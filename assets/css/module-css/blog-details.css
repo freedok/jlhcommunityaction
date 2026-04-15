@@ -1,0 +1,293 @@
+
+.blog-details-content{
+    position: relative;
+    display: block;
+}
+
+.blog-details-content blockquote{
+    position: relative;
+    display: block;
+    background-color: #FAF7F1;
+    padding: 32px 70px 36px 120px;
+    border-radius: 24px;
+    margin-bottom: 25px;
+}
+
+.blog-details-content blockquote .icon-box{
+    position: absolute;
+    display: inline-block;
+    font-size: 35px;
+    left: 40px;
+    top: 40px;
+}
+
+.blog-details-content blockquote p{
+    font-size: 20px;
+    line-height: 30px;
+    color: #555555;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.blog-details-content blockquote h5{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 26px;
+    font-family: var(--text-font);
+    color: var(--title-color);
+    font-weight: 700;
+    padding-left: 34px;
+}
+
+.blog-details-content blockquote h5::before{
+    position: absolute;
+    content: '';
+    background-color: #2F2F2F;
+    width: 20px;
+    height: 2px;
+    left: 0px;
+    top: 12px;
+}
+
+.blog-details-content .news-block-two .inner-box .lower-content p{
+    margin-bottom: 26px;
+}
+
+.blog-details-content .news-block-two .two-column .image-box{
+    position: relative;
+    display: block;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.blog-details-content .news-block-two .two-column .image-box img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.blog-details-content .post-share-option{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid #E4E4E4;
+    margin-top: 60px;
+}
+
+.blog-details-content .post-share-option ul{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.blog-details-content .post-share-option ul li span{
+    position: relative;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+.blog-details-content .post-share-option .tags-list li{
+    position: relative;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.blog-details-content .post-share-option .tags-list li a{
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: var(--title-font);
+    color: var(--title-color);
+    font-weight: 700;
+    border: 1px solid #E4E4E4;
+    border-radius: 50px;
+    padding: 7px 35px;
+}
+
+.blog-details-content .post-share-option .tags-list li a:hover{
+    color: #fff;
+}
+
+.blog-details-content .post-share-option .social-list li a{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: #39579A;
+}
+
+.blog-details-content .post-share-option .social-list li:nth-child(3) a{
+    color: #69ACE0;
+}
+
+.blog-details-content .post-share-option .social-list li:nth-child(4) a{
+    color: #007BB5;
+}
+
+.blog-details-content .related-post h2{
+    display: block;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 22px;
+}
+
+.blog-details-content .news-block-two .inner-box{
+    margin-bottom: 50px;
+}
+
+.blog-details-content .author-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 60px;
+}
+
+.blog-details-content .author-box .thumb-box{
+    position: relative;
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    min-width: 140px;
+}
+
+.blog-details-content .author-box .thumb-box img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.blog-details-content .author-box h3{
+    display: block;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 0;
+}
+
+.blog-details-content .author-box .designation{
+    position: relative;
+    display: block;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 11px;
+}
+
+.blog-details-content .author-box p{
+    color: #777777;
+}
+
+.blog-details-content .author-box .social-list{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.blog-details-content .author-box .social-list li a{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: #39579A;
+}
+
+.blog-details-content .author-box .social-list li:nth-child(2) a{
+    color: #69ACE0;
+}
+
+.blog-details-content .author-box .social-list li:nth-child(3) a{
+    color: #007BB5;
+}
+
+.blog-details-content .comment-form h2{
+    display: block;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 20px;
+}
+
+.blog-details-content .comment-form{
+    position: relative;
+    display: block;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px 40px 40px 40px;
+}
+  
+  
+/** rtl-css **/
+  
+.rtl .blog-details-content .author-box .social-list{
+    right: inherit;
+    left: 30px;
+}
+  
+/** responsive-css **/
+  
+@media only screen and (max-width: 1200px){
+  
+}
+  
+@media only screen and (max-width: 991px){
+
+}
+  
+@media only screen and (max-width: 767px){
+    .blog-details-content .post-share-option{
+        display: block;
+    }
+
+    .blog-details-content .post-share-option .tags-list{
+        margin-bottom: 10px;
+    }
+}
+  
+@media only screen and (max-width: 599px){
+    .blog-details-content .post-share-option .tags-list{
+        display: block;
+    }
+
+    .blog-details-content .post-share-option .tags-list li{
+        margin-bottom: 10px;
+    }
+
+    .blog-details-content .author-box .social-list{
+        position: relative;
+        top: 0px;
+        right: 0px;
+        margin-top: 15px;
+    }
+}
+  
+@media only screen and (max-width: 499px){
+    .blog-details-content blockquote,
+    .blog-details-content .comment-form{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .blog-details-content blockquote .icon-box{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        margin-bottom: 20px;
+    }
+
+    .blog-details-content .author-box{
+        display: block;
+    }
+
+    .blog-details-content .author-box .thumb-box{
+        margin-bottom: 20px;
+    }
+} 

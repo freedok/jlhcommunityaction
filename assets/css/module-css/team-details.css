@@ -1,0 +1,287 @@
+
+/** team-details **/
+
+.team-details{
+    position: relative;
+}
+
+.team-details-content{
+    position: relative;
+    display: block;
+}
+
+.team-details-content .image-box{
+    position: relative;
+    display: block;
+    padding-left: 55px;
+    padding-right: 66px;
+    padding-bottom: 127px;
+}
+
+.team-details-content .image-box .image{
+    position: relative;
+    display: block;
+}
+
+.team-details-content .image-box .image img{
+    width: 100%;
+}
+
+.team-details-content .image-box .image-shape .shape-1{
+    position: absolute;
+    left: -39px;
+    bottom: 0px;
+    width: 500px;
+    height: 466px;
+    background-repeat: no-repeat;
+}
+
+.team-details-content .image-box .image-shape .shape-2{
+    position: absolute;
+    top: 0px;
+    right: 37px;
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+}
+
+.team-details-content .content-box{
+    position: relative;
+    display: block;
+}
+
+.team-details-content .content-box h2{
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 4px;
+}
+
+.team-details-content .content-box .designation{
+    position: relative;
+    display: block;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 18px;
+}
+
+.team-details-content .content-box p{
+    max-width: 490px;
+    color: #444;
+    margin-bottom: 27px;
+}
+
+.team-details-content .content-box .list-item li{
+    position: relative;
+    display: block;
+    font-size: 16px;
+    line-height: 26px;
+    color: #444;
+    margin-bottom: 7px;
+}
+
+.team-details-content .content-box .list-item li:last-child{
+    margin-bottom: 0px;
+}
+
+.team-details-content .content-box .list-item li strong{
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.team-details-content .content-box .list-item li a{
+    color: #444;
+}
+
+.team-details-content .content-box .social-links{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.team-details-content .content-box .social-links li a{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 54px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 16px;
+    color: #777777;
+}
+
+.team-details-content .content-box .social-links li a:hover{
+    color: #fff;
+}
+
+.team-details h2{
+    position: relative;
+    display: block;
+    font-size: 36px;
+    line-height: 50px;
+    margin-bottom: 24px;
+}
+
+.team-details .biography-box p{
+    margin-bottom: 26px;
+}
+
+.team-details .biography-box p:last-child{
+    margin-bottom: 0px;
+}
+
+.team-details .two-column .progress-box .bar{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.team-details .two-column .progress-box .bar .bar-inner{
+    position: relative;
+    display: block;
+    height: 6px;
+    border-radius: 20px;
+    -webkit-transition:all 1500ms ease;
+    -ms-transition:all 1500ms ease;
+    -o-transition:all 1500ms ease;
+    -moz-transition:all 1500ms ease;
+    transition:all 1500ms ease; 
+}
+
+.team-details .two-column .progress-box .single-box{
+    position: relative;
+    display: block;
+    margin-bottom: 21px;
+}
+
+.team-details .two-column .progress-box .bar span{
+    position: absolute;
+    bottom: 15px;
+    right: 0px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+.team-details .two-column .progress-box .single-box h5{
+    position: relative;
+    display: block;
+    font-size: 18px;
+    line-height: 30px;
+    font-family: var(--title-font);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.team-details .two-column .experience-content p{
+    margin-bottom: 26px;
+}
+
+.team-details .two-column .experience-content p:last-child{
+    margin-bottom: 0px;
+}
+
+.team-details .join-form{
+    position: relative;
+    display: block;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.team-details .join-form .form-inner{
+    position: relative;
+    display: block;
+    background-color: #fff;
+    border-radius: 24px;
+    box-shadow: 0px 8px 90px 0px rgba(0, 0, 0, 0.06);
+    padding: 70px;
+}
+
+.team-details .join-form .form-inner .form-group{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.team-details .join-form .form-inner .form-group:last-child{
+    margin-bottom: 0px;
+}
+
+.team-details .join-form .form-inner .form-group input[type='text'],
+.team-details .join-form .form-inner .form-group input[type='email'],
+.team-details .join-form .form-inner .form-group textarea{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 56px;
+    border: 1px solid #E4E4E4;
+    border-radius: 50px;
+    font-size: 16px;
+    color: #6A6A6A;
+    padding: 10px 25px;
+    transition: all 500ms ease;
+}
+
+.team-details .join-form .form-inner .form-group textarea{
+    height: 170px;
+    resize: none;
+    padding-top: 15px;
+    border-radius: 36px;
+}
+
+.team-details .join-form .form-inner .form-group .theme-btn .text,
+.team-details .join-form .form-inner .form-group .theme-btn{
+    width: 100%;
+}
+
+
+
+  
+/** rtl-css **/
+  
+.rtl .team-details .two-column .progress-box .bar span{
+    right: inherit;
+    left: 0px;
+}
+  
+/** responsive-css **/
+  
+@media only screen and (max-width: 1200px){
+  
+}
+  
+@media only screen and (max-width: 991px){
+
+}
+  
+@media only screen and (max-width: 767px){
+    .team-details{
+        padding: 70px 0px;
+    }
+
+    .team-details .two-column .skills-content{
+        margin-right: 0px;
+    }
+
+    .team-details-content .content-box{
+        margin-bottom: 40px;
+    }
+}
+  
+@media only screen and (max-width: 599px){
+    .team-details .join-form .form-inner{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+  
+@media only screen and (max-width: 499px){
+    .team-details-content .image-box{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+} 

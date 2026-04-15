@@ -1,0 +1,198 @@
+
+/** funfact-section **/
+
+.funfact-section{
+    position: relative;
+    background-color: var(--secondary-color);
+    padding: 45px 0px;
+}
+
+.funfact-section .outer-container{
+    position: relative;
+    padding: 0px 15px;
+}
+
+.funfact-block-one .inner-box{
+    position: relative;
+    display: block;
+}
+
+.funfact-block-one .inner-box::before{
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 1px;
+    height: 205px;
+    top: -45px;
+    right: -15px;
+    opacity: 0.12;
+}
+
+.funfact-block:last-child .funfact-block-one .inner-box::before{
+    display: none;
+}
+
+.funfact-block-one .inner-box .count-outer{
+    position: relative;
+    display: block;
+    font-size: 64px;
+    line-height: 70px;
+    font-family: var(--title-font);
+    font-weight: 600;
+    z-index: 1;
+    margin-bottom: 7px;
+}
+
+.funfact-block-one .inner-box .count-outer .shape{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.funfact-block-one .inner-box p{
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+
+/** funfact-style-two **/
+
+.funfact-style-two{
+    position: relative;
+}
+
+.funfact-style-two .inner-container{
+    position: relative;
+    display: block;
+    max-width: 910px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+    z-index: 3;
+    padding: 48px 80px;
+    margin-top: -90px;
+}
+
+.funfact-style-two .inner-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.funfact-style-two .single-item{
+    position: relative;
+    display: block;
+}
+
+.funfact-style-two .inner-container .bar-box{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.funfact-style-two .inner-container .bar-box .bar{
+    position: absolute;
+    background-color: #E5E5E5;
+    width: 1px;
+    height: 64px;
+    top: 58px;
+}
+
+.funfact-style-two .inner-container .bar-box .bar-1{
+    left: 33.333%;
+}
+
+.funfact-style-two .inner-container .bar-box .bar-2{
+    left: 66.666%;
+}
+
+.funfact-style-two .single-item:last-child:before{
+    display: none;
+}
+
+.funfact-style-two .single-item .count-outer{
+    position: relative;
+    display: block;
+    font-size: 48px;
+    line-height: 50px;
+    font-family: var(--title-font);
+    font-weight: 700;
+}
+
+.funfact-style-two .single-item h4{
+    display: block;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.funfact-style-two .single-item .count-outer .symble{
+    position: relative;
+    display: inline-block;
+    top: -2px;
+    text-transform: uppercase;
+}
+
+.funfact-section.alternat-2 .funfact-block-one .inner-box .count-outer{
+    color: #fff;
+}
+  
+  
+/** rtl-css **/
+  
+.rtl .funfact-block-one .inner-box::before{
+    right: inherit;
+    left: -15px;
+}
+  
+/** responsive-css **/
+  
+@media only screen and (max-width: 1200px){
+  
+}
+  
+@media only screen and (max-width: 991px){
+
+}
+  
+@media only screen and (max-width: 767px){
+    .funfact-style-two .inner-container{
+        margin-top: 0px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+  
+@media only screen and (max-width: 599px){
+    .funfact-style-two .inner-container .bar-box{
+        display: none;
+    }
+
+    .funfact-style-two .inner-container .inner-box{
+        display: block;
+    }
+
+    .funfact-style-two .inner-container .inner-box .single-item{
+        margin-bottom: 30px;
+    }
+
+    .funfact-style-two .inner-container .inner-box .single-item:last-child{
+        margin-bottom: 0px;
+    }
+}
+  
+@media only screen and (max-width: 499px){
+
+} 

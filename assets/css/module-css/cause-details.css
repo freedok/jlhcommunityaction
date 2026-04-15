@@ -1,0 +1,394 @@
+
+/** cause-details **/
+
+.cause-details{
+    position: relative;
+}
+
+.cause-details-content{
+    position: relative;
+}
+
+.cause-details-content .cause-block-one .inner-box{
+    padding: 0px;
+    background: transparent;
+    box-shadow: none !important;
+    margin-bottom: 60px;
+}
+
+.cause-details-content .cause-block-one .inner-box .image-box .image img{
+    transform: scale(1) !important;
+}
+
+.cause-details-content .cause-block-one .inner-box .lower-content{
+    position: relative;
+    display: block;
+    padding-top: 30px;
+}
+
+.cause-details-content h2{
+    display: block;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 28px;
+}
+
+.cause-details-content .content-one{
+    position: relative;
+    display: block;
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 60px;
+}
+
+.cause-details-content .content-one .progress-box .bar{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+}
+
+.cause-details-content .content-one .progress-box .bar span{
+    position: absolute;
+    bottom: 13px;
+    right: 0px;
+    font-size: 18px;
+    line-height: 28px;
+    font-family: var(--title-font);
+    color: var(--title-color);
+    font-weight: 700;
+}
+
+.cause-details-content .content-one .progress-box .bar .bar-inner{
+    position:relative;
+    display:block;
+    width:0px;
+    height:6px;
+    border-radius: 5px;
+    -webkit-transition:all 1500ms ease;
+    -ms-transition:all 1500ms ease;
+    -o-transition:all 1500ms ease;
+    -moz-transition:all 1500ms ease;
+    transition:all 1500ms ease;
+}
+
+.cause-details-content .content-one .progress-box h4{
+    position: relative;
+    display: block;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 7px;
+}
+
+.cause-details-content .content-one .amount-list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cause-details-content .content-one .amount-list li{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 20px;
+    font-family: var(--title-font);
+    color: var(--title-color);
+    font-weight: 600;
+    padding: 14px 30px;
+    border-radius: 30px;
+    border: 1px solid #E4E4E4;
+}
+
+.cause-details-content .content-one h3{
+    display: block;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 17px;
+}
+
+.cause-details-content .content-one .payment-option{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.cause-details-content .content-one .payment-option li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.cause-details-content .content-one .payment-option li .check-box input {
+    display: none;
+}
+  
+.cause-details-content .content-one .payment-option li .check-box label {
+    position: relative;
+    font-size: 18px;
+    line-height: 26px;
+    color: #5E5E5E;
+    padding-left: 28px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+  
+.cause-details-content .content-one .payment-option li .check-box label:before{
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #D6D6D6;
+}
+  
+.cause-details-content .content-one .payment-option li .check-box label:after {
+    position: absolute;
+    content: '';
+    top: 7px;
+    opacity: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    left: 3px;
+}
+  
+.cause-details-content .content-one .payment-option li .check-box input:checked + label:after {
+    opacity: 1;
+}
+
+.cause-details-content .content-one .form-inner h3{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.cause-details-content form{
+    position: relative;
+    margin: 0px 5px;
+}
+
+.cause-details-content form .form-group{
+    position: relative;
+    padding: 0px 10px;
+    margin-bottom: 20px;
+}
+
+.cause-details-content form .form-group:last-child{
+    margin-bottom: 0px;
+}
+
+.cause-details-content form .form-group input[type='text'],
+.cause-details-content form .form-group input[type='email'],
+.cause-details-content form .form-group textarea{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 56px;
+    border: 1px solid #D6D6D6;
+    border-radius: 100px;
+    padding: 10px 30px;
+    font-size: 14px;
+    color: #5E5E5E;
+    background-color: #fff;
+    transition: all 500ms ease;
+}
+
+.cause-details-content form .form-group textarea{
+    height: 170px;
+    border-radius: 36px;
+    padding-top: 15px;
+    resize: none;
+}
+
+.cause-details-content .content-two .image-box{
+    position: relative;
+    display: block;
+    border-radius: 24px;
+}
+
+.cause-details-content .content-two .image-box img{
+    width: 100%;
+    border-radius: 24px;
+}
+
+.cause-details-content .content-two blockquote{
+    position: relative;
+    display: block;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0px 14px 64px 0px rgba(0, 0, 0, 0.06);
+    padding: 32px 70px 36px 120px;
+    margin-top: -50px;
+    border-radius: 24px;
+}
+
+.cause-details-content .content-two blockquote .icon-box{
+    position: absolute;
+    display: inline-block;
+    font-size: 35px;
+    color: #000;
+    left: 40px;
+    top: 40px;
+}
+
+.cause-details-content .content-two blockquote p{
+    font-size: 20px;
+    line-height: 30px;
+    color: #555555;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.cause-details-content .content-two blockquote h5{
+    position: relative;
+    display: block;
+    font-size: 18px;
+    line-height: 26px;
+    font-family: var(--text-font);
+    color: var(--title-color);
+    font-weight: 700;
+    padding-left: 34px;
+}
+
+.cause-details-content .content-two blockquote h5::before{
+    position: absolute;
+    content: '';
+    background-color: #2F2F2F;
+    width: 20px;
+    height: 2px;
+    left: 0px;
+    top: 12px;
+}
+
+.cause-details-content .content-three p{
+    margin-bottom: 24px;
+}
+
+.cause-details-content .content-three h3{
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+
+.cause-details-content .content-three .list-item li{
+    position: relative;
+    display: block;
+    font-size: 16px;
+    line-height: 26px;
+    color: #444444;
+    margin-bottom: 4px;
+}
+
+.cause-details-content .content-three .list-item li:last-child{
+    margin-bottom: 0px;
+}
+
+.cause-details-content .content-three .list-item li span{
+    margin-right: 6px;
+}
+
+.cause-details-content .content-three .image-box{
+    position: relative;
+    display: block;
+    border-radius: 24px;
+}
+
+.cause-details-content .content-three .image-box img{
+    width: 100%;
+    border-radius: 24px;
+}
+
+.cause-details-content .cause-block-one .inner-box .image-box .image,
+.cause-details-content .cause-block-one .inner-box .image-box .image img{
+    border-radius: 24px;
+}
+
+  
+/** rtl-css **/
+  
+.rtl .cause-details-content .content-one .progress-box .bar span{
+    right: inherit;
+    left: 0px;
+}
+
+.rtl .cause-details-content .content-two blockquote h5{
+    padding-left: 0px;
+    padding-right: 34px;
+}
+
+.rtl .cause-details-content .content-two blockquote h5::before{
+    left: inherit;
+    right: 0px;
+}
+
+.rtl .cause-details-content .content-three .list-item li span{
+    margin-right: 0px;
+    margin-left: 6px;
+}
+  
+/** responsive-css **/
+  
+@media only screen and (max-width: 1200px){
+  
+}
+  
+@media only screen and (max-width: 991px){
+    .cause-details-content{
+        margin-bottom: 30px;
+    }
+}
+  
+@media only screen and (max-width: 767px){
+    .cause-details{
+        padding: 70px 0px;
+    }
+
+    .cause-details-content .content-one .amount-list{
+        display: block;
+    }
+
+    .cause-details-content .content-one .payment-option{
+        gap: 30px;
+    }
+
+    .cause-details-content .content-one .amount-list li{
+        margin-right: 6px;
+        margin-bottom: 10px;
+    }
+}
+  
+@media only screen and (max-width: 599px){
+    .cause-details-content .content-one .payment-option{
+        display: block;
+    }
+
+    .cause-details-content .content-two blockquote{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .cause-details-content .content-two blockquote .icon-box{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        margin-bottom: 20px;
+    }
+}
+  
+@media only screen and (max-width: 499px){
+    .cause-details-content .content-one{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+} 

@@ -1,0 +1,165 @@
+/* Responsive Css */
+
+
+@media only screen and (max-width: 1699px){
+  .donate-content .donate-option{
+    padding-right: 0px;
+  }
+
+  .donate-content .donate-option .other-amount{
+    position: relative;
+    top: 0px;
+  }
+
+  .donate-content .donate-option .donate-list li{
+    width: 80px;
+    margin-right: 30px;
+  }
+}
+
+
+@media only screen and (max-width: 1499px){
+
+ 
+
+}
+
+
+@media only screen and (max-width: 1399px){
+
+
+
+}
+
+
+@media only screen and (max-width: 1299px){
+
+
+
+}
+
+
+
+@media only screen and (max-width: 1200px){
+
+  .main-menu,
+  .sticky-header,
+  .main-header.style-one .outer-container:before{
+    display: none !important;
+  }
+
+  .menu-area .mobile-nav-toggler {
+    display: block;
+    padding: 10px;
+  }
+
+  .megamenu ul li:first-child{
+    display: none;
+  }
+
+
+}
+
+
+
+@media only screen and (min-width: 768px){
+  .main-menu .navigation > li > ul,
+  .main-menu .navigation > li > ul > li > ul,
+  .main-menu .navigation > li > .megamenu{
+    display:block !important;
+    visibility:hidden;
+    opacity:0;
+  }
+}
+
+
+
+@media only screen and (max-width: 991px){
+
+
+}
+
+
+@media only screen and (max-width: 767px){
+  .sec-title h2{
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .sec-title h2 br{
+    display: none;
+  }
+
+  .faq-page-section,
+  .faq-form-section{
+    padding: 70px 0px;
+  }
+
+}
+
+@media only screen and (max-width: 599px){
+
+  .pagination li a{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .search-popup .upper-box{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .donate-content .donate-box,
+  .donate-content .form-inner,
+  .faq-form-section .form-inner{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .donate-popup .donate-content{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+}
+
+
+@media only screen and (max-width: 499px){
+
+  .mobile-menu,
+  .chat-popup{
+    width: 100%;
+  }
+
+  .donate-content .donate-option .other-amount {
+    width: 230px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .theme-btn .text{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

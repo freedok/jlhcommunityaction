@@ -1,0 +1,185 @@
+
+/** cta-section **/
+
+.cta-section{
+    position: relative;
+    padding: 138px 0px;
+}
+
+.cta-section .bg-layer{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    min-height: 546px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cta-section .sec-title .title-text{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 26px;
+    font-family: var(--special-font);
+    color: var(--title-color);
+    height: 41px;
+    line-height: 41px;
+    margin-bottom: 23px;
+    z-index: 1;
+    width: 136px;
+    text-align: center;
+}
+
+.cta-section .sec-title .title-text::before{
+    position: absolute;
+    content: '';
+    background-image: url(../../images/shape/shape-19.png);
+    width: 136px;
+    height: 41px;
+    left: 0px;
+    top: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+}
+
+.cta-section .sec-title h2{
+    margin-bottom: 30px;
+}
+
+.cta-section.home-4{
+    padding: 212px 0px;
+}
+
+
+/** cta-style-two **/
+
+.cta-style-two{
+    position: relative;
+}
+
+.cta-style-two .inner-container{
+    position: relative;
+    border-radius: 20px;
+    padding: 80px;
+    margin-top: -153px;
+}
+
+.cta-style-two .content-box{
+    position: relative;
+    display: block;
+    max-width: 520px;
+}
+
+.cta-style-two .content-box .category{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 26px;
+    font-family: var(--special-font);
+    color: var(--title-color);
+    margin-bottom: 12px;
+    padding: 7px 24px;
+    z-index: 1;
+}
+
+.cta-style-two .content-box .category::before{
+    position: absolute;
+    content: '';
+    background-image: url(../../images/shape/shape-31.png);
+    width: 141px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+}
+
+.cta-style-two .content-box h2{
+    font-size: 56px;
+    line-height: 60px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.cta-style-two .inner-container .shape{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cta-style-two .inner-container .image-layer{
+    position: absolute;
+    right: 22px;
+    bottom: -62px;
+}
+
+  
+  
+/** rtl-css **/
+  
+.rtl .cta-style-two .inner-container .image-layer{
+    right: inherit;
+    left: 22px;
+}
+  
+/** responsive-css **/
+  
+@media only screen and (max-width: 1200px){
+  
+}
+  
+@media only screen and (max-width: 991px){
+    .cta-style-two .inner-container .image-layer{
+        display: none;
+    }
+
+    .cta-style-two .content-box{
+        max-width: 100%;
+    }
+}
+  
+@media only screen and (max-width: 767px){
+    .cta-section{
+        padding: 70px 0px;
+    }
+
+    .cta-section .bg-layer{
+        min-height: 100%;
+    }
+
+    .cta-section.home-4{
+        padding: 100px 0px;
+    }
+
+    .cause-style-five{
+        padding: 90px 0px 200px 0px;
+    }
+
+    .cta-style-two .inner-container{
+        padding: 70px 30px;
+    }
+
+    .cta-style-two .content-box h2{
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+  
+@media only screen and (max-width: 599px){
+  
+}
+  
+@media only screen and (max-width: 499px){
+    .cta-style-two .inner-container{
+        padding: 70px 15px;
+    }
+} 

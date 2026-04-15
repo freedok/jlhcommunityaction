@@ -1,0 +1,393 @@
+
+/** default-sidebar **/
+
+.default-sidebar{
+    position: relative;
+    display: block;
+}
+
+.default-sidebar .search-widget .form-group{
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.default-sidebar .search-widget .form-group input[type='search']{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    font-size: 20px;
+    color: #333333;
+    font-weight: 500;
+    padding: 10px 70px 10px 30px;
+    border-radius: 20px;
+}
+
+.default-sidebar .search-widget .form-group button[type='submit']{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 42px;
+    background-color: #F0F1F1;
+    text-align: center;
+    font-size: 20px;
+    color: var(--title-color);
+    border-radius: 50%;
+    transition: all 500ms ease;
+}
+
+.default-sidebar .search-widget .form-group input:focus + button,
+.default-sidebar .search-widget .form-group button:hover{
+    color: #fff;
+}
+
+.default-sidebar .widget-title{
+    position: relative;
+    display: block;
+}
+
+.default-sidebar .widget-title h3{
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.default-sidebar .category-widget .category-list li{
+    position: relative;
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 16px;
+}
+
+.default-sidebar .category-widget .category-list li:last-child{
+    margin-bottom: 0px;
+}
+
+.default-sidebar .category-widget .category-list li a{
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--title-color);
+    padding-left: 15px;
+}
+
+.default-sidebar .category-widget .category-list li a::before{
+    position: absolute;
+    content: '';
+    background-color: var(--secondary-color);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    left: 0px;
+    top: 7px;
+    transition: all 500ms ease;
+}
+
+.default-sidebar .sidebar-widget{
+    position: relative;
+    display: block;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 25px 30px 37px 30px;
+}
+
+.default-sidebar .tags-widget .tags-list{
+    position: relative;
+    margin: 0px -5px;
+}
+
+.default-sidebar .tags-widget .tags-list li{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin: 0px 5px 10px 5px;
+}
+
+.default-sidebar .tags-widget .tags-list li a{
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: var(--title-font);
+    color: var(--title-color);
+    font-weight: 700;
+    border: 1px solid #E4E4E4;
+    border-radius: 50px;
+    padding: 5px 15px;
+}
+
+.default-sidebar .tags-widget .tags-list li a:hover{
+    color: #fff;
+}
+
+.default-sidebar .download-widget .download-list li{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.default-sidebar .download-widget .download-list li:last-child{
+    margin-bottom: 0px;
+}
+
+.default-sidebar .download-widget .download-list li button{
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(248, 79, 35, 0.06);
+    border: 1px solid rgb(248, 79, 35, 0.40);
+    font-size: 18px;
+    line-height: 28px;
+    font-family: var(--title-font);
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 15px 30px;
+}
+
+.default-sidebar .tags-widget{
+    padding-bottom: 27px;
+}
+
+.price-range-slider .range-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.price-range-slider .range-value input{
+    width: 100%;
+    background: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: var(--text-font);
+    color: #555555;
+    font-weight: 500;
+    box-shadow: none;
+    border: none;
+}
+  
+.price-range-slider .range-bar{
+    position: relative;
+    border: none;
+    height: 4px;  
+    width: 100%;
+    background: #F0F1F1;
+    border-radius: 30px;
+}
+  
+.price-range-slider .ui-slider-range{
+    position: relative;
+    width: 100%;
+    height: 4px;
+}
+  
+.price-range-slider .ui-slider-handle{
+    position: absolute;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    top: -6px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.18);
+}
+
+.price-range-slider .range-box .theme-btn .text{
+    padding: 0px 20px;
+}
+
+.blog-sidebar .search-widget .form-group input[type='search']{
+    height: 56px;
+    background-color: #FAF7F1;
+    border-radius: 50px;
+    border: 1px solid #FAF7F1;
+}
+
+.blog-sidebar .search-widget .form-group button[type='submit']{
+    top: 8px;
+    right: 8px;
+    color: #fff;
+    background-color: var(--theme-color);
+}
+
+.blog-sidebar .post-widget .post-inner .post{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.blog-sidebar .post-widget .post-inner .post:last-child{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+.blog-sidebar .post-widget .post-inner .post .thumb-box{
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.blog-sidebar .post-widget .post-inner .post .thumb-box img{
+    width: 100%;
+    border-radius: 12px;
+    transition: all .25s cubic-bezier(.25,.8,.25,1);
+}
+
+.blog-sidebar .post-widget .post-inner .post:hover .thumb-box img{
+    -webkit-transform: scale3d(1.1, 1.1, 1);
+    transform: scale3d(1.1, 1.1, 1);
+}
+
+.blog-sidebar .post-widget .post-inner .post h5{
+    display: block;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 6px;
+}
+
+.blog-sidebar .post-widget .post-inner .post h5 a{
+    display: inline-block;
+    color: var(--title-color);
+}
+
+.blog-sidebar .post-widget .post-inner .post .post-date{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.blog-sidebar .gallery-widget .image-list{
+    position: relative;
+    margin: 0px -8px;
+}
+
+.blog-sidebar .gallery-widget .image-list li{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin: 0px 8px 16px 8px;
+}
+
+.rtl .blog-sidebar .gallery-widget .image-list li{
+    float: right;
+}
+
+.blog-sidebar .gallery-widget .image-list li .image{
+    position: relative;
+    display: block;
+    width: 106px;
+    height: 106px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.blog-sidebar .gallery-widget .image-list li .image img{
+    width: 100%;
+    border-radius: 12px;
+    transition: all .25s cubic-bezier(.25,.8,.25,1);
+}
+
+.blog-sidebar .gallery-widget .image-list li .image:hover img{
+    -webkit-transform: scale3d(1.1, 1.1, 1);
+    transform: scale3d(1.1, 1.1, 1);
+}
+
+.blog-sidebar .gallery-widget{
+    padding-bottom: 21px;
+}
+
+.blog-sidebar .archive-widget .archives-list li{
+    position: relative;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.blog-sidebar .archive-widget .archives-list li:last-child{
+    margin-bottom: 0px;
+}
+
+.blog-sidebar .archive-widget .archives-list li a{
+    display: inline-block;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--title-color);
+}
+
+.blog-sidebar .archive-widget .archives-list li a:hover{
+    letter-spacing: 1px;
+}
+
+  
+/** rtl-css **/
+  
+.rtl .default-sidebar .category-widget .category-list li a{
+    padding-left: 0px;
+    padding-right: 15px;
+}
+
+.rtl .default-sidebar .category-widget .category-list li a::before{
+    left: inherit;
+    right: 0px;
+}
+
+.rtl .default-sidebar .tags-widget .tags-list li{
+    float: right;
+}
+
+.rtl .price-range-slider .range-bar{
+    direction: ltr;
+}
+  
+/** responsive-css **/
+  
+@media only screen and (max-width: 1200px){
+  
+}
+  
+@media only screen and (max-width: 991px){
+    .blog-sidebar{
+        margin-top: 40px;
+    }
+}
+  
+@media only screen and (max-width: 767px){
+    
+}
+  
+@media only screen and (max-width: 599px){
+  
+}
+  
+@media only screen and (max-width: 499px){
+    .blog-sidebar .post-widget .post-inner .post{
+        display: block;
+    }
+
+    .blog-sidebar .post-widget .post-inner .post .thumb-box{
+        margin-bottom: 20px;
+    }
+} 

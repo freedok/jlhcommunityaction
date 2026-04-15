@@ -1,0 +1,285 @@
+
+/** fluid-section **/
+
+.fluid-section{
+    position: relative;
+    background-color: var(--theme-color);
+    overflow: hidden;
+}
+
+.fluid-section .video-column{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+}
+
+.fluid-section .video-column .video-inner{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 305px 0px;
+}
+
+.fluid-section .video-column .video-inner::before{
+    position: absolute;
+    content: '';
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    opacity: 0.4;
+}
+
+.fluid-section .video-column .video-inner .video-btn a{
+    position: relative;
+    display: inline-block;
+}
+
+.fluid-section .right-column{
+    position: relative;
+    float: right;
+    width: 50%;
+}
+
+.fluid-section .accordion-content{
+    position: relative;
+    padding: 85px 210px;
+}
+
+.fluid-section .sub-title{
+    color: #fff;
+}
+
+.fluid-section .accordion-box .accordion{
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.fluid-section .pattern-layer .pattern-1{
+    position: absolute;
+    left: 0px;
+    top: -15px;
+    width: 100%;
+    height: 45px;
+    background-repeat: repeat-x;
+    z-index: 1;
+}
+
+.fluid-section .pattern-layer .pattern-2{
+    position: absolute;
+    left: 0px;
+    bottom: -15px;
+    width: 100%;
+    height: 45px;
+    background-repeat: repeat-x;
+    z-index: 1;
+}
+
+
+/** fluid-style-two **/
+
+.fluid-style-two{
+    position: relative;
+}
+
+.fluid-style-two .video-column{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+}
+
+.fluid-style-two .video-column .video-inner{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 322.5px 0px;
+}
+
+.fluid-style-two .video-column .video-inner .video-btn a{
+    position: relative;
+    display: inline-block;
+}
+
+.fluid-style-two .left-column{
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.fluid-style-two .left-column .content-box{
+    position: relative;
+    max-width: 960px;
+}
+
+.fluid-style-two .left-column .content-box .tab-btns{
+    position: absolute;
+    left: 0px;
+    top: -60px;
+    display: flex;
+    gap: 8px;
+}
+
+.fluid-style-two .left-column .tabs-content{
+    padding: 100px 120px;
+}
+
+.fluid-style-two .left-column .content-box .tab-btns li{
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: var(--special-font);
+    color: var(--title-color);
+    background-color: #F5F0E6;
+    border-radius: 16px 16px 0px 0px;
+    cursor: pointer;
+    padding: 16px 35px;
+}
+
+.fluid-style-two .left-column .content-box .tab-btns li.active-btn{
+    color: #fff;
+}
+
+.fluid-style-two .left-column .content-box .sec-title .sub-title{
+    color: #fff;
+}
+
+.fluid-style-two .left-column .content-box .text-box p{
+    color: #fff;
+}
+
+.fluid-style-two .left-column .content-box .funfact-box{
+    position: relative;
+    display: flex;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.1);
+    padding: 27px 30px 30px 30px;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.fluid-style-two .left-column .content-box .funfact-box .single-item{
+    position: relative;
+    display: block;
+}
+
+.fluid-style-two .left-column .content-box .funfact-box .single-item h2{
+    font-size: 48px;
+    line-height: 50px;
+    font-family: var(--title-font);
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.fluid-style-two .left-column .content-box .funfact-box .single-item h4{
+    display: block;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+}
+  
+  
+/** rtl-css **/
+  
+
+  
+/** responsive-css **/
+
+
+@media only screen and (max-width: 1700px){
+    .fluid-section .accordion-content{
+        padding: 85px 60px;
+    }
+
+    .fluid-style-two .left-column .tabs-content{
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+  
+@media only screen and (max-width: 1200px){
+    .fluid-style-two .left-column .tabs-content{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .fluid-style-two .left-column{
+        float: none;
+        width: 100%;
+    }
+
+    .fluid-style-two .video-column{
+        position: relative;
+        width: 100%;
+    }
+}
+  
+@media only screen and (max-width: 991px){
+    .fluid-section .video-column{
+        position: relative;
+        width: 100%;
+    }
+
+    .fluid-section .right-column{
+        float: none;
+        width: 100%;
+    }
+}
+  
+@media only screen and (max-width: 767px){
+    .fluid-section .video-column .video-inner{
+        padding: 150px 0px;
+    }
+
+    .fluid-section .accordion-content{
+        padding: 60px 30px;
+    }
+
+    .fluid-style-two .left-column .tabs-content{
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
+  
+@media only screen and (max-width: 599px){
+    .fluid-style-two .left-column .content-box .funfact-box{
+        display: block;
+        text-align: center;
+    }
+
+    .fluid-style-two .left-column .content-box .funfact-box .single-item{
+        margin-bottom: 30px;
+    }
+
+    .fluid-style-two .left-column .content-box .funfact-box .single-item:last-child{
+        margin-bottom: 0px;
+    }
+
+    .fluid-style-two .video-column .video-inner{
+        padding: 150px 0px;
+    }
+}
+  
+@media only screen and (max-width: 499px){
+    .fluid-section .accordion-content,
+    .fluid-style-two .left-column .tabs-content{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

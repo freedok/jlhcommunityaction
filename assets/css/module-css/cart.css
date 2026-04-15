@@ -1,0 +1,509 @@
+/** cart-section **/
+
+.cart-section{
+    position: relative;
+}
+
+  
+  .cart-section .table-outer {
+    overflow-x: auto;
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, 0.04);
+  }
+  
+  .cart-section .cart-table {
+    min-width: 1170px;
+    width: 100%;
+  }
+  
+  .cart-section .cart-table thead{
+    position: relative;
+    background: #F2EDE4;
+  }
+  
+  .cart-section .cart-table thead th{
+    font-size: 14px;
+    line-height: 24px;
+    font-family: var(--title-font);
+    color: var(--title-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 23px 30px;
+    text-align: center;
+  }
+  
+  .cart-section .cart-table thead th:first-child{
+    text-align: left;
+  }
+  
+  .cart-section .cart-table tbody tr{
+    border-bottom: 1px solid #E4E4E4;
+  }
+  
+  .cart-section .cart-table tbody tr:last-child{
+    border-bottom: none;
+  }
+  
+  .cart-section .cart-table td{
+    position: relative;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--title-color);
+    text-align: center;
+  }
+
+  .cart-section .cart-table td.color span{
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  .cart-section .cart-table td.color span.black{
+    background-color: #111111;
+  }
+
+  .cart-section .cart-table td.color span.green{
+    background-color: #93D5ED;
+  }
+
+  .cart-section .cart-table td.color span.merun{
+    background-color: #926351;
+  }
+
+  .cart-section .cart-table td.color span.blue{
+    background-color: #4E5868;
+  }
+  
+  .cart-section .cart-table tbody .product-column{
+    padding: 19px 30px;
+  }
+  
+  .cart-section .cart-table tbody .product-column .product-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .cart-section .cart-table tbody .product-column .product-box .image-box{
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    border: 1px solid #E4E4E4;
+    border-radius: 12px;
+  }
+  
+  .cart-section .cart-table tbody .product-column .product-box h4{
+    position: relative;
+    display: block;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  
+  .cart-section .cart-table tbody .product-column .product-box h4 a{
+    display: inline-block;
+    color: var(--title-color);
+  }
+  
+  .cart-section .cart-table td .cancel-btn{
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    color: var(--title-color);
+    transition: all 500ms ease;
+  }
+  
+  .cart-section .cart-table td .cancel-btn:hover,
+  .cart-section .cart-table td .cancel-btn:focus,
+  .cart-section .cart-table td .cancel-btn:active{
+    color: red;
+  }
+  
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical > .btn.bootstrap-touchspin-up,
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical > .btn.bootstrap-touchspin-down{
+    border: none !important;
+  }
+  
+  .cart-section .item-quantity{
+    position: relative;
+    display: inline-block;
+    max-width: 110px;
+    width: 100%;
+    padding: 0px 30px;
+    margin-left: 0px;
+    border: 1px solid #E4E4E4;
+    border-radius: 50px !important;
+    height: 40px;
+    z-index: 1;
+    margin: 0 auto;
+  }
+  
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical i{
+    left: 12px;
+  }
+  
+  .cart-section .item-quantity input.quantity-spinner {
+    line-height: 48px;
+    height: 40px;
+    width: 43px !important;
+    padding: 0px !important;
+    box-shadow: none !important;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #101010;
+    background: transparent;
+  }
+  
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical > .btn.bootstrap-touchspin-down{
+    position: absolute;
+    height: 40px;
+    width: 70px;
+    background: transparent;
+    padding: 0px 0px;
+    left: -30px;
+    top: 0px;
+    border-radius: 0px;
+    border: none !important;
+  }
+  
+  .cart-section .bootstrap-touchspin .btn.bootstrap-touchspin-up:before,
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down:before{
+    color: var(--title-color) !important;
+  }
+  
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical > .btn.bootstrap-touchspin-up{
+    position: absolute;
+    height: 40px;
+    width: 70px;
+    background: transparent;
+    padding: 0px 0px;
+    right: -35px;
+    top: 0px;
+    margin-top: 0px;
+    border-radius: 0px;
+    border: none !important;
+  }
+  
+  .cart-section .bootstrap-touchspin .glyphicon-chevron-up:before {
+    content: "\f067";
+    font-size: 16px;
+    font-style: normal;
+    color: var(--title-color);
+    font-family: 'Font Awesome 5 Pro';
+  }
+  
+  .cart-section .bootstrap-touchspin .glyphicon-chevron-down:before {
+    content: "\f068";
+    font-size: 16px;
+    font-style: normal;
+    color: var(--title-color);
+    font-family: 'Font Awesome 5 Pro';
+  }
+  
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical{
+    position: absolute;
+    width: 100%;
+  }
+  
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical i{
+    top: 15px;
+    left: 15px;
+    font-size: inherit !important; 
+  }
+  
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down{
+    margin-top: 0px;
+  }
+  
+  .cart-section .bootstrap-touchspin .btn:hover,
+  .cart-section .bootstrap-touchspin .btn:focus{
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  
+  .cart-section .item-quantity{
+    border-radius: 5px;
+  }
+  
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical > .btn.bootstrap-touchspin-down{
+    width: 40px;
+    top: 0px;
+  }
+  
+  .cart-section .bootstrap-touchspin .input-group-btn-vertical > .btn.bootstrap-touchspin-up{
+    width: 50px;
+    top: 0px;
+  }
+  
+  .cart-section .coupon-box .form-group{
+    position: relative;
+    max-width: 330px;
+    margin-bottom: 0px;
+  }
+  
+  .cart-section .coupon-box .form-group input[type='text']{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 56px;
+    background-color: #fff;
+    border-radius: 55px;
+    font-size: 16px;
+    color: var(--title-color);
+    padding: 10px 75px 10px 20px;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.08);
+    transition: all 500ms ease;
+  }
+  
+  .cart-section .coupon-box .form-group button{
+    position: absolute;
+    display: inline-block;
+    top: 8px;
+    right: 5px;
+    width: 56px;
+    height: 40px;
+    line-height: 44px;
+    font-size: 11px;
+    border-radius: 30px;
+    color: #fff;
+    text-align: center;
+    transition: all 500ms ease;
+  }
+  
+  .cart-section .total-cart{
+    position: relative;
+    display: block;
+    border-radius: 20px;
+    background: #fff;
+    padding: 33px 40px 40px 40px;
+    box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.04);
+  }
+  
+  .cart-section .total-cart .title-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #EDEDED;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+  }
+  
+  .cart-section .total-cart h4{
+    font-size: 20px;
+    line-height: 30px;
+    font-family: var(--title-font);
+  }
+  
+  .cart-section .total-cart h5{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+  
+  .cart-section .total-cart .shipping-cost h4{
+    margin-bottom: 12px;
+  }
+  
+  .cart-section .total-cart .shipping-cost .cost-list li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3px;
+  }
+
+  .cart-section .total-cart .shipping-cost .cost-list li:last-child{
+    margin-bottom: 0px;
+  }
+  
+  .cart-section .total-cart .shipping-cost .cost-list li .price{
+    font-size: 13px;
+    color: var(--title-color);
+  }
+  
+  .cart-section .total-cart .shipping-cost .cost-list li .check-box input {
+    display: none;
+  }
+  
+  .cart-section .total-cart .shipping-cost .cost-list li .check-box label {
+    position: relative;
+    font-size: 14px;
+    line-height: 26px;
+    color: var(--title-color);
+    padding-left: 24px;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 0px;
+  }
+  
+  .cart-section .total-cart .shipping-cost .cost-list li .check-box label:before{
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #9A9A9A;
+  }
+  
+  .cart-section .total-cart .shipping-cost .cost-list li .check-box label:after {
+    position: absolute;
+    content: '';
+    top: 8px;
+    opacity: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    left: 3px;
+  }
+  
+  .cart-section .total-cart .shipping-cost .cost-list li .check-box input:checked + label:after {
+    opacity: 1;
+  }
+  
+  .cart-section .total-cart .shipping-cost .cost-list li .check-box input:checked + label:before{
+  
+  }
+  
+  .cart-section .total-cart .shipping-calculator h4{
+    margin-bottom: 15px;
+  }
+  
+  .cart-section .total-cart .shipping-calculator .form-group{
+    position: relative;
+    margin-bottom: 12px;
+  }
+  
+  .cart-section .total-cart .shipping-calculator .form-group:last-child{
+    margin-bottom: 0px;
+  }
+  
+  .cart-section .total-cart .shipping-calculator .form-group .select-box{
+    min-height: 50px;
+  }
+  
+  .cart-section .total-cart .shipping-calculator .form-group .nice-select,
+  .cart-section .total-cart .shipping-calculator .form-group input[type='text']{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border: 1px solid #E4E4E4;
+    border-radius: 50px;
+    font-size: 14px;
+    color: var(--title-color);
+    padding: 10px 20px;
+    text-transform: capitalize;
+  }
+  
+  .cart-section .total-cart .shipping-calculator .form-group .nice-select{
+    padding: 0px 20px;
+    line-height: 50px;
+    background: #fff;
+    border: 1px solid #E4E4E4;
+  }
+
+  .cart-section .total-cart .shipping-calculator .update-btn{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: var(--title-font);
+    font-weight: 700;
+    text-transform: capitalize;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    transition: all 500ms ease;
+  }
+
+  .cart-section .total-cart .shipping-calculator .update-btn:hover{
+    color: #fff;
+  }
+  
+  .cart-section .total-cart .shipping-calculator .form-group .theme-btn{
+    padding: 8px 30px;
+    width: 100%;
+  }
+  
+  .cart-section .total-cart .btn-box .theme-btn .text,
+  .cart-section .total-cart .btn-box .theme-btn{
+    width: 100%;
+  }
+  
+  
+  .cart-section .total-cart .total-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0px 22px 0px;
+  }
+  
+  .cart-section .sec-title h2{
+    font-size: 36px;
+    line-height: 42px;
+  }
+  
+  
+  /** rtl-css **/
+  
+  .rtl .cart-section .cart-table tbody .product-column .product-box .image-box{
+    margin-right: 0px;
+    margin-left: 24px;
+  }
+  
+  .rtl .cart-section .total-cart .shipping-calculator .form-group .nice-select:before{
+    right: inherit;
+    left: 20px;
+  }
+
+  .rtl .cart-section .cart-table thead th:first-child{
+    text-align: right;
+  }
+  
+  /** responsive-css **/
+  
+  @media only screen and (max-width: 1200px){
+  
+  }
+  
+  @media only screen and (max-width: 991px){
+    .cart-section .total-cart{
+      margin-top: 30px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px){
+    .cart-section{
+        padding: 70px 0px;
+    }
+  }
+  
+  @media only screen and (max-width: 599px){
+  
+  }
+  
+  @media only screen and (max-width: 499px){
+    .cart-section .total-cart{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  } 
