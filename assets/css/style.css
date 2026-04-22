@@ -69,7 +69,7 @@
 
 
 :root{
-  --theme-color: #F84F23;
+  --theme-color: #dc3545;
   --secondary-color: #111111;
   --text-color: #444444;
   --title-color: #111111;
@@ -550,7 +550,7 @@ html.lenis {
   text-align: center;
   line-height: 50px;
   font-size: 10px;
-  color: var(--theme-color);
+  color: #dc3545;
   left: 0;
   top: 0;
   height: 50px;

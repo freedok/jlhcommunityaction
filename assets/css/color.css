@@ -81,7 +81,7 @@
 .contact-section .content-box .inner-box .single-item p a:hover
 
 {
-  color: var(--theme-color);
+  color: #b71449;
 }
 
 
@@ -146,7 +146,7 @@ button.ltr,
 .contact-section .content-box .inner-box .single-item:hover .icon-box
 
 {
-  background: var(--theme-color);
+  background: #dc3545;
 }
 
 
