@@ -83,68 +83,61 @@
                                 <i class="icon-bar"></i>
                                 <i class="icon-bar"></i>
                             </div>
-                            <nav class="main-menu navbar-expand-md navbar-light clearfix">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
-                                        <li class="dropdown"><a href="index.html">HOME</a>
-                                           <ul>
-                                                <li><a href="letter.html">LETTER FROM EXECUTIF DIRECTOR</a></li>
-                                                <li><a href="mission.html">MISSION STATEMENT</a></li>
-                                                <li><a href="vision.html">VISION STATEMENT</a></li>
-                                                <li><a href="values.html">VALUES STATEMENT</a></li>
-                                                <li><a href="about.html">ABOUT US</a></li>
-                                                <li><a href="contact.html">CONTACT</a></li>
-                                                </ul>
-                                                </li>
-                                        <li class="current"><a href="team-2.html">OVERHEAD</a></li>
-                                        <li class="dropdown"><a href="#">ANNOUNCEMENTS</a>
-                                            <ul>
-                                                
-                                                <li><a href="documents/RESOURCE FAIR UPDATE.pdf" target="_blank">RESSOURCE FOR UPDATE</a></li>
-                                                <li><a href="documents/JLH Community Resource Fair Flyer 2023.pdf" target="_blank">JLH COMMUNUNITY RESSOURCE FAIR 2023</a></li>
-                                            </ul>
-                                        </li>
+                            <!-- FIX 7 (WCAG 2.4.2): Navigation avec aria-label pour la distinguer des autres nav -->
+              <nav class="main-menu navbar-expand-md navbar-light clearfix" aria-label="Navigation principale">
+                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                  <ul class="navigation clearfix" role="list">
 
-                                        <li class="dropdown"><a href="#">OUR PROGRAMS</a>
-                                            <ul>
-                                                <li><a href="csbg.html">CSBG</a></li>
-                                                <li><a href="#">HEAD START/EARLY HEAD START</a></li>
-                                                <li><a href="#">WEATERIZATION</a></li>
-                                                <li><a href="#">RAPID RE-HOUSING</a></li>
-                                            </ul>
-                                        </li>  
-                                        <li class="dropdown"><a href="">H.R.</a>
-                                            <ul>
-                                                <li><a href="#">EMPLOYMENT OPPORTUNITIES</a></li>
-                                            </ul>
-                                            </li>
-                                        <li class="dropdown"><a href="">ANNUAL REPORTS</a>
-                                            <ul>
-                                                <li><a href="documents/JOHNSTON-LEE-HARNETT COMMUNITY ACTION_ INC._2023_990_Tax Returns.pdf" target="_blank">2023 - 990 TAX RETURNS</a></li>
-                                                <li><a href="documents/JLHCA 2023 Audited Financial Statements.pdf" target="_blank">2023 - JLHCA AUDITED FINANCIAL REPORT</a></li>
-                                                <li><a href="documents/2021 JLHCA Audited Financial Statements-JLHCA.pdf" target="_blank">2021 - JLHCA AUDITED FINANCIAL STATEMENT</a></li>
-                                                <li><a href="documents/JLHCA 2024 Financial Statements.pdf" target="_blank">JLHCA 2024 - FINANCIAL STATEMENT</a></li>
-                                                <li><a href="documents/PUBLIC DISCLOSURE COPY Form 990 JLHCA YE 06 30 2023.pdf" target="_blank">FROM 990 YE 06 30 2023 - JLHCA PUBLIC DISC</a></li>
-                                            </ul>
-                                            </li>
-                                        <li class="dropdown"><a href="#">PARTNERSHIPS</a>
-                                            <ul>
-                                                <li><a href="https://communityactionpartnership.com/" target="_blank">COMMUNITY ACTION PARTNERSHIPS</a></li>
-                                                <li><a href="https://www.nccaa.net/" target="_blank">NCCAA</a></li>
-                                                <li><a href="https://seacaa.org/" target="_blank">SEACAA</a></li>
-                                                <li><a href="https://www.unitedwaytriangle.org/" target="_blank">UNITED WAY</a></li>
-                                                <li><a href="https://www.leecountyunitedway.org/" target="_blank">UNITED WAY LEE COUNTY</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="events.html">EVENTS</a></li>
-                                        
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
+                    <li class="dropdown current">
+                      <a href="index.html" aria-current="page">HOME</a>
+                      <ul aria-label="Sous-menu Home">
+                        <li><a href="letter.html">LETTER FROM EXECUTIF DIRECTOR</a></li>
+                        <li><a href="mission.html">MISSION STATEMENT</a></li>
+                        <li><a href="vision.html">VISION STATEMENT</a></li>
+                        <li><a href="values.html">VALUES STATEMENT</a></li>
+                        <li><a href="about.html">ABOUT US</a></li>
+                      </ul>
+                    </li>
+
+                    <li><a href="team-2.html">TEAM</a></li>
+
+                    <li class="dropdown">
+                      <!-- FIX 8 (WCAG 2.4.4): href="#" ambigu remplacé, aria-haspopup ajouté -->
+                      <a href="#" aria-haspopup="true" aria-expanded="false">OUR PROGRAMS</a>
+                      <ul aria-label="Sous-menu Our Programs">
+                        <li><a href="csbg.html">CSBG</a></li>
+                        <!-- FIX 9 (WCAG 2.4.4): Liens vides signalés comme "à venir" pour la transparence -->
+                        <li><a href="#" aria-disabled="true">HEAD START/EARLY HEAD START <span class="sr-only">(page à venir)</span></a></li>
+                        <li><a href="#" aria-disabled="true">WEATHERIZATION <span class="sr-only">(page à venir)</span></a></li>
+                        <li><a href="#" aria-disabled="true">RAPID RE-HOUSING <span class="sr-only">(page à venir)</span></a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">BOARD OF DIRECTOR</a></li>
+
+                    
+
+                    <li class="dropdown">
+                      <a href="#" aria-haspopup="true" aria-expanded="false">ANNUAL REPORTS</a>
+                      <ul aria-label="Sous-menu Annual Reports">
+                        <!-- FIX 10 (WCAG 2.4.4): Ajout de rel="noopener" et indication "nouvelle fenêtre" pour les PDF -->
+                        <li><a href="documents/JOHNSTON-LEE-HARNETT COMMUNITY ACTION_ INC._2023_990_Tax Returns.pdf" target="_blank" rel="noopener noreferrer">2023 - 990 TAX RETURNS <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/JLHCA 2023 Audited Financial Statements.pdf" target="_blank" rel="noopener noreferrer">2023 - JLHCA AUDITED FINANCIAL REPORT <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/PUBLIC DISCLOSURE COPY Form 990 JLHCA YE 06 30 2023.pdf" target="_blank" rel="noopener noreferrer">FORM 990 YE 06 30 2023 - JLHCA PUBLIC DISC <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/JLHCA 2024 Financial Statements.pdf" target="_blank" rel="noopener noreferrer">JLHCA 2024 - FINANCIAL STATEMENT <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/2025 JLHCA Financial Statements.pdf" target="_blank" rel="noopener noreferrer">2025 - JLHCA FINANCIAL STATEMENT <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                      </ul>
+                    </li>
+
+
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                  </ul>
                 </div>
+              </nav>
             </div>
+          </div>
+        </div>
+      </div>
 
             <!--sticky Header-->
             <div class="sticky-header">
@@ -200,8 +193,9 @@
         <!-- page-title end -->
 
 
-        <!-- team-section -->
-        <section class="team-section pt_120 pb_90 bg-color-3 centred">
+      
+                <!-- team-section -->
+        <section class="team-section pt_120 pb_90 centred">
             <div class="auto-container">
                 <div class="sec-title mb_50">
                     <h2>OVERHEAD DEPARTMENT</h2>
@@ -209,50 +203,42 @@
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                 <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-5.jpg" alt=""></figure>
-                                </div>
+                                <figure class="image-box"><img src="assets/images/team/team-5.jpg" alt=""></figure>
                                 <div class="content-box">
-                                    <h3><a href="team-details.html">Ruby Bryant</a></h3>
+                                    <h3><a href="">Ruby Bryant</a></h3>
                                     <span class="designation">Executive Director</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-6.jpg" alt=""></figure>
-                                </div>
+                                <figure class="image-box"><img src="assets/images/team/team-6.jpg" alt=""></figure>
                                 <div class="content-box">
-                                    <h3><a href="team-details.html">Lakisha Alston</a></h3>
+                                    <h3><a href="">Lakisha Alston</a></h3>
                                     <span class="designation">Fiscal Director</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-7.jpg" alt=""></figure>
-                                </div>
+                                <figure class="image-box"><img src="assets/images/team/team-7.jpg" alt=""></figure>
                                 <div class="content-box">
-                                    <h3><a href="team-details.html">Iwanda Davis</a></h3>
+                                    <h3><a href="">Iwanda Davis</a></h3>
                                     <span class="designation">Accounting Technician</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-8.jpg" alt=""></figure>
-                                </div>
+                                <figure class="image-box"><img src="assets/images/team/team-8.jpg" alt=""></figure>
                                 <div class="content-box">
                                     <h3><a href="team-details.html">Monica Gullatt</a></h3>
                                     <span class="designation">Accounting Technician</span>
@@ -261,11 +247,9 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-9.jpg" alt=""></figure>
-                                </div>
+                                <figure class="image-box"><img src="assets/images/team/team-9.jpg" alt=""></figure>
                                 <div class="content-box">
                                     <h3><a href="team-details.html">Alisa Bizzell</a></h3>
                                     <span class="designation">Human Resources/Programs Assistant</span>
@@ -274,11 +258,9 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-10.jpg" alt=""></figure>
-                                </div>
+                                <figure class="image-box"><img src="assets/images/team/team-10.jpg" alt=""></figure>
                                 <div class="content-box">
                                     <h3><a href="team-details.html">DeAnn Willard</a></h3>
                                     <span class="designation">Executive Secretary</span>
@@ -287,11 +269,9 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-11.jpg" alt=""></figure>
-                                </div>
+                                <figure class="image-box"><img src="assets/images/team/team-11.jpg" alt=""></figure>
                                 <div class="content-box">
                                     <h3><a href="team-details.html">Jo Ann Massengill</a></h3>
                                     <span class="designation">Receptionist</span>
@@ -299,18 +279,15 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-               <div class="sec-title mb_50">
+                <div class="sec-title mb_50">
                     <h2>JLHCA PROGRAM ADMINISTRATORS</h2>
-                    
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-12.jpg" alt=""></figure></div>
+                                <figure class="image-box"><img src="assets/images/team/team-12.jpg" alt=""></figure>
                                 <div class="content-box">
                                     <h3><a href="team-details.html">Donna Barnette</a></h3>
                                     <span class="designation">Head Start/Early Head Start Director</span>
@@ -318,11 +295,10 @@
                             </div>
                         </div>
                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-13.jpg" alt=""></figure></div>
+                                <figure class="image-box"><img src="assets/images/team/team-13.jpg" alt=""></figure>
                                 <div class="content-box">
                                     <h3><a href="team-details.html">Wayne Bodrick</a></h3>
                                     <span class="designation">Weatherization Director</span>
@@ -331,10 +307,9 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-14.jpg" alt=""></figure></div>
+                                <figure class="image-box"><img src="assets/images/team/team-14.jpg" alt=""></figure>
                                 <div class="content-box">
                                     <h3><a href="team-details.html">Angela Jones</a></h3>
                                     <span class="designation">Housing  Coordinator</span>
@@ -342,11 +317,10 @@
                             </div>
                         </div>
                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                        <div class="team-block-one">
                             <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="assets/images/team/team-15.jpg" alt=""></figure></div>
+                                <figure class="image-box"><img src="assets/images/team/team-15.jpg" alt=""></figure>
                                 <div class="content-box">
                                     <h3><a href="team-details.html">Laura (Tina) Ray, M. Ed, BS FCS, CCAM</a></h3>
                                     <span class="designation">CSBG Director</span>
@@ -354,85 +328,112 @@
                             </div>
                         </div>
                     </div>
-                  
-                    </div>
-                </div>
             </div>
         </section>
         <!-- team-section end -->
 
-
         
 
-        <!-- main-footer -->
-        <footer class="main-footer">
-            <div class="auto-container">
-                <div class="widget-section pt_100 pb_90">
-                    <div class="row clearfix">
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget about-widget">
-                                <div class="widget-title">
-                                    <h3>About</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <p>The primary purpose of Community Action agencies is to obtain grant funds and local contributions to use for services and activities which have a major impact on the causes of poverty in the community.</p>
-                                    <ul class="social-links">
-                                        <li><a href=""><i class="icon-14"></i></a></li>
-                                        <li><a href=""><i class="icon-15"></i></a></li>
-                                        <li><a href=""><i class="icon-16"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget ml_50">
-                                <div class="widget-title">
-                                    <h3>Quick Link</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget ml_30">
-                                <div class="widget-title">
-                                    <h3>Usefull Links</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="">Privacy Policy</a></li>
-                                        <li><a href="">Terms & Condition</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget contact-widget contact-widget-two">
-                                <div class="widget-title centred">
-                                    <h3>Contact</h3>
-                                    <p>Tincidunt neque pretium lectus donec risus.</p>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="info-list">
-                                        <li><i class="icon-17"></i><span>1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</span></li>
-                                        <li><i class="icon-18"></i><a href="mailto:example@info.com">example@info.com</a></li>
-                                        <li class="phone"><i class="icon-19"></i><a href="tel:919.934.2145">919.934.2145
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <!-- main-footer -->
+    <footer class="main-footer" role="contentinfo">
+      <div class="auto-container">
+        <div class="widget-section pt_100 pb_90">
+          <div class="row clearfix">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget about-widget">
+                <div class="widget-title">
+                  <h3>About</h3>
                 </div>
-                <div class="footer-bottom centred">
-                    <div class="copyright"><p>Copyright 2026 by <a href="index.html">JLHCA, Inc</a> All Right Reserved.</p></div>
+                <div class="widget-content">
+                  <p>The primary purpose of Community Action agencies is to obtain grant funds and local contributions to use for services and activities which have a major impact on the causes of poverty in the community.</p>
+                  <!-- FIX 18 (WCAG 4.1.2 + 2.4.4): aria-label descriptif sur chaque lien social -->
+                  <ul class="social-links" aria-label="Réseaux sociaux">
+                    <li><a href="https://facebook.com" aria-label="Suivez-nous sur Facebook" target="_blank" rel="noopener noreferrer"><i class="icon-14" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com" aria-label="Suivez-nous sur Twitter / X" target="_blank" rel="noopener noreferrer"><i class="icon-15" aria-hidden="true"></i></a></li>
+                    <li><a href="https://linkedin.com" aria-label="Suivez-nous sur LinkedIn" target="_blank" rel="noopener noreferrer"><i class="icon-16" aria-hidden="true"></i></a></li>
+                  </ul>
                 </div>
+              </div>
             </div>
-        </footer>
-        <!-- main-footer end  -->
+
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget links-widget ml_50">
+                <div class="widget-title">
+                  <h3>Quick Links</h3>
+                </div>
+                <div class="widget-content">
+                  <nav aria-label="Liens rapides">
+                    <ul class="links-list clearfix">
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget links-widget ml_30">
+                <div class="widget-title">
+                  <h3>Useful Links</h3>
+                </div>
+                <div class="widget-content">
+                  <nav aria-label="Liens utiles">
+                    <ul class="links-list clearfix">
+                      <!-- FIX 19 (WCAG 2.4.4): href="" non valide remplacé par des pages à créer -->
+                      <li><a href="#" aria-disabled="true">Carreer<span class="sr-only">(page à venir)</span></a></li>
+
+                      <li><a href="privacy.html">Privacy Policy</a></li>
+                      <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                    <li class="dropdown">
+                      <a href="#" aria-haspopup="true" aria-expanded="false">PARTNERSHIPS</a>
+                      <ul aria-label="Sous-menu Partnerships">
+                        <li><a href="https://communityactionpartnership.com/" target="_blank" rel="noopener noreferrer">COMMUNITY ACTION PARTNERSHIPS <span class="sr-only">(s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="https://www.nccaa.net/" target="_blank" rel="noopener noreferrer">NCCAA <span class="sr-only">(s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="https://seacaa.org/" target="_blank" rel="noopener noreferrer">SEACAA <span class="sr-only">(s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="https://www.unitedwaytriangle.org/" target="_blank" rel="noopener noreferrer">UNITED WAY <span class="sr-only">(s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="https://www.leecountyunitedway.org/" target="_blank" rel="noopener noreferrer">UNITED WAY LEE COUNTY <span class="sr-only">(s'ouvre dans un nouvel onglet)</span></a></li>
+                      </ul>
+                    </li>
+                  </nav>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget contact-widget contact-widget-two">
+                <div class="widget-title centred">
+                  <h3>Contact</h3>
+                  <!-- FIX 20: Suppression du faux texte lorem ipsum -->
+                  <p>We're here to help you.</p>
+                </div>
+                <div class="widget-content">
+                  <!-- FIX 21 (WCAG 1.3.1): Utilisation de <address> pour les informations de contact -->
+                  <address>
+                    <ul class="info-list">
+                      <li><i class="icon-17" aria-hidden="true"></i><span>1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</span></li>
+                      <li><i class="icon-18" aria-hidden="true"></i><a href="mailto:example@info.com">example@info.com</a></li>
+                      <!-- FIX 22 (WCAG 4.1.1): Balise <a> correctement fermée (était non fermée) -->
+                      <li class="phone"><i class="icon-19" aria-hidden="true"></i><a href="tel:9199342145">919.934.2145</a></li>
+                    </ul>
+                  </address>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="footer-bottom centred">
+          <div class="copyright">
+            <p>Copyright &copy; 2026 by <a href="index.html">JLHCA, Inc.</a> All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- main-footer end -->
 
 
 

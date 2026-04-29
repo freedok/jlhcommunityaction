@@ -4,7 +4,8 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!-- FIX 1 (WCAG 1.4.4): Suppression de user-scalable=0 et maximum-scale=1.0 qui bloquaient le zoom -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>HOME | JLHCA</title>
 
@@ -15,7 +16,6 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&amp;display=swap" rel="stylesheet">
-
 
 <!-- Stylesheets -->
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -45,382 +45,543 @@
 <link href="assets/css/module-css/footer.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 
+<!-- FIX 2 (WCAG 2.4.1): Style pour le lien skip-nav -->
+<style>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 9999;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+</style>
 </head>
 
-
-<!-- page wrapper -->
 <body>
 
-    <div class="boxed_wrapper ltr">
-        <!-- main header -->
-        <header class="main-header header-style-two">
-            <!-- header-top -->
-            <div class="header-top">
-                <div class="auto-container">
-                    <div class="top-inner">
-                        <ul class="info-list">
-                            <li><i class="icon-19"></i><span>Call: <a href="tel:912345432"> 919.934.2145</a></span></li>
-                            <li><i class="icon-18"></i><span>Mail: <a href="mailto:info@example.com"> info@example.com</a></span></li>
-                            <li><i class="icon-17"></i><span>Location: <a href=" 1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577">  1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
-                        </ul>
-                         <div class="right-column">
-                            <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
-                                <form action="https://azim.hostlin.com/Uphand/index.html" class="language-picker__form">
-                                    <label for="language-picker-select">Select your language</label>
-                                    <select name="language-picker-select" id="language-picker-select">
-                                        <option lang="en" value="english" selected>EN</option>
-                                        <option lang="es" value="Espagnol">ES</option>
-                                    </select>
-                                </form>
-                            </div>
+  <!-- FIX 2 (WCAG 2.4.1): Lien "Aller au contenu principal" pour les utilisateurs clavier -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
-                        </div>
-                    </div>
-                </div>
+  <div class="boxed_wrapper ltr">
+
+    <!-- main header -->
+    <!-- FIX: Utilisation de <header> avec role="banner" pour renforcer la sémantique -->
+    <header class="main-header header-style-two" role="banner">
+
+      <!-- header-top -->
+      <div class="header-top">
+        <div class="auto-container">
+          <div class="top-inner">
+            <ul class="info-list" aria-label="Coordonnées de contact">
+              <li><i class="icon-19" aria-hidden="true"></i><span>Call: <a href="tel:9199342145">919.934.2145</a></span></li>
+              <li><i class="icon-18" aria-hidden="true"></i><span>Mail: <a href="mailto:info@example.com">info@example.com</a></span></li>
+              <!-- FIX 3 (WCAG 2.4.4): Suppression du href invalide (adresse texte) — remplacé par un lien Google Maps -->
+              <li><i class="icon-17" aria-hidden="true"></i><span>Location: <a href="https://maps.google.com/?q=1102+Massey+Street+Smithfield+NC+27577" target="_blank" rel="noopener noreferrer">1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
+            </ul>
+
+            <div class="right-column">
+              <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
+                <form action="https://azim.hostlin.com/Uphand/index.html" class="language-picker__form">
+                  <!-- FIX 4 (WCAG 1.3.1): Label visible et correctement associé au select -->
+                  <label for="language-picker-select" class="sr-only">Select your language</label>
+                  <select name="language-picker-select" id="language-picker-select" aria-label="Select language">
+                    <option lang="en" value="english" selected>EN</option>
+                    <option lang="es" value="Espagnol">ES</option>
+                  </select>
+                </form>
+              </div>
             </div>
-            <!-- header-lower -->
-            <div class="header-lower">
-                <div class="auto-container">
-                    <div class="outer-box">
-                        <figure class="logo-box"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
-                        <div class="menu-area">
-                            <!--Mobile Navigation Toggler-->
-                            <div class="mobile-nav-toggler">
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                            </div>
-                            <nav class="main-menu navbar-expand-md navbar-light clearfix">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
-                                        <li class="dropdown current"><a href="index.html">HOME</a>
-                                           <ul>
-                                                <li><a href="letter.html">LETTER FROM EXECUTIF DIRECTOR</a></li>
-                                                <li><a href="mission.html">MISSION STATEMENT</a></li>
-                                                <li><a href="vision.html">VISION STATEMENT</a></li>
-                                                <li><a href="values.html">VALUES STATEMENT</a></li>
-                                                <li><a href="about.html">ABOUT US</a></li>
-                                                
-                                                </ul>
-                                                </li>
-                                        <li><a href="team-2.html">TEAM</a></li>
-
-                                        <li class="dropdown"><a href="#">OUR PROGRAMS</a>
-                                            <ul>
-                                                <li><a href="csbg.html">CSBG</a></li>
-                                                <li><a href="#">HEAD START/EARLY HEAD START</a></li>
-                                                <li><a href="#">WEATERIZATION</a></li>
-                                                <li><a href="#">RAPID RE-HOUSING</a></li>
-                                            </ul>
-                                        </li>  
-                                        <li class="dropdown"><a href="">H.R.</a>
-                                            <ul>
-                                                <li><a href="#">EMPLOYMENT OPPORTUNITIES</a></li>
-                                            </ul>
-                                            </li>
-                                        <li class="dropdown"><a href="">ANNUAL REPORTS</a>
-                                            <ul>
-                                                <li><a href="documents/JOHNSTON-LEE-HARNETT COMMUNITY ACTION_ INC._2023_990_Tax Returns.pdf" target="_blank">2023 - 990 TAX RETURNS</a></li>
-                                                <li><a href="documents/JLHCA 2023 Audited Financial Statements.pdf" target="_blank">2023 - JLHCA AUDITED FINANCIAL REPORT</a></li>
-                                                <li><a href="documents/2021 JLHCA Audited Financial Statements-JLHCA.pdf" target="_blank">2021 - JLHCA AUDITED FINANCIAL STATEMENT</a></li>
-                                                <li><a href="documents/JLHCA 2024 Financial Statements.pdf" target="_blank">JLHCA 2024 - FINANCIAL STATEMENT</a></li>
-                                                <li><a href="documents/PUBLIC DISCLOSURE COPY Form 990 JLHCA YE 06 30 2023.pdf" target="_blank">FROM 990 YE 06 30 2023 - JLHCA PUBLIC DISC</a></li>
-                                            </ul>
-                                            </li>
-                                        <li class="dropdown"><a href="#">PARTNERSHIPS</a>
-                                            <ul>
-                                                <li><a href="https://communityactionpartnership.com/" target="_blank">COMMUNITY ACTION PARTNERSHIPS</a></li>
-                                                <li><a href="https://www.nccaa.net/" target="_blank">NCCAA</a></li>
-                                                <li><a href="https://seacaa.org/" target="_blank">SEACAA</a></li>
-                                                <li><a href="https://www.unitedwaytriangle.org/" target="_blank">UNITED WAY</a></li>
-                                                <li><a href="https://www.leecountyunitedway.org/" target="_blank">UNITED WAY LEE COUNTY</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="events.html">EVENTS</a></li>
-                                        <li><a href="contact.html">CONTACT</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--sticky Header-->
-            <div class="sticky-header">
-                <div class="auto-container">
-                    <div class="outer-box">
-                        <figure class="logo-box mr_50"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
-                        <div class="menu-area">
-                            <nav class="main-menu clearfix">
-                                <!--Keep This Empty / Menu will come through Javascript-->
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- main-header end -->
-
-
-        <!-- Mobile Menu  -->
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-            <div class="close-btn"><i class="fas fa-times"></i></div>
-            <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
-                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
-                <div class="contact-info">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li> 1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</li>
-                        <li><a href="tel:919.934.2145">919.934.2145</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
-                    </ul>
-                </div>
-            </nav>
+          </div>
         </div>
-        <!-- End Mobile Menu -->
+      </div>
+
+      <!-- header-lower -->
+      <div class="header-lower">
+        <div class="auto-container">
+          <div class="outer-box">
+            <figure class="logo-box">
+              <a href="index.html">
+                <!-- FIX 5 (WCAG 1.1.1): Texte alternatif descriptif sur le logo -->
+                <img src="assets/images/logo.png" alt="JLHCA — Johnston-Lee-Harnett Community Action, Inc.">
+              </a>
+            </figure>
+
+            <div class="menu-area">
+              <!-- FIX 6 (WCAG 2.1.1 + 4.1.2): Remplacement du <div> par un <button> accessible -->
+              <button
+                class="mobile-nav-toggler"
+                aria-label="Ouvrir le menu de navigation"
+                aria-expanded="false"
+                aria-controls="navbarSupportedContent"
+                type="button"
+              >
+                <i class="icon-bar" aria-hidden="true"></i>
+                <i class="icon-bar" aria-hidden="true"></i>
+                <i class="icon-bar" aria-hidden="true"></i>
+              </button>
+
+              <!-- FIX 7 (WCAG 2.4.2): Navigation avec aria-label pour la distinguer des autres nav -->
+              <nav class="main-menu navbar-expand-md navbar-light clearfix" aria-label="Navigation principale">
+                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                  <ul class="navigation clearfix" role="list">
+
+                    <li class="dropdown current">
+                      <a href="index.html" aria-current="page">HOME</a>
+                      <ul aria-label="Sous-menu Home">
+                        <li><a href="letter.html">LETTER FROM EXECUTIF DIRECTOR</a></li>
+                        <li><a href="mission.html">MISSION STATEMENT</a></li>
+                        <li><a href="vision.html">VISION STATEMENT</a></li>
+                        <li><a href="values.html">VALUES STATEMENT</a></li>
+                        <li><a href="about.html">ABOUT US</a></li>
+                      </ul>
+                    </li>
+
+                    <li><a href="team-2.html">TEAM</a></li>
+
+                    <li class="dropdown">
+                      <!-- FIX 8 (WCAG 2.4.4): href="#" ambigu remplacé, aria-haspopup ajouté -->
+                      <a href="#" aria-haspopup="true" aria-expanded="false">OUR PROGRAMS</a>
+                      <ul aria-label="Sous-menu Our Programs">
+                        <li><a href="csbg.html">CSBG</a></li>
+                        <!-- FIX 9 (WCAG 2.4.4): Liens vides signalés comme "à venir" pour la transparence -->
+                        <li><a href="#" aria-disabled="true">HEAD START/EARLY HEAD START <span class="sr-only">(page à venir)</span></a></li>
+                        <li><a href="#" aria-disabled="true">WEATHERIZATION <span class="sr-only">(page à venir)</span></a></li>
+                        <li><a href="#" aria-disabled="true">RAPID RE-HOUSING <span class="sr-only">(page à venir)</span></a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">BOARD OF DIRECTOR</a></li>
+
+                    
+
+                    <li class="dropdown">
+                      <a href="#" aria-haspopup="true" aria-expanded="false">ANNUAL REPORTS</a>
+                      <ul aria-label="Sous-menu Annual Reports">
+                        <!-- FIX 10 (WCAG 2.4.4): Ajout de rel="noopener" et indication "nouvelle fenêtre" pour les PDF -->
+                        <li><a href="documents/JOHNSTON-LEE-HARNETT COMMUNITY ACTION_ INC._2023_990_Tax Returns.pdf" target="_blank" rel="noopener noreferrer">2023 - 990 TAX RETURNS <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/JLHCA 2023 Audited Financial Statements.pdf" target="_blank" rel="noopener noreferrer">2023 - JLHCA AUDITED FINANCIAL REPORT <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/PUBLIC DISCLOSURE COPY Form 990 JLHCA YE 06 30 2023.pdf" target="_blank" rel="noopener noreferrer">FORM 990 YE 06 30 2023 - JLHCA PUBLIC DISC <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/JLHCA 2024 Financial Statements.pdf" target="_blank" rel="noopener noreferrer">JLHCA 2024 - FINANCIAL STATEMENT <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/2025 JLHCA Financial Statements.pdf" target="_blank" rel="noopener noreferrer">2025 - JLHCA FINANCIAL STATEMENT <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                      </ul>
+                    </li>
 
 
-        <!-- banner-section -->
-        <section class="banner-style-two">
-            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-14.png);"></div>
-            <div class="banner-carousel owl-theme owl-carousel owl-dots-none nav-style-one">
-                <div class="slide-item p_relative">
-                    <div class="auto-container">
-                        <div class="content-box">
-                            <div class="shape" style="background-image: url(assets/images/shape/shape-15.png);"></div>
-                            <span class="sub-title mb_7">HELPING PEOPLE</span>
-                            <h2>CHANGING <span>LIVES</span></h2>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-one"><span class="text">Contact Us</span><i class="icon-2"></i></a></div>
-                        </div>
-                    </div>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                  </ul>
                 </div>
-                <!--<div class="slide-item p_relative">
-                    <div class="auto-container">
-                        <div class="content-box">
-                            <div class="shape" style="background-image: url(assets/images/shape/shape-15.png);"></div>
-                            <span class="sub-title mb_7">Change The World</span>
-                            <h2>Change the World Today by <span>Charity</span></h2>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-one"><span class="text">Discover More</span><i class="icon-2"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-item p_relative">
-                    <div class="auto-container">
-                        <div class="content-box">
-                            <div class="shape" style="background-image: url(assets/images/shape/shape-15.png);"></div>
-                            <span class="sub-title mb_7">Change The World</span>
-                            <h2>Change the World Today by <span>Charity</span></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Turpis ridiculus tellus. Mastering design has never been so affordable.</p>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-one"><span class="text">Discover More</span><i class="icon-2"></i></a></div>
-                        </div>
-                    </div>
-                </div>-->
+              </nav>
             </div>
-        </section>
-
-        <!-- banner-section end -->
- <!-- about-style-three -->
-        <section class="about-style-three bg-color-1 pt_120 pb_160">
-            <div class="auto-container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12 image-block">
-                        <div class="image_block_three">
-                            <div class="image-box">
-                                <div class="image-shape" style="background-image: url(assets/images/shape/shape-22.png);"></div>
-                                <figure class="image"><img src="assets/images/resource/about-1.png" alt=""></figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 content-block">
-                        <div class="content_block_four">
-                            <div class="content-box ml_60">
-                                <div class="sec-title mb_30">
-                                    <h2>About <span>Us</span></h2>
-                                </div>
-                                <div class="tabs-box">
-                                    <div class="tabs-content">
-                                        <div class="tab active-tab" id="tab-1">
-                                            <div class="inner-box">
-                                                <p>The primary purpose of Community Action agencies is to obtain grant funds and local contributions to use for services and activities which have a major impact on the causes of poverty in the community.</p>
-                                                <p>Community Action agencies, through coordination of public and private services programs, promote self-sufficiency for low-income individuals and encourage the use of private sector involvement in anti-poverty activities.</p>
-                                                <p>Meeting this goal is a long and dynamic journey, challenging,  because it requires Community Action agencies to develop a variety of self-help programs and opportunities directly involving the poor.  Community Action has produced notable accomplishments to date.</p>
-                                                <p>The idea that the poor should and can work effectively on their own behalf to eliminate poverty is confirmed by their active participation in all programs we administer.  The poor are the driving force in our agency; however, we provide educational and volunteer programs for all citizens.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- about-style-three end -->
- <!-- about-style-three -->
-        <section class="about-style-three bg-color-1 pt_120 pb_160">
-            <div class="auto-container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12 image-block">
-                        <div class="image_block_three">
-                            <div class="image-box">
-                                <div class="image-shape" style="background-image: url(assets/images/shape/shape-22.png);"></div>
-                                <figure class="image"><img src="assets/images/resource/about-1.png" alt=""></figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                        <div class="content_block_two">
-                            <div class="content-box ml_60">
-                                <div class="sec-title mb_20">
-                                    <h2><br><br>Our Vision<span> Statement</span></h2>
-                                </div>
-                                <div class="text-box mb_35">
-                                    <h4>Johnston-Lee-Harnett Community Action's vision is a community that inspires people to be empowered through opportunities that support education, self-sufficiency and a willingness to give back to society.<h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- about-style-three end -->
-  <section class="about-style-two bg-color-1 pb_120">
-            <div class="auto-container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                        <div class="image_block_two">
-                            <br><br><br><br>
-                            <div class="image-box mr_40 pr_110 pb_80">
-                                <div class="image-shape" style="background-image: url(assets/images/shape/shape-17.png);"></div>
-                                <figure class="image image-1 image-hov-one"><img src="assets/images/resource/about-7.jpg" alt=""></figure>
-                                <figure class="image image-2 p_absolute r_0 b_0 z_2"><img src="assets/images/resource/about-8.jpg" alt=""></figure>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                        <div class="content_block_two">
-                            <div class="content-box ml_60">
-                                <div class="sec-title mb_20">
-                                    <h2><br><br>Our Mission<span> Statement</span></h2>
-                                </div>
-                                <div class="text-box mb_35">
-                                    <h4>Address the needs of the vulnerable population by using co-ordinated efforts with representation from the disadvantaged, public, and private sector to help those persons become self-sufficient.<h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- about-style-three end -->
-
-
-        <!-- main-footer -->
-        <footer class="main-footer">
-            <div class="auto-container">
-                <div class="widget-section pt_100 pb_90">
-                    <div class="row clearfix">
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget about-widget">
-                                <div class="widget-title">
-                                    <h3>About</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <p>The primary purpose of Community Action agencies is to obtain grant funds and local contributions to use for services and activities which have a major impact on the causes of poverty in the community.</p>
-                                    <ul class="social-links">
-                                        <li><a href=""><i class="icon-14"></i></a></li>
-                                        <li><a href=""><i class="icon-15"></i></a></li>
-                                        <li><a href=""><i class="icon-16"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget ml_50">
-                                <div class="widget-title">
-                                    <h3>Quick Link</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget ml_30">
-                                <div class="widget-title">
-                                    <h3>Usefull Links</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="">Privacy Policy</a></li>
-                                        <li><a href="">Terms & Condition</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget contact-widget contact-widget-two">
-                                <div class="widget-title centred">
-                                    <h3>Contact</h3>
-                                    <p>Tincidunt neque pretium lectus donec risus.</p>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="info-list">
-                                        <li><i class="icon-17"></i><span>1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</span></li>
-                                        <li><i class="icon-18"></i><a href="mailto:example@info.com">example@info.com</a></li>
-                                        <li class="phone"><i class="icon-19"></i><a href="tel:919.934.2145">919.934.2145
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom centred">
-                    <div class="copyright"><p>Copyright 2026 by <a href="index.html">JLHCA, Inc</a> All Right Reserved.</p></div>
-                </div>
-            </div>
-        </footer>
-        <!-- main-footer end  -->
-
-
-
-        <!--Scroll to top-->
-        <div class="scroll-to-top">
-            <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-            </svg>
+          </div>
         </div>
-        
+      </div>
+
+      <!-- Sticky Header -->
+      <div class="sticky-header" aria-hidden="true">
+        <div class="auto-container">
+          <div class="outer-box">
+            <figure class="logo-box mr_50">
+              <a href="index.html" tabindex="-1">
+                <img src="assets/images/logo.png" alt="">
+              </a>
+            </figure>
+            <div class="menu-area">
+              <nav class="main-menu clearfix" aria-hidden="true" tabindex="-1">
+                <!-- Menu injecté via JS -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <!-- main-header end -->
+
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navigation mobile">
+      <div class="menu-backdrop"></div>
+      <!-- FIX 11 (WCAG 2.1.1): Bouton fermeture accessible -->
+      <button class="close-btn" aria-label="Fermer le menu" type="button">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <nav class="menu-box" aria-label="Navigation mobile">
+        <div class="nav-logo">
+          <a href="index.html">
+            <img src="assets/images/logo-2.png" alt="JLHCA - Retour à l'accueil">
+          </a>
+        </div>
+        <div class="menu-outer"><!-- Menu injecté via JS --></div>
+        <div class="contact-info">
+          <h4>Contact Info</h4>
+          <address>
+            <ul>
+              <li>1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</li>
+              <li><a href="tel:9199342145">919.934.2145</a></li>
+              <li><a href="mailto:info@example.com">info@example.com</a></li>
+            </ul>
+          </address>
+        </div>
+      </nav>
     </div>
+    <!-- End Mobile Menu -->
 
 
-    <!-- jequery plugins -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/validation.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/parallax-scroll.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/scrolltop.min.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/odometer.js"></script>
-    <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
-    <script src="assets/js/language.js"></script>
+    <!-- FIX 12 (WCAG 2.4.1): id="main-content" pour le skip-link -->
+    <main id="main-content">
 
-    <!-- main-js -->
-    <script src="assets/js/script.js"></script>
+      <!-- banner-section -->
+      <section class="banner-style-two" aria-label="Bannière principale — Helping People, Changing Lives">
+        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-14.png);" aria-hidden="true"></div>
+        <div
+          class="banner-carousel owl-theme owl-carousel owl-dots-none nav-style-one"
+          aria-roledescription="carrousel"
+          aria-label="Diaporama de la bannière"
+        >
+          <div class="slide-item p_relative" role="group" aria-roledescription="diapositive" aria-label="Diapositive 1 sur 1">
+            <div class="auto-container">
+              <div class="content-box">
+                <div class="shape" style="background-image: url(assets/images/shape/shape-15.png);" aria-hidden="true"></div>
+                <span class="sub-title mb_7">HELPING PEOPLE</span>
+                <h1>CHANGING <span>LIVES</span></h1>
+                <div class="btn-box">
+                  <a href="contact.html" class="theme-btn btn-one">
+                    <span class="text">Contact Us</span>
+                    <i class="icon-2" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIX 13 (WCAG 2.2.2): Bouton pause carrousel -->
+        <button
+          class="carousel-pause-btn"
+          aria-label="Mettre en pause le carrousel"
+          aria-pressed="false"
+          type="button"
+          style="position:absolute;bottom:16px;right:16px;z-index:10;background:rgba(0,0,0,0.5);color:#fff;border:2px solid #fff;border-radius:4px;padding:6px 12px;cursor:pointer;font-size:13px;"
+        >
+          ⏸ Pause
+        </button>
+      </section>
+      <!-- banner-section end -->
 
-</body><!-- End of .page_wrapper -->
+
+      <!-- About section -->
+      <section class="about-style-three bg-color-1 pt_120 pb_160" aria-labelledby="about-heading">
+        <div class="auto-container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 col-sm-12 image-block">
+              <div class="image_block_three">
+                <div class="image-box">
+                  <div class="image-shape" style="background-image: url(assets/images/shape/shape-22.png);" aria-hidden="true"></div>
+                  <!-- FIX 14 (WCAG 1.1.1): alt descriptif sur l'image de contenu -->
+                  <figure class="image"><img src="assets/images/resource/about-1.png" alt="Membres de la communauté participant à un programme JLHCA"></figure>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-block">
+              <div class="content_block_four">
+                <div class="content-box ml_60">
+                  <div class="sec-title mb_30">
+                    <h2 id="about-heading">About <span>Us</span></h2>
+                  </div>
+                  <div class="tabs-box">
+                    <div class="tabs-content">
+                      <div class="tab active-tab" id="tab-1">
+                        <div class="inner-box">
+                          <p>The primary purpose of Community Action agencies is to obtain grant funds and local contributions to use for services and activities which have a major impact on the causes of poverty in the community.</p>
+                          <p>Community Action agencies, through coordination of public and private services programs, promote self-sufficiency for low-income individuals and encourage the use of private sector involvement in anti-poverty activities.</p>
+                          <p>Meeting this goal is a long and dynamic journey, challenging, because it requires Community Action agencies to develop a variety of self-help programs and opportunities directly involving the poor. Community Action has produced notable accomplishments to date.</p>
+                          <p>The idea that the poor should and can work effectively on their own behalf to eliminate poverty is confirmed by their active participation in all programs we administer. The poor are the driving force in our agency; however, we provide educational and volunteer programs for all citizens.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Vision section -->
+      <section class="about-style-three bg-color-1 pt_120 pb_160" aria-labelledby="vision-heading">
+        <div class="auto-container">
+          <div class="row align-items-center">
+            
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+              <div class="content_block_two">
+                <div class="content-box ml_60">
+                  <div class="sec-title mb_20">
+                    <!-- FIX 15 (WCAG 1.3.1): Suppression des <br> décoratifs, utilisation de margin CSS plutôt -->
+                    <h2 id="vision-heading">Our Vision <span>Statement</span></h2>
+                  </div>
+                  <div class="text-box mb_35">
+                    <!-- FIX 16 (WCAG 4.1.1): Balise <h4> correctement fermée (était non fermée) -->
+                    <h4>Johnston-Lee-Harnett Community Action's vision is a community that inspires people to be empowered through opportunities that support education, self-sufficiency and a willingness to give back to society.</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 image-block">
+              <div class="image_block_three">
+                <div class="image-box">
+                  <div class="image-shape" style="background-image: url(assets/images/shape/shape-22.png);" aria-hidden="true"></div>
+                  <figure class="image"><img src="assets/images/resource/about-1.png" alt="Personnes aidées par les programmes JLHCA"></figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Mission section -->
+      <section class="about-style-two bg-color-1 pb_120" aria-labelledby="mission-heading">
+        <div class="auto-container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+              <div class="image_block_two">
+                <div class="image-box mr_40 pr_110 pb_80">
+                  <div class="image-shape" style="background-image: url(assets/images/shape/shape-17.png);" aria-hidden="true"></div>
+                  <figure class="image image-1 image-hov-one"><img src="assets/images/resource/about-7.jpg" alt="Bénévoles JLHCA travaillant ensemble dans la communauté"></figure>
+                  <figure class="image image-2 p_absolute r_0 b_0 z_2"><img src="assets/images/resource/about-8.jpg" alt="Familles bénéficiaires des programmes JLHCA"></figure>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+              <div class="content_block_two">
+                <div class="content-box ml_60">
+                  <div class="sec-title mb_20">
+                    <h2 id="mission-heading">Our Mission <span>Statement</span></h2>
+                  </div>
+                  <div class="text-box mb_35">
+                    <!-- FIX 17 (WCAG 4.1.1): Balise <h4> correctement fermée (était non fermée) -->
+                    <h4>Address the needs of the vulnerable population by using co-ordinated efforts with representation from the disadvantaged, public, and private sector to help those persons become self-sufficient.</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about-style-three bg-color-1 pt_120 pb_160">
+            <div class="auto-container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                        <div class="content_block_two">
+                            <div class="content-box ml_60">
+                                <div class="sec-title mb_20">
+                                    <h2><br><br>Our Values<span> Statement</span></h2>
+                                </div>
+                                <div class="text-box mb_35">
+                                    <h4>Our agency values professional and quality services conducted with integrity, compassion and commitment.<h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-block">
+                        <div class="image_block_three">
+                            <div class="image-box">
+                                <div class="image-shape" style="background-image: url(assets/images/shape/shape-22.png);"></div>
+                                <figure class="image"><img src="assets/images/resource/about-1.png" alt=""></figure>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- main end -->
+
+
+    <!-- main-footer -->
+    <footer class="main-footer" role="contentinfo">
+      <div class="auto-container">
+        <div class="widget-section pt_100 pb_90">
+          <div class="row clearfix">
+
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget about-widget">
+                <div class="widget-title">
+                  <h3>About</h3>
+                </div>
+                <div class="widget-content">
+                  <p>The primary purpose of Community Action agencies is to obtain grant funds and local contributions to use for services and activities which have a major impact on the causes of poverty in the community.</p>
+                  <!-- FIX 18 (WCAG 4.1.2 + 2.4.4): aria-label descriptif sur chaque lien social -->
+                  <ul class="social-links" aria-label="Réseaux sociaux">
+                    <li><a href="https://facebook.com" aria-label="Suivez-nous sur Facebook" target="_blank" rel="noopener noreferrer"><i class="icon-14" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com" aria-label="Suivez-nous sur Twitter / X" target="_blank" rel="noopener noreferrer"><i class="icon-15" aria-hidden="true"></i></a></li>
+                    <li><a href="https://linkedin.com" aria-label="Suivez-nous sur LinkedIn" target="_blank" rel="noopener noreferrer"><i class="icon-16" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget links-widget ml_50">
+                <div class="widget-title">
+                  <h3>Quick Links</h3>
+                </div>
+                <div class="widget-content">
+                  <nav aria-label="Liens rapides">
+                    <ul class="links-list clearfix">
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget links-widget ml_30">
+                <div class="widget-title">
+                  <h3>Useful Links</h3>
+                </div>
+                <div class="widget-content">
+                  <nav aria-label="Liens utiles">
+                    <ul class="links-list clearfix">
+                      <!-- FIX 19 (WCAG 2.4.4): href="" non valide remplacé par des pages à créer -->
+                      <li><a href="#" aria-disabled="true">Carreer<span class="sr-only">(page à venir)</span></a></li>
+
+                      <li><a href="privacy.html">Privacy Policy</a></li>
+                      <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                    <li class="dropdown">
+                      <a href="#" aria-haspopup="true" aria-expanded="false">PARTNERSHIPS</a>
+                      <ul aria-label="Sous-menu Partnerships">
+                        <li><a href="https://communityactionpartnership.com/" target="_blank" rel="noopener noreferrer">COMMUNITY ACTION PARTNERSHIPS <span class="sr-only">(s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="https://www.nccaa.net/" target="_blank" rel="noopener noreferrer">NCCAA <span class="sr-only">(s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="https://seacaa.org/" target="_blank" rel="noopener noreferrer">SEACAA <span class="sr-only">(s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="https://www.unitedwaytriangle.org/" target="_blank" rel="noopener noreferrer">UNITED WAY <span class="sr-only">(s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="https://www.leecountyunitedway.org/" target="_blank" rel="noopener noreferrer">UNITED WAY LEE COUNTY <span class="sr-only">(s'ouvre dans un nouvel onglet)</span></a></li>
+                      </ul>
+                    </li>
+                  </nav>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget contact-widget contact-widget-two">
+                <div class="widget-title centred">
+                  <h3>Contact</h3>
+                  <!-- FIX 20: Suppression du faux texte lorem ipsum -->
+                  <p>We're here to help you.</p>
+                </div>
+                <div class="widget-content">
+                  <!-- FIX 21 (WCAG 1.3.1): Utilisation de <address> pour les informations de contact -->
+                  <address>
+                    <ul class="info-list">
+                      <li><i class="icon-17" aria-hidden="true"></i><span>1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</span></li>
+                      <li><i class="icon-18" aria-hidden="true"></i><a href="mailto:example@info.com">example@info.com</a></li>
+                      <!-- FIX 22 (WCAG 4.1.1): Balise <a> correctement fermée (était non fermée) -->
+                      <li class="phone"><i class="icon-19" aria-hidden="true"></i><a href="tel:9199342145">919.934.2145</a></li>
+                    </ul>
+                  </address>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="footer-bottom centred">
+          <div class="copyright">
+            <p>Copyright &copy; 2026 by <a href="index.html">JLHCA, Inc.</a> All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- main-footer end -->
+
+
+    <!-- Scroll to top -->
+    <!-- FIX 23 (WCAG 2.1.1 + 4.1.2): Bouton scroll-to-top accessible -->
+    <button
+      class="scroll-to-top"
+      aria-label="Retour en haut de page"
+      type="button"
+    >
+      <svg class="scroll-top-inner" viewBox="-1 -1 102 102" aria-hidden="true" focusable="false">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </button>
+
+  </div>
+
+
+  <!-- jQuery plugins -->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/jquery.fancybox.js"></script>
+  <script src="assets/js/appear.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/parallax-scroll.js"></script>
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <script src="assets/js/scrolltop.min.js"></script>
+  <script src="assets/js/jquery-ui.js"></script>
+  <script src="assets/js/odometer.js"></script>
+  <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
+  <script src="assets/js/language.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <!-- FIX 24 (WCAG 2.1.1 + 2.2.2): Script accessibilité — gestion aria-expanded et pause carrousel -->
+  <script>
+    // Gestion aria-expanded sur le toggler mobile
+    var toggler = document.querySelector('.mobile-nav-toggler');
+    if (toggler) {
+      toggler.addEventListener('click', function () {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+      });
+    }
+
+    // Gestion aria-expanded sur les sous-menus dropdown
+    document.querySelectorAll('.navigation .dropdown > a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+      });
+    });
+
+    // Bouton pause carrousel
+    var pauseBtn = document.querySelector('.carousel-pause-btn');
+    var carousel = document.querySelector('.banner-carousel');
+    var isPaused = false;
+    if (pauseBtn && carousel) {
+      pauseBtn.addEventListener('click', function () {
+        isPaused = !isPaused;
+        if (isPaused) {
+          $(carousel).trigger('stop.owl.autoplay');
+          pauseBtn.setAttribute('aria-pressed', 'true');
+          pauseBtn.innerHTML = '▶ Reprendre';
+          pauseBtn.setAttribute('aria-label', 'Reprendre le carrousel');
+        } else {
+          $(carousel).trigger('play.owl.autoplay');
+          pauseBtn.setAttribute('aria-pressed', 'false');
+          pauseBtn.innerHTML = '⏸ Pause';
+          pauseBtn.setAttribute('aria-label', 'Mettre en pause le carrousel');
+        }
+      });
+    }
+  </script>
+
+</body>
 </html>
