@@ -2106,3 +2106,301 @@ button.ltr {
   color: var(--title-color);
   margin-bottom: 5px;
 }
+
+/* ===== Board of Directors Page ===== */
+
+.board-banner-title {
+  background: #fff;
+  text-align: center;
+  padding: 40px 20px 30px;
+}
+
+.board-banner-title h2 {
+  color: #e86a1a;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.board-banner-title h3 {
+  color: #e86a1a;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  margin: 0;
+}
+
+.board-banner-image {
+  height: 550px;
+  background-image: url(../images/background/banner-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+}
+
+.board-banner-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(240, 235, 228, 0.65);
+  backdrop-filter: blur(3px);
+}
+
+.board-banner-image p {
+  position: relative;
+  z-index: 1;
+  font-style: italic;
+  font-size: 14px;
+  color: #333;
+  max-width: 420px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.board-directors-section {
+  width: 100%;
+  background: #fff;
+  padding: 60px 40px 80px;
+  text-align: center;
+}
+
+.board-directors-section .sector-heading {
+  font-family: 'Shadows Into Light Two', cursive;
+  color: #e86a1a;
+  font-size: 36px;
+  text-decoration: underline;
+  margin-bottom: 40px;
+}
+
+.board-directors-section .member-row {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.board-directors-section .member-row.mb-large {
+  margin-bottom: 40px;
+}
+
+.board-directors-section .member-col {
+  padding: 15px 40px;
+}
+
+.board-directors-section .member-col p {
+  margin: 0;
+}
+
+.board-directors-section .member-email {
+  color: #2a9d8f;
+}
+
+.board-directors-section .member-centered {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ===== Career / Employment Page ===== */
+
+.career-section {
+  background-color: #e86a1a;
+  padding: 80px 0 100px;
+  text-align: center;
+}
+
+.career-section-title h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #1a1a5e;
+  margin-bottom: 50px;
+}
+
+.career-app-row {
+  margin-bottom: 30px;
+}
+
+.career-app-col {
+  margin-bottom: 20px;
+}
+
+.career-app-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  padding: 24px 30px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.career-app-primary {
+  background-color: #1a1a5e;
+  color: #fff;
+}
+
+.career-app-primary:hover {
+  background-color: #0f0f3d;
+  color: #fff;
+  text-decoration: none;
+}
+
+.career-app-pdf {
+  background-color: #2a9d8f;
+  background-image: url(../images/background/cta-bg.png);
+  background-size: cover;
+  background-position: center;
+  color: #1a1a5e;
+}
+
+.career-app-pdf:hover {
+  opacity: 0.88;
+  color: #fff;
+  text-decoration: none;
+}
+
+.career-jobs-row {
+  margin-bottom: 5px;
+}
+
+.career-job-col {
+  margin-bottom: 15px;
+}
+
+.career-job-btn {
+  display: block;
+  background-color: #1a1a5e;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.career-job-btn:hover {
+  background-color: #0f0f3d;
+  color: #fff;
+  text-decoration: none;
+}
+
+.career-qual-wrap {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.career-qual-info {
+  background-color: #2a9d8f;
+  color: #1a1a5e;
+  padding: 13px 36px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.career-qual-btn {
+  display: inline-block;
+  background-color: #1a1a5e;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 36px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.career-qual-btn:hover {
+  background-color: #0f0f3d;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* HR Contact Card */
+.career-contact-section {
+  padding: 80px 0 90px;
+  background: #fff;
+}
+
+.career-hr-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.career-hr-photo img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.career-hr-info h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a1a5e;
+  margin: 0 0 6px;
+}
+
+.career-hr-title {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.career-hr-info p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.career-hr-info a {
+  color: #2a9d8f;
+  text-decoration: none;
+}
+
+.career-hr-info a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .career-hr-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .career-section-title h2 {
+    font-size: 26px;
+  }
+}

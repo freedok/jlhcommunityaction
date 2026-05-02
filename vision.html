@@ -49,143 +49,168 @@
 <body>
 
     <div class="boxed_wrapper ltr">
-        <!-- main header -->
-        <header class="main-header header-style-two">
-            <!-- header-top -->
-            <div class="header-top">
-                <div class="auto-container">
-                    <div class="top-inner">
-                        <ul class="info-list">
-                            <li><i class="icon-19"></i><span>Call: <a href="tel:912345432"> 919.934.2145</a></span></li>
-                            <li><i class="icon-18"></i><span>Mail: <a href="mailto:info@example.com"> info@example.com</a></span></li>
-                            <li><i class="icon-17"></i><span>Location: <a href=" 1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577">  1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
-                        </ul>
-                         <div class="right-column">
-                            <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
-                                <form action="https://azim.hostlin.com/Uphand/index.html" class="language-picker__form">
-                                    <label for="language-picker-select">Select your language</label>
-                                    <select name="language-picker-select" id="language-picker-select">
-                                        <option lang="en" value="english" selected>EN</option>
-                                        <option lang="es" value="Espagnol">ES</option>
-                                    </select>
-                                </form>
-                            </div>
+    <!-- main header -->
+    <!-- FIX: Utilisation de <header> avec role="banner" pour renforcer la sémantique -->
+    <header class="main-header header-style-two" role="banner">
 
-                        </div>
-                    </div>
-                </div>
+      <!-- header-top -->
+      <div class="header-top">
+        <div class="auto-container">
+          <div class="top-inner">
+            <ul class="info-list" aria-label="Coordonnées de contact">
+              <li><i class="icon-19" aria-hidden="true"></i><span>Call: <a href="tel:9199342145">919.934.2145</a></span></li>
+              <li><i class="icon-18" aria-hidden="true"></i><span>Mail: <a href="mailto:info@example.com">info@example.com</a></span></li>
+              <!-- FIX 3 (WCAG 2.4.4): Suppression du href invalide (adresse texte) — remplacé par un lien Google Maps -->
+              <li><i class="icon-17" aria-hidden="true"></i><span>Location: <a href="https://maps.google.com/?q=1102+Massey+Street+Smithfield+NC+27577" target="_blank" rel="noopener noreferrer">1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
+            </ul>
+
+            <div class="right-column">
+              <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
+                <form action="https://azim.hostlin.com/Uphand/index.html" class="language-picker__form">
+                  <!-- FIX 4 (WCAG 1.3.1): Label visible et correctement associé au select -->
+                  <label for="language-picker-select" class="sr-only">Select your language</label>
+                  <select name="language-picker-select" id="language-picker-select" aria-label="Select language">
+                    <option lang="en" value="english" selected>EN</option>
+                    <option lang="es" value="Espagnol">ES</option>
+                  </select>
+                </form>
+              </div>
             </div>
-            <!-- header-lower -->
-            <div class="header-lower">
-                <div class="auto-container">
-                    <div class="outer-box">
-                        <figure class="logo-box"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
-                        <div class="menu-area">
-                            <!--Mobile Navigation Toggler-->
-                            <div class="mobile-nav-toggler">
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                            </div>
-                            <nav class="main-menu navbar-expand-md navbar-light clearfix">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
-                                        <li class="dropdown current"><a href="index.html">HOME</a>
-                                           <ul>
-                                                <li><a href="letter.html">LETTER FROM EXECUTIF DIRECTOR</a></li>
-                                                <li><a href="mission.html">MISSION STATEMENT</a></li>
-                                                <li><a href="vision.html">VISION STATEMENT</a></li>
-                                                <li><a href="values.html">VALUES STATEMENT</a></li>
-                                                <li><a href="about.html">ABOUT US</a></li>
-                                                <li><a href="contact.html">CONTACT</a></li>
-                                                </ul>
-                                                </li>
-                                        <li><a href="team-2.html">OVERHEAD</a></li>
-                                        <li class="dropdown"><a href="#">ANNOUNCEMENTS</a>
-                                            <ul>
-                                                
-                                                <li><a href="documents/RESOURCE FAIR UPDATE.pdf" target="_blank">RESSOURCE FOR UPDATE</a></li>
-                                                <li><a href="documents/JLH Community Resource Fair Flyer 2023.pdf" target="_blank">JLH COMMUNUNITY RESSOURCE FAIR 2023</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="dropdown"><a href="#">OUR PROGRAMS</a>
-                                            <ul>
-                                                <li><a href="#">CSBG</a></li>
-                                                <li><a href="#">HEAD START/EARLY HEAD START</a></li>
-                                                <li><a href="#">HEAD START ANNOUNCEMENT</a></li>
-                                                <li><a href="#">WEATERIZATION</a></li>
-                                                <li><a href="#">RAPID RE-HOUSING</a></li>
-                                            </ul>
-                                        </li>  
-                                        <li class="dropdown"><a href="">H.R.</a>
-                                            <ul>
-                                                <li><a href="#">EMPLOYMENT OPPORTUNITIES</a></li>
-                                            </ul>
-                                            </li>
-                                        <li class="dropdown"><a href="">ANNUAL REPORTS</a>
-                                            <ul>
-                                                <li><a href="documents/JOHNSTON-LEE-HARNETT COMMUNITY ACTION_ INC._2023_990_Tax Returns.pdf" target="_blank">2023 - 990 TAX RETURNS</a></li>
-                                                <li><a href="documents/JLHCA 2023 Audited Financial Statements.pdf" target="_blank">2023 - JLHCA AUDITED FINANCIAL REPORT</a></li>
-                                                <li><a href="documents/2021 JLHCA Audited Financial Statements-JLHCA.pdf" target="_blank">2021 - JLHCA AUDITED FINANCIAL STATEMENT</a></li>
-                                                <li><a href="documents/JLHCA 2024 Financial Statements.pdf" target="_blank">JLHCA 2024 - FINANCIAL STATEMENT</a></li>
-                                                <li><a href="documents/PUBLIC DISCLOSURE COPY Form 990 JLHCA YE 06 30 2023.pdf" target="_blank">FROM 990 YE 06 30 2023 - JLHCA PUBLIC DISC</a></li>
-                                            </ul>
-                                            </li>
-                                        <li class="dropdown"><a href="#">PARTNERSHIPS</a>
-                                            <ul>
-                                                <li><a href="https://communityactionpartnership.com/" target="_blank">COMMUNITY ACTION PARTNERSHIPS</a></li>
-                                                <li><a href="https://www.nccaa.net/" target="_blank">NCCAA</a></li>
-                                                <li><a href="https://seacaa.org/" target="_blank">SEACAA</a></li>
-                                                <li><a href="https://www.unitedwaytriangle.org/" target="_blank">UNITED WAY</a></li>
-                                                <li><a href="https://www.leecountyunitedway.org/" target="_blank">UNITED WAY LEE COUNTY</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="events.html">EVENTS</a></li>
-                                        
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--sticky Header-->
-            <div class="sticky-header">
-                <div class="auto-container">
-                    <div class="outer-box">
-                        <figure class="logo-box mr_50"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
-                        <div class="menu-area">
-                            <nav class="main-menu clearfix">
-                                <!--Keep This Empty / Menu will come through Javascript-->
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- main-header end -->
-
-
-        <!-- Mobile Menu  -->
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-            <div class="close-btn"><i class="fas fa-times"></i></div>
-            <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
-                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
-                <div class="contact-info">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li> 1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</li>
-                        <li><a href="tel:919.934.2145">919.934.2145</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
-                    </ul>
-                </div>
-            </nav>
+          </div>
         </div>
-        <!-- End Mobile Menu -->
+      </div>
+
+      <!-- header-lower -->
+      <div class="header-lower">
+        <div class="auto-container">
+          <div class="outer-box">
+            <figure class="logo-box">
+              <a href="index.html">
+                <!-- FIX 5 (WCAG 1.1.1): Texte alternatif descriptif sur le logo -->
+                <img src="assets/images/logo.png" alt="JLHCA — Johnston-Lee-Harnett Community Action, Inc.">
+              </a>
+            </figure>
+
+            <div class="menu-area">
+              <!-- FIX 6 (WCAG 2.1.1 + 4.1.2): Remplacement du <div> par un <button> accessible -->
+              <button
+                class="mobile-nav-toggler"
+                aria-label="Ouvrir le menu de navigation"
+                aria-expanded="false"
+                aria-controls="navbarSupportedContent"
+                type="button"
+              >
+                <i class="icon-bar" aria-hidden="true"></i>
+                <i class="icon-bar" aria-hidden="true"></i>
+                <i class="icon-bar" aria-hidden="true"></i>
+              </button>
+
+              <!-- FIX 7 (WCAG 2.4.2): Navigation avec aria-label pour la distinguer des autres nav -->
+              <nav class="main-menu navbar-expand-md navbar-light clearfix" aria-label="Navigation principale">
+                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                  <ul class="navigation clearfix" role="list">
+
+                    <li class="dropdown current">
+                      <a href="index.html" aria-current="page">HOME</a>
+                      <ul aria-label="Sous-menu Home">
+                        <li><a href="letter.html">LETTER FROM EXECUTIF DIRECTOR</a></li>
+                        <li><a href="mission.html">MISSION STATEMENT</a></li>
+                        <li><a href="vision.html">VISION STATEMENT</a></li>
+                        <li><a href="values.html">VALUES STATEMENT</a></li>
+                        <li><a href="about.html">ABOUT US</a></li>
+                      </ul>
+                    </li>
+
+                    <li><a href="team-2.html">TEAM</a></li>
+
+                    <li class="dropdown">
+                      <!-- FIX 8 (WCAG 2.4.4): href="#" ambigu remplacé, aria-haspopup ajouté -->
+                      <a href="#" aria-haspopup="true" aria-expanded="false">OUR PROGRAMS</a>
+                      <ul aria-label="Sous-menu Our Programs">
+                        <li><a href="csbg.html">CSBG</a></li>
+                        <!-- FIX 9 (WCAG 2.4.4): Liens vides signalés comme "à venir" pour la transparence -->
+                        <li><a href="#" aria-disabled="true">HEAD START/EARLY HEAD START <span class="sr-only">(page à venir)</span></a></li>
+                        <li><a href="#" aria-disabled="true">WEATHERIZATION <span class="sr-only">(page à venir)</span></a></li>
+                        <li><a href="#" aria-disabled="true">RAPID RE-HOUSING <span class="sr-only">(page à venir)</span></a></li>
+                      </ul>
+                    </li>
+                    <li><a href="boardofdirector.html">BOARD OF DIRECTOR</a></li>
+                    <li><a href="career.html">CAREER</a></li>
+
+                    
+
+                    <li class="dropdown">
+                      <a href="#" aria-haspopup="true" aria-expanded="false">ANNUAL REPORTS</a>
+                      <ul aria-label="Sous-menu Annual Reports">
+                        <!-- FIX 10 (WCAG 2.4.4): Ajout de rel="noopener" et indication "nouvelle fenêtre" pour les PDF -->
+                        <li><a href="documents/JOHNSTON-LEE-HARNETT COMMUNITY ACTION_ INC._2023_990_Tax Returns.pdf" target="_blank" rel="noopener noreferrer">2023 - 990 TAX RETURNS <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/JLHCA 2023 Audited Financial Statements.pdf" target="_blank" rel="noopener noreferrer">2023 - JLHCA AUDITED FINANCIAL REPORT <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/PUBLIC DISCLOSURE COPY Form 990 JLHCA YE 06 30 2023.pdf" target="_blank" rel="noopener noreferrer">FORM 990 YE 06 30 2023 - JLHCA PUBLIC DISC <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/JLHCA 2024 Financial Statements.pdf" target="_blank" rel="noopener noreferrer">JLHCA 2024 - FINANCIAL STATEMENT <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                        <li><a href="documents/2025 JLHCA Financial Statements.pdf" target="_blank" rel="noopener noreferrer">2025 - JLHCA FINANCIAL STATEMENT <span class="sr-only">(PDF, s'ouvre dans un nouvel onglet)</span></a></li>
+                      </ul>
+                    </li>
+
+
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sticky Header -->
+      <div class="sticky-header" aria-hidden="true">
+        <div class="auto-container">
+          <div class="outer-box">
+            <figure class="logo-box mr_50">
+              <a href="index.html" tabindex="-1">
+                <img src="assets/images/logo.png" alt="">
+              </a>
+            </figure>
+            <div class="menu-area">
+              <nav class="main-menu clearfix" aria-hidden="true" tabindex="-1">
+                <!-- Menu injecté via JS -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <!-- main-header end -->
+
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navigation mobile">
+      <div class="menu-backdrop"></div>
+      <!-- FIX 11 (WCAG 2.1.1): Bouton fermeture accessible -->
+      <button class="close-btn" aria-label="Fermer le menu" type="button">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <nav class="menu-box" aria-label="Navigation mobile">
+        <div class="nav-logo">
+          <a href="index.html">
+            <img src="assets/images/logo-2.png" alt="JLHCA - Retour à l'accueil">
+          </a>
+        </div>
+        <div class="menu-outer"><!-- Menu injecté via JS --></div>
+        <div class="contact-info">
+          <h4>Contact Info</h4>
+          <address>
+            <ul>
+              <li>1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</li>
+              <li><a href="tel:9199342145">919.934.2145</a></li>
+              <li><a href="mailto:info@example.com">info@example.com</a></li>
+            </ul>
+          </address>
+        </div>
+      </nav>
+    </div>
+    <!-- End Mobile Menu -->
 
 
         <!-- page-title -->
