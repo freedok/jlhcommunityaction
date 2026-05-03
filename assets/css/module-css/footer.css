@@ -194,12 +194,12 @@
 .main-footer .contact-widget-two{
     position: relative;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: #1a1a1a;
     padding: 5px;
 }
 
 .main-footer .contact-widget-two .widget-title{
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid #2e2e2e;
     border-radius: 20px;
     padding: 20px;
     padding-bottom: 25px;

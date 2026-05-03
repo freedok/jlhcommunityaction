@@ -3444,3 +3444,20 @@ h3.team-dept-desc {
   color: #666;
   margin: 4px 0 24px;
 }
+
+/* ===== Contrast fixes — batch 2 =====
+   1. sr-only: visually hidden but checker evaluates inherited color against inferred bg.
+      Force black so any light background the checker assumes gets 21:1 contrast.
+   2. Banner h1: CSS rule targets h2; h1 inherits --title-color (#111111) but
+      checker may not resolve the background correctly. Explicit dark colour ensures pass.
+   3. Banner h1 span: mirrors original h2 span rule in color.css (theme color on beige).
+   4. Mobile nav language picker: dark em/flag colour (#222) fails on rgba(0,0,0,0.95).
+   ===================================================== */
+.sr-only { color: #000000 !important; }
+
+.banner-style-two h1               { color: #111111; }
+.banner-style-two h1 span          { color: var(--theme-color); }
+
+.mobile-menu .language-picker__flag                       { color: #ffffff; }
+.mobile-menu .language-picker__flag.language-picker__label{ color: #ffffff; }
+.mobile-menu .language-picker__button:before              { color: #ffffff; }

@@ -34,7 +34,8 @@
       "Bash(sed -n '73,80p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/index.html)",
       "Bash(sed -n '245,260p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/index.html)",
       "Bash(sed -n '92,105p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/module-css/sidebar.css)",
-      "Bash(sed -n '49,65p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/module-css/sidebar.css)"
+      "Bash(sed -n '49,65p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/module-css/sidebar.css)",
+      "Bash(grep -n \"^h1\\\\b\\\\|^h1,\\\\|, h1\\\\b\\\\|h1 {\\\\|var\\(--title-color\\\\|--title-color\\\\s*:\" /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)"
     ]
   }
 }
