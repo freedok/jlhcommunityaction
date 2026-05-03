@@ -177,6 +177,8 @@ input{
 button:focus,
 input:focus,
 textarea:focus{
+  outline: none;
+  box-shadow: none;
   transition: all 500ms ease;
 }
 
@@ -2924,13 +2926,89 @@ button.ltr {
   text-decoration: underline;
 }
 
-/* =======================================================
-   WCAG 2.0 / 2.1 / 2.2 — Accessibility Compliance Layer
-   ======================================================= */
+/* ===== Team Page — Hover Card White Background ===== */
+.team-block-one .inner-box:hover .content-box {
+  background-color: #fff;
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.12);
+}
 
-/* --------------------------------------------------
-   2.4.1 — Skip navigation link (Bypass Blocks)
-   -------------------------------------------------- */
+.team-block-one .inner-box .content-box h3 a {
+  color: #1a1a5e;
+}
+
+.team-block-one .inner-box .content-box .designation {
+  color: #e86a1a;
+}
+
+
+/* ===== Footer — Grant Disclaimer Text ===== */
+.footer-grant-text {
+  font-size: 11px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+
+/* ===== Accessibility — Contrast Fixes (WCAG 1.4.3) =====
+   Accessible orange : #b85515 = 4.83:1 on white
+   Accessible teal   : #0d6b5e = 6.41:1 on white
+   Applied only to normal-size text (< 24px regular / < 18.67px bold)
+   Large text headings (≥24px) retain brand colors (3:1 passes)
+   ======================================================== */
+
+/* Board of Directors */
+.board-banner-title h3          { color: #b85515; }   /* 22px regular */
+.board-directors-section .member-email { color: #0d6b5e; }
+
+/* CSBG */
+.csbg-label                     { color: #b85515; }   /* 13px */
+.csbg-contact-block a           { color: #b85515; }
+.csbg-flyer-link                { color: #fff; }       /* white on #1a1a5e bg — already passes */
+
+/* Career */
+.career-hr-info a               { color: #0d6b5e; }
+.wap-staff-role                 { color: #b85515; }   /* 11px uppercase */
+
+/* Head Start center cards */
+.hs-center-card a               { color: #b85515; }
+.hs-center-card p               { color: #444; }
+
+/* Weatherization staff */
+.wap-staff-contacts a           { color: #0d6b5e; }
+.wap-staff-contacts li          { color: #444; }
+
+/* Head Start enrollment notes */
+.hs-enroll-note                 { color: #444; }
+.hs-apply-text-box a            { color: #0d6b5e; }
+
+/* Download widget links — dark bg (navy), white text passes */
+.download-widget .download-list li a { color: #fff; }
+
+/* Footer grant disclaimer — on dark footer bg, colour fine */
+.footer-grant-text              { color: rgba(255,255,255,0.80); }
+
+/* career subtitle (replaces duplicate h2) */
+.career-section-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 30px;
+}
+
+/* mobile menu contact label (replaces h4) */
+.mobile-contact-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+
+/* ===== Skip Link — hidden until keyboard focus ===== */
 .skip-link {
   position: absolute;
   top: -100%;
@@ -2943,196 +3021,10 @@ button.ltr {
   font-weight: 700;
   text-decoration: none;
   border-radius: 0 0 4px 0;
-  border-bottom: 2px solid #e86a1a;
 }
 .skip-link:focus {
   top: 0;
-  outline: 3px solid #e86a1a;
-  outline-offset: 2px;
 }
 
-/* --------------------------------------------------
-   2.4.7 / 2.4.13 — Focus Visible + Focus Appearance
-   Minimum: 2px outline, 3:1 contrast, non-obscured
-   -------------------------------------------------- */
-:focus-visible {
-  outline: 3px solid #1a1a5e !important;
-  outline-offset: 3px !important;
-  border-radius: 2px;
-}
+/* ===== Override template red (#b71449) → JLHCA orange ===== */
 
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid #1a1a5e !important;
-  outline-offset: 3px !important;
-  box-shadow: 0 0 0 5px rgba(26,26,94,0.18) !important;
-  border-radius: 2px;
-}
-
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #1a1a5e !important;
-  outline-offset: 0 !important;
-  box-shadow: 0 0 0 4px rgba(26,26,94,0.15) !important;
-}
-
-/* Preserve nav dropdown functionality while showing focus */
-.main-menu .navigation > li > a:focus-visible,
-.main-menu .navigation li ul li a:focus-visible {
-  outline: 3px solid #fff !important;
-  outline-offset: 2px !important;
-  background-color: rgba(26,26,94,0.08);
-}
-
-/* --------------------------------------------------
-   2.4.11 — Focus Not Obscured (WCAG 2.2)
-   Scroll margin prevents sticky header from hiding
-   the focused element
-   -------------------------------------------------- */
-* {
-  scroll-margin-top: 100px;
-}
-
-#main-content {
-  scroll-margin-top: 0;
-}
-
-/* --------------------------------------------------
-   1.4.3 / 1.4.11 — Colour Contrast
-   Accessible link colours (≥ 4.5:1 on white)
-   #b85515 orange = 4.83:1  |  #0d6b5e teal = 6.41:1
-   -------------------------------------------------- */
-
-/* Body-size email / phone links inside content cards */
-.service-block-two .inner-box p a,
-.wap-staff-contacts a,
-.hs-center-card a,
-.member-col a,
-.csbg-contact-block a,
-.board-directors-section .member-email,
-.career-hr-card p a,
-.hs-enroll-block a,
-.hs-apply-text-box a {
-  color: #0d6b5e;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-.service-block-two .inner-box p a:hover,
-.wap-staff-contacts a:hover,
-.hs-center-card a:hover,
-.member-col a:hover,
-.csbg-contact-block a:hover,
-.career-hr-card p a:hover,
-.hs-enroll-block a:hover,
-.hs-apply-text-box a:hover {
-  color: #0a5248;
-  text-decoration: underline;
-}
-
-/* Footer links — on dark navy background, white is fine */
-.main-footer a {
-  text-decoration-color: transparent;
-}
-.main-footer a:hover {
-  text-decoration-color: currentColor;
-}
-
-/* --------------------------------------------------
-   1.4.1 — Use of Colour
-   Ensure links are distinguishable without colour
-   -------------------------------------------------- */
-.cause-details-content a:not(.theme-btn):not(.hs-apply-process-btn) {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-/* --------------------------------------------------
-   1.4.12 — Text Spacing (WCAG 2.1)
-   Content must not overflow when user applies:
-   line-height 1.5× | letter-spacing 0.12em |
-   word-spacing 0.16em | paragraph-spacing 2×font-size
-   -------------------------------------------------- */
-* {
-  line-height: normal;
-}
-
-/* --------------------------------------------------
-   2.5.8 — Target Size Minimum (WCAG 2.2)
-   Interactive elements ≥ 24×24 px
-   -------------------------------------------------- */
-a,
-button,
-[role="button"],
-input[type="checkbox"],
-input[type="radio"],
-select {
-  min-height: 24px;
-  min-width: 24px;
-}
-
-.navigation li a,
-.links-list a,
-.info-list li {
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-/* --------------------------------------------------
-   1.4.10 — Reflow (WCAG 2.1)
-   No horizontal scroll at 320px viewport width
-   -------------------------------------------------- */
-@media (max-width: 320px) {
-  .auto-container {
-    padding: 0 12px;
-  }
-  .board-directors-section .member-col {
-    padding: 10px 12px;
-  }
-  table {
-    display: block;
-    overflow-x: auto;
-  }
-}
-
-/* --------------------------------------------------
-   Forced Colours / High Contrast Mode (Windows)
-   Supports users with prefers-contrast or forced-colors
-   -------------------------------------------------- */
-@media (forced-colors: active) {
-  .skip-link,
-  .theme-btn,
-  .download-widget .download-list li a,
-  .career-app-btn,
-  .wap-service-icon,
-  .hs-qr-section {
-    forced-color-adjust: none;
-    border: 2px solid ButtonText;
-  }
-
-  a {
-    color: LinkText;
-  }
-
-  a:visited {
-    color: VisitedText;
-  }
-
-  :focus-visible {
-    outline: 3px solid Highlight !important;
-  }
-
-  .board-banner-image .overlay,
-  .bg-layer {
-    display: none;
-  }
-}
-
-/* --------------------------------------------------
-   3.1.2 — Language of Parts
-   Visual marker for Spanish content blocks
-   (lang="es" set in HTML)
-   -------------------------------------------------- */
-[lang="es"] {
-  quotes: "\00AB" "\00BB";
-}
