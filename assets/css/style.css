@@ -2990,9 +2990,13 @@ button.ltr {
 
 /* ===== Readability — Additional Contrast Fixes =====
    Banner sub-title: banner.css sets #f99ea7 (light pink) on beige #F5F2EC = 1.79:1 → critical fail
-   Restored to template red #b71449 = 6.99:1 on beige. !important needed (banner.css loads after style.css)
+   Restored to template red with AAA-compliant shade. !important needed (banner.css loads after style.css)
    ===================================================== */
-.banner-style-two .sub-title    { color: #b71449 !important; }
+.banner-style-two .sub-title    { color: #a01040 !important; }
+
+/* Nav active link: #b71449 = 6.54:1 on white (AA pass, AAA fail). → #a01040 = 7.73:1 (AAA pass) */
+.main-menu .navigation > li.current > a,
+.main-menu .navigation > li:hover > a { color: #a01040 !important; }
 
 /* Board of Directors — orange on white */
 .board-banner-title h2          { color: #b85515; }   /* 32px: was #e86a1a (3.23:1) */

@@ -384,6 +384,13 @@
 	}
 
 
+	// Fix: OWL carousel adds role="presentation" to nav buttons, hiding accessible names
+	$(document).ready(function() {
+		setTimeout(function() {
+			$('.owl-prev, .owl-next').removeAttr('role');
+		}, 300);
+	});
+
 	//Add One Page nav
 	if($('.scroll-nav').length) {
 		$('.scroll-nav').onePageNav();
