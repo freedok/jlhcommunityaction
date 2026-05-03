@@ -32,7 +32,9 @@
       "Bash(sed -n '1990,2015p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
       "Bash(sed -n '2075,2100p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
       "Bash(sed -n '73,80p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/index.html)",
-      "Bash(sed -n '245,260p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/index.html)"
+      "Bash(sed -n '245,260p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/index.html)",
+      "Bash(sed -n '92,105p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/module-css/sidebar.css)",
+      "Bash(sed -n '49,65p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/module-css/sidebar.css)"
     ]
   }
 }

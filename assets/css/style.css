@@ -2982,8 +2982,56 @@ button.ltr {
 .hs-enroll-note                 { color: #444; }
 .hs-apply-text-box a            { color: #0d6b5e; }
 
-/* Download widget links — dark bg (navy), white text passes */
-.download-widget .download-list li a { color: #fff; }
+/* Download widget — tighter heading size for narrow sidebar */
+.default-sidebar .download-widget .widget-title h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  color: #1a1a5e;
+  margin-bottom: 12px;
+}
+
+.default-sidebar .download-widget .widget-title h3 small {
+  display: block;
+  font-size: 13px;
+  color: #666666;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* Download widget — style <a> links as visible buttons (template originally used <button>) */
+.default-sidebar .download-widget .download-list li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(167, 16, 64, 0.07);
+  border: 2px solid rgba(167, 16, 64, 0.50);
+  border-radius: 50px;
+  padding: 14px 24px;
+  font-family: var(--title-font);
+  font-size: 15px;
+  font-weight: 700;
+  color: #a01040;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 300ms ease;
+}
+
+.default-sidebar .download-widget .download-list li a::after {
+  content: '\f061';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.default-sidebar .download-widget .download-list li a:hover {
+  background-color: #a01040;
+  border-color: #a01040;
+  color: #fff;
+}
 
 /* Footer copyright link — color.css sets #b71449 (2.89:1 on dark #111111 footer, fails AA).
    Override to white on dark bg (21:1) with underline to distinguish from surrounding text. */
