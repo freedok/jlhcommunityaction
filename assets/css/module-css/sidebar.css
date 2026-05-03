@@ -37,6 +37,7 @@
     font-size: 20px;
     color: var(--title-color);
     border-radius: 50%;
+    border: 1px solid #767676;
     transition: all 500ms ease;
 }
 
@@ -116,7 +117,7 @@
     font-family: var(--title-font);
     color: var(--title-color);
     font-weight: 700;
-    border: 1px solid #E4E4E4;
+    border: 1px solid #767676;
     border-radius: 50px;
     padding: 5px 15px;
 }

@@ -17,7 +17,22 @@
       "Bash(sed -n '3280,3300p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
       "Bash(sed -n '3350,3375p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
       "Bash(sed -n '2955,2985p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
-      "Bash(sed -n '3168,3180p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)"
+      "Bash(sed -n '3168,3180p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '98,108p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/index.html)",
+      "Bash(sed -n '246,255p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/index.html)",
+      "Bash(sed -n '479,490p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/index.html)",
+      "Bash(sed -n '92,100p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/blog.html)",
+      "Bash(sed -n '582,590p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/blog.html)",
+      "Bash(python3 -c ' *)",
+      "Bash(sed -n '1425,1445p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '2705,2720p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(grep -rn 'border.*#[0-9a-fA-F]\\\\{3,6\\\\}' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(grep -n 'input\\\\b.*{$\\\\|input\\\\[type\\\\|\\\\.form-control\\\\|border.*input\\\\|input.*border' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(grep -rn 'border.*#[0-9a-fA-F]\\\\{3,6\\\\}' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/module-css/)",
+      "Bash(sed -n '1990,2015p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '2075,2100p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '73,80p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/index.html)",
+      "Bash(sed -n '245,260p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/index.html)"
     ]
   }
 }
