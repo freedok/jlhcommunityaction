@@ -2985,8 +2985,38 @@ button.ltr {
 /* Download widget links — dark bg (navy), white text passes */
 .download-widget .download-list li a { color: #fff; }
 
-/* Footer grant disclaimer — on dark footer bg, colour fine */
-.footer-grant-text              { color: rgba(255,255,255,0.80); }
+/* Footer grant disclaimer — on dark footer bg, colour fine; increased from 11px for readability */
+.footer-grant-text              { color: rgba(255,255,255,0.80); font-size: 13px; }
+
+/* ===== Readability — Additional Contrast Fixes =====
+   Banner sub-title: banner.css sets #f99ea7 (light pink) on beige #F5F2EC = 1.79:1 → critical fail
+   Restored to template red #b71449 = 6.99:1 on beige. !important needed (banner.css loads after style.css)
+   ===================================================== */
+.banner-style-two .sub-title    { color: #b71449 !important; }
+
+/* Board of Directors — orange on white */
+.board-banner-title h2          { color: #b85515; }   /* 32px: was #e86a1a (3.23:1) */
+.board-directors-section .sector-heading { color: #b85515; }  /* 36px: was #e86a1a */
+
+/* CSBG — teal banquet title (28px) on white */
+.csbg-banquet-title             { color: #0d6b5e; }   /* 28px: was #2a9d8f (3.33:1) */
+
+/* Head Start — county headings (32px) on beige */
+.hs-county-heading              { color: #b85515; }   /* 32px: was #e86a1a (3.23:1) */
+
+/* Weatherization — icon colour next to small text */
+.wap-staff-contacts li i        { color: #b85515; }
+
+/* Team cards — designation (16px) on white hover background */
+.team-block-one .inner-box .content-box .designation { color: #b85515; }
+
+/* Statement subheadings upgraded h4→h3 for heading hierarchy; keep h4 visual size */
+.content_block_two .content-box .text-box h3,
+.content_block_four .content-box .text-box h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
 
 /* career subtitle (replaces duplicate h2) */
 .career-section-subtitle {
@@ -3026,5 +3056,4 @@ button.ltr {
   top: 0;
 }
 
-/* ===== Override template red (#b71449) → JLHCA orange ===== */
 
