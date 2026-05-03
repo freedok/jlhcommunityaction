@@ -1645,6 +1645,16 @@ button.ltr {
   display: none;
 }
 
+/* language-picker select: hidden visually — the JS custom widget replaces it */
+.language-picker select {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 .language-picker {
   position: relative;
