@@ -5,7 +5,19 @@
       "Bash(sed -n '2643,2651p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
       "Bash(sed -n '2878,2886p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
       "Bash(sed -n '2942,2950p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
-      "Bash(sed -n '3145,3155p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)"
+      "Bash(sed -n '3145,3155p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(grep -E 'rgba\\\\\\(255,255,255,0\\\\.[0-7]|#[89a-e][0-9a-fA-F]{5}|#[0-9a-fA-F]{3}\\\\b')",
+      "Bash(sed -n '2110,2140p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '2165,2185p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '3165,3185p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '2450,2480p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '2630,2650p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '2930,2950p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '3240,3260p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '3280,3300p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '3350,3375p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '2955,2985p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '3168,3180p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)"
     ]
   }
 }

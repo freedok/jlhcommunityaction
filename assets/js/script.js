@@ -385,9 +385,11 @@
 
 
 	// Fix: OWL carousel adds role="presentation" to nav buttons, hiding accessible names
+	// Also add aria-label directly since sr-only text alone isn't reliably detected
 	$(document).ready(function() {
 		setTimeout(function() {
-			$('.owl-prev, .owl-next').removeAttr('role');
+			$('.owl-prev').removeAttr('role').attr('aria-label', 'Précédent');
+			$('.owl-next').removeAttr('role').attr('aria-label', 'Suivant');
 		}, 300);
 	});
 

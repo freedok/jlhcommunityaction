@@ -2985,6 +2985,10 @@ button.ltr {
 /* Download widget links — dark bg (navy), white text passes */
 .download-widget .download-list li a { color: #fff; }
 
+/* Footer copyright link — color.css sets #b71449 (2.89:1 on dark #111111 footer, fails AA).
+   Override to white on dark bg (21:1) with underline to distinguish from surrounding text. */
+.footer-bottom p a              { color: #fff; text-decoration: underline; }
+
 /* Footer grant disclaimer — on dark footer bg, colour fine; increased from 11px for readability */
 .footer-grant-text              { color: rgba(255,255,255,0.80); font-size: 13px; }
 
@@ -3170,7 +3174,7 @@ button.ltr {
 .rrh-county-no-name {
   font-size: 13px;
   font-style: italic;
-  color: #999;
+  color: #666666;
   margin: 0 0 10px;
 }
 
