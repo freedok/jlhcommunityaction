@@ -3057,3 +3057,320 @@ button.ltr {
 }
 
 
+
+
+/* ===== Rapid Re-Housing Page ===== */
+
+/* Process steps */
+.rrh-process-block { margin: 50px 0 48px; }
+
+.rrh-process-heading {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 30px;
+  color: #1a1a5e;
+  margin-bottom: 28px;
+}
+
+.rrh-step-card {
+  background: #fff;
+  border-radius: 6px;
+  padding: 30px 22px 26px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.rrh-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.13);
+}
+
+.rrh-step-num {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #1a1a5e;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.rrh-step-icon {
+  font-size: 28px;
+  color: #b85515;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.rrh-step-card h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a5e;
+  margin-bottom: 10px;
+}
+
+.rrh-step-card p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* County counselor cards */
+.rrh-county-col { margin-bottom: 28px; }
+
+.rrh-county-card {
+  background: #fff;
+  border-top: 3px solid #1a1a5e;
+  border-radius: 4px;
+  padding: 24px 26px 22px;
+  height: 100%;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.rrh-county-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+}
+
+.rrh-county-badge {
+  display: inline-block;
+  background: #1a1a5e;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+.rrh-county-card h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a5e;
+  margin: 0 0 4px;
+}
+
+.rrh-county-no-name {
+  font-size: 13px;
+  font-style: italic;
+  color: #999;
+  margin: 0 0 10px;
+}
+
+.rrh-county-contacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rrh-county-contacts li {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.rrh-county-contacts li i {
+  color: #b85515;
+  width: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rrh-county-contacts a { color: #0d6b5e; text-decoration: none; }
+.rrh-county-contacts a:hover { text-decoration: underline; }
+
+/* Coordinated Entry highlighted box */
+.rrh-coordinated-box {
+  background: linear-gradient(135deg, #1a1a5e 0%, #2a2a8e 100%);
+  border-radius: 10px;
+  padding: 40px 48px;
+  text-align: center;
+  margin-top: 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rrh-coordinated-box::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+.rrh-coordinated-box::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  pointer-events: none;
+}
+
+.rrh-coordinated-box h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.rrh-coordinated-box .rrh-sub {
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.rrh-coordinated-phone {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 700;
+  color: #f9c000;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s;
+}
+
+.rrh-coordinated-phone:hover { color: #ffe066; text-decoration: none; }
+
+.rrh-coordinated-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.88);
+  margin-top: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.rrh-households-intro {
+  color: rgba(255,255,255,0.90);
+  font-size: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.rrh-coordinated-counties {
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+  margin-top: 16px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sidebar info boxes */
+.rrh-sidebar-info {
+  background: #fff;
+  border-left: 4px solid #1a1a5e;
+  border-radius: 0 4px 4px 0;
+  padding: 20px 18px 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+}
+
+.rrh-sidebar-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a5e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.rrh-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rrh-sidebar-list li {
+  font-size: 13px;
+  color: #444;
+  padding: 6px 0 6px 20px;
+  position: relative;
+  border-bottom: 1px solid #f5f5f5;
+  line-height: 1.5;
+}
+
+.rrh-sidebar-list li:last-child { border-bottom: none; }
+
+.rrh-sidebar-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #b85515;
+  font-weight: 700;
+}
+
+/* Emergency phone sidebar widget */
+.rrh-emergency-widget {
+  background: #1a1a5e;
+  border-radius: 6px;
+  padding: 22px 18px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.rrh-emergency-widget .rrh-emergency-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.80);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.rrh-emergency-widget .rrh-emergency-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 14px;
+}
+
+.rrh-emergency-widget a {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f9c000;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: color 0.3s;
+}
+
+.rrh-emergency-widget a:hover { color: #ffe066; }

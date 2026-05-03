@@ -210,7 +210,7 @@
     		active: true,
 			smartSpeed: 1000,
 			autoplay: 6000,
-            navText: [ '<span class="icon-6"></span>', '<span class="icon-7"></span>' ],
+            navText: [ '<span class="icon-6" aria-hidden="true"></span><span class="sr-only">Précédent</span>', '<span class="icon-7" aria-hidden="true"></span><span class="sr-only">Suivant</span>' ],
             responsive:{
                 0:{
                     items:1
@@ -237,7 +237,7 @@
 			nav:true,
 			smartSpeed: 500,
 			autoplay: 1000,
-			navText: [ '<span class="icon-6"></span>', '<span class="icon-7"></span>' ],
+			navText: [ '<span class="icon-6" aria-hidden="true"></span><span class="sr-only">Précédent</span>', '<span class="icon-7" aria-hidden="true"></span><span class="sr-only">Suivant</span>' ],
 			responsive:{
 				0:{
 					items:1
@@ -268,7 +268,7 @@
 			nav:true,
 			smartSpeed: 500,
 			autoplay: 1000,
-			navText: [ '<span class="icon-6"></span>', '<span class="icon-7"></span>' ],
+			navText: [ '<span class="icon-6" aria-hidden="true"></span><span class="sr-only">Précédent</span>', '<span class="icon-7" aria-hidden="true"></span><span class="sr-only">Suivant</span>' ],
 			responsive:{
 				0:{
 					items:1
@@ -299,7 +299,7 @@
 			nav:true,
 			smartSpeed: 500,
 			autoplay: 1000,
-			navText: [ '<span class="icon-6"></span>', '<span class="icon-7"></span>' ],
+			navText: [ '<span class="icon-6" aria-hidden="true"></span><span class="sr-only">Précédent</span>', '<span class="icon-7" aria-hidden="true"></span><span class="sr-only">Suivant</span>' ],
 			responsive:{
 				0:{
 					items:1
@@ -330,7 +330,7 @@
 			nav:true,
 			smartSpeed: 500,
 			autoplay: 1000,
-			navText: [ '<span class="icon-6"></span>', '<span class="icon-7"></span>' ],
+			navText: [ '<span class="icon-6" aria-hidden="true"></span><span class="sr-only">Précédent</span>', '<span class="icon-7" aria-hidden="true"></span><span class="sr-only">Suivant</span>' ],
 			responsive:{
 				0:{
 					items:1
@@ -361,7 +361,7 @@
 			nav:true,
 			smartSpeed: 500,
 			autoplay: 1000,
-			navText: [ '<span class="icon-6"></span>', '<span class="icon-7"></span>' ],
+			navText: [ '<span class="icon-6" aria-hidden="true"></span><span class="sr-only">Précédent</span>', '<span class="icon-7" aria-hidden="true"></span><span class="sr-only">Suivant</span>' ],
 			responsive:{
 				0:{
 					items:1
