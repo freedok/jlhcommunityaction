@@ -2530,7 +2530,7 @@ button.ltr {
   background-color: #1a1a5e;
   color: #fff;
   font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -2644,8 +2644,8 @@ button.ltr {
 }
 
 .hs-center-id {
-  font-size: 11px !important;
-  color: #999 !important;
+  font-size: 12px !important;
+  color: #767676 !important;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 12px !important;
@@ -2879,11 +2879,11 @@ button.ltr {
 .wap-staff-role {
   display: block;
   font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #e86a1a;
+  color: #b85515;
   margin-bottom: 4px;
 }
 
@@ -3146,7 +3146,7 @@ button.ltr {
   background: #1a1a5e;
   color: #fff;
   font-family: 'DM Sans', sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -3155,7 +3155,7 @@ button.ltr {
   margin-bottom: 12px;
 }
 
-.rrh-county-card h4 {
+.rrh-county-card h3 {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -3265,7 +3265,7 @@ button.ltr {
 
 .rrh-coordinated-label {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: rgba(255,255,255,0.88);
@@ -3374,3 +3374,17 @@ button.ltr {
 }
 
 .rrh-emergency-widget a:hover { color: #ffe066; }
+
+/* ===== Heading hierarchy fixes — visual sizing for promoted h3s ===== */
+h3.hs-address, h3.wap-address {
+  font-size: 14px;
+  font-weight: 400;
+  color: #444;
+  margin: 4px 0 16px;
+}
+h3.team-dept-desc {
+  font-size: 15px;
+  font-weight: 400;
+  color: #666;
+  margin: 4px 0 24px;
+}

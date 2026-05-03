@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -n '2529,2537p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '2643,2651p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '2878,2886p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '2942,2950p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)",
+      "Bash(sed -n '3145,3155p' /home/hermes/Workspace/Cash/Freeman/jlhcommunityaction/assets/css/style.css)"
+    ]
+  }
+}
