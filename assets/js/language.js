@@ -175,6 +175,9 @@ Math.easeInOutQuad = function(t, b, c, d) {
 		this.trigger = false;
 		this.dropdown = false;
 		this.firstLanguage = false;
+		// Prefer aria-label on the select; fall back to associated <label> element text
+		var labelEl = this.element.getElementsByTagName('label')[0];
+		this.labelText = this.select.getAttribute('aria-label') || (labelEl ? labelEl.innerText : 'Select language');
 		// dropdown arrow inside the button element
 		this.svgPath = '<svg viewBox="0 0 16 16"><polygon points="3,5 8,11 13,5 "></polygon></svg>';
 		initLanguagePicker(this);
@@ -234,7 +237,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 		// check if we need to add custom classes to the button trigger
 		var customClasses = picker.element.getAttribute('data-trigger-class') ? ' '+picker.element.getAttribute('data-trigger-class') : '';
 	
-		var button = '<button class="language-picker__button'+customClasses+'" aria-label="'+picker.select.value+' '+picker.element.getElementsByTagName('label')[0].innerText+'" aria-expanded="false" aria-controls="'+picker.pickerId+'-dropdown">';
+		var button = '<button class="language-picker__button'+customClasses+'" aria-label="'+picker.select.value+' '+picker.labelText+'" aria-expanded="false" aria-controls="'+picker.pickerId+'-dropdown">';
 		button = button + '<span aria-hidden="true" class="language-picker__label language-picker__flag language-picker__flag--'+picker.select.value+'"><em>'+picker.selectedOption+'</em>';
 		button = button +picker.svgPath+'</span>';
 		return button+'</button>';
@@ -242,7 +245,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
 	function initListPicker(picker) { // create language picker dropdown
 		var list = '<div class="language-picker__dropdown" aria-describedby="'+picker.pickerId+'-description" id="'+picker.pickerId+'-dropdown">';
-		list = list + '<p class="sr-only" id="'+picker.pickerId+'-description">'+picker.element.getElementsByTagName('label')[0].innerText+'</p>';
+		list = list + '<p class="sr-only" id="'+picker.pickerId+'-description">'+picker.labelText+'</p>';
 		list = list + '<ul class="language-picker__list" role="listbox">';
 		for(var i = 0; i < picker.options.length; i++) {
 			var selected = picker.options[i].hasAttribute('selected') ? ' aria-selected="true"' : '',

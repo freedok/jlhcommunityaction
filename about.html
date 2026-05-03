@@ -67,9 +67,7 @@
             <div class="right-column">
               <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
                 <div class="language-picker__form">
-                  <!-- FIX 4 (WCAG 1.3.1): Label visible et correctement associé au select -->
-                  <label for="language-picker-select" class="sr-only">Select your language</label>
-                  <select name="language-picker-select" id="language-picker-select" class="ignore">
+                  <select name="language-picker-select" id="language-picker-select" class="ignore" aria-label="Select your language">
                     <option lang="en" value="english" selected>EN</option>
                     <option lang="es" value="Espagnol">ES</option>
                   </select>
