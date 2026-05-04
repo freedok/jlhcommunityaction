@@ -819,12 +819,16 @@ div#mCSB_1_container{
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
-  color: var(--title-color);
+  color: #111111;
+}
+
+.header-top .top-inner .info-list li span{
+  color: #111111;
 }
 
 .header-top .top-inner .info-list li a{
   display: inline-block;
-  color: var(--title-color);
+  color: #111111;
 }
 
 .header-top .top-inner .right-column{
