@@ -89,7 +89,7 @@
   background: transparent;
   line-height: 30px;
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.70);
+  color: #b3b3b3;
   border: none;
   font-weight: 400;
   border-radius: 0px;
@@ -752,12 +752,12 @@ div#mCSB_1_container{
   position: relative;
   display: block;
   font-size: 15px;
-  color: rgba(255,255,255,0.80);
+  color: #cccccc;
   margin-bottom: 3px;
 }
 
 .mobile-menu .contact-info ul li a{
-  color: rgba(255,255,255,0.80);
+  color: #cccccc;
 }
 
 .mobile-menu .contact-info ul li a:hover{
