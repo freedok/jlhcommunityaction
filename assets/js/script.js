@@ -390,6 +390,14 @@
 		setTimeout(function() {
 			$('.owl-prev').removeAttr('role').attr('aria-label', 'Précédent');
 			$('.owl-next').removeAttr('role').attr('aria-label', 'Suivant');
+
+			// Label each dot button: "Aller à la diapositive N"
+			$('.owl-dot').each(function(i) {
+				$(this)
+					.removeAttr('role')
+					.attr('aria-label', 'Aller à la diapositive ' + (i + 1));
+				$(this).find('span').attr('aria-hidden', 'true');
+			});
 		}, 300);
 	});
 
