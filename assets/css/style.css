@@ -2653,6 +2653,85 @@ button.ltr {
   text-decoration: underline;
 }
 
+/* ===== Our Programs page — cards ===== */
+.programs-intro {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444444;
+  max-width: 820px;
+  margin: 18px auto 0;
+}
+
+.programs-grid {
+  row-gap: 28px;
+}
+
+.program-card {
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #e0d8c8;
+  border-radius: 10px;
+  padding: 32px 28px 28px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card:hover {
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.program-card__title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a5e;
+  margin: 0 0 4px;
+}
+
+.program-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.program-card__title a:hover,
+.program-card__title a:focus-visible {
+  color: #a01040;
+  text-decoration: underline;
+}
+
+.program-card__sub {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #b85515;
+  margin: 0 0 14px;
+}
+
+.program-card__desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #444444;
+  margin: 0 0 22px;
+  flex: 1 1 auto;
+}
+
+.program-card__cta {
+  margin: 0;
+}
+
+/* Letter from Executive Director — signature */
+.letter-signature {
+  margin-top: 28px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1a1a5e;
+}
+.letter-signature strong { font-size: 18px; }
+
 /* ===== Head Start FAQ ===== */
 .hs-faq-list {
   max-width: 900px;

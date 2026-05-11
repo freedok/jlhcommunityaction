@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- FIX 1 (WCAG 1.4.4): Suppression de user-scalable=0 et maximum-scale=1.0 qui bloquaient le zoom -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CONTACT | JLHCA</title>
+<title>ANNUAL REPORTS | JLHCA</title>
 
 <!-- Fav Icon -->
 <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
@@ -14,7 +16,6 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&amp;display=swap" rel="stylesheet">
-
 
 <!-- Stylesheets -->
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -31,18 +32,28 @@
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/module-css/header.css" rel="stylesheet">
 <link href="assets/css/module-css/page-title.css" rel="stylesheet">
-<link href="assets/css/module-css/contact.css" rel="stylesheet">
-<link href="assets/css/module-css/funfact.css" rel="stylesheet">
+<link href="assets/css/module-css/banner.css" rel="stylesheet">
+<link href="assets/css/module-css/service.css" rel="stylesheet">
+<link href="assets/css/module-css/about.css" rel="stylesheet">
+<link href="assets/css/module-css/video.css" rel="stylesheet">
+<link href="assets/css/module-css/cause.css" rel="stylesheet">
+<link href="assets/css/module-css/location.css" rel="stylesheet">
+<link href="assets/css/module-css/cta.css" rel="stylesheet">
+<link href="assets/css/module-css/team.css" rel="stylesheet">
+<link href="assets/css/module-css/chooseus.css" rel="stylesheet">
+<link href="assets/css/module-css/clients.css" rel="stylesheet">
+<link href="assets/css/module-css/testimonial.css" rel="stylesheet">
 <link href="assets/css/module-css/footer.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 
 </head>
 
-
-<!-- page wrapper -->
 <body>
 
-    <div class="boxed_wrapper ltr">
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <div class="boxed_wrapper ltr">
+
     <!-- main header -->
     <!-- FIX: Utilisation de <header> avec role="banner" pour renforcer la sémantique -->
     <header class="main-header header-style-two" role="banner">
@@ -102,15 +113,8 @@
                 <div class="collapse navbar-collapse show clearfix">
                   <ul class="navigation clearfix" role="list">
 
-                    <li class="dropdown current">
-                      <a href="index.html" aria-current="page">HOME</a>
-                      <ul aria-label="Sous-menu Home">
-                        <li><a href="letter.html">LETTER FROM EXECUTIF DIRECTOR</a></li>
-                        <li><a href="mission.html">MISSION STATEMENT</a></li>
-                        <li><a href="vision.html">VISION STATEMENT</a></li>
-                        <li><a href="values.html">VALUES STATEMENT</a></li>
-                        <li><a href="about.html">ABOUT US</a></li>
-                      </ul>
+                    <li>
+                      <a href="index.html">HOME</a>
                     </li>
 
                     <li><a href="team-2.html">TEAM</a></li>
@@ -119,9 +123,7 @@
                     <li><a href="boardofdirector.html">BOARD OF DIRECTOR</a></li>
                     <li><a href="career.html">CAREER</a></li>
 
-                    
-
-                    <li><a href="annual-reports.html">ANNUAL REPORTS</a></li>
+                    <li class="current"><a href="annual-reports.html" aria-current="page">ANNUAL REPORTS</a></li>
 
 
                     <li><a href="events.html">EVENTS</a></li>
@@ -185,159 +187,137 @@
     <!-- End Mobile Menu -->
 
 
+    <!-- FIX 12 (WCAG 2.4.1): id="main-content" pour le skip-link -->
+    <main id="main-content">
+
+      <!-- page-title -->
+      <section class="page-title centred" aria-label="En-tête de page">
+        <div class="bg-layer" style="background-image: url(assets/images/background/page-title-5.jpg);" aria-hidden="true"></div>
+        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-56.png);" aria-hidden="true"></div>
+        <div class="auto-container">
+          <div class="content-box">
+            <h1>Annual Reports</h1>
+            <ul class="bread-crumb clearfix" aria-label="Fil d'Ariane">
+              <li><a href="index.html">Home</a></li>
+              <li aria-current="page">Annual Reports</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- page-title end -->
 
 
-        <!-- page-title -->
-        <section class="page-title centred">
-            <div class="bg-layer" style="background-image: url(assets/images/background/page-title-3.jpg);"></div>
-            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-56.png);"></div>
-            <div class="auto-container">
-                <div class="content-box">
-                    <h1>Contact Us</h1>
-                    <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
-                        <li>Contact Us</li>
-                    </ul>
-                </div>
+      <!-- Reports grid -->
+      <section class="service-section service-page pt_80 pb_100 bg-color-1" aria-labelledby="reports-heading">
+        <div class="auto-container">
+          <div class="sec-title mb_50 centred">
+            <h2 id="reports-heading">Financial <span>Reports</span></h2>
+            <p class="programs-intro">Below are our most recent audited financial statements and IRS Form 990 filings. Each document opens as a PDF in a new tab.</p>
+          </div>
+
+          <div class="row clearfix programs-grid">
+
+            <!-- 2025 Financial Statements -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+              <article class="program-card">
+                <h3 class="program-card__title">2025 Financial Statements</h3>
+                <p class="program-card__sub">JLHCA &middot; Fiscal Year 2025</p>
+                <p class="program-card__desc">JLHCA financial statements for fiscal year 2025, including statements of financial position, activities, and cash flows.</p>
+                <p class="program-card__cta">
+                  <a class="theme-btn btn-one" href="documents/2025 JLHCA Financial Statements.pdf" target="_blank" rel="noopener noreferrer" aria-label="View 2025 JLHCA Financial Statements (PDF, opens in a new tab)">
+                    <span class="text">View PDF</span>
+                    <i class="icon-2" aria-hidden="true"></i>
+                  </a>
+                </p>
+              </article>
             </div>
-        </section>
-        <!-- page-title end -->
 
-
-        <!-- contact-section -->
-        <section class="contact-section bg-color-3 pt_120 pb_120">
-            <div class="auto-container">
-                <div class="upper-content mb_120">
-                    <div class="row clearfix">
-                        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                            <div class="content-box">
-                                <div class="sec-title mb_35">
-                                    <span class="sub-title mb_12">Get in Touch</span>
-                                    <h2>Lets Connect with Us</h2>
-                                    <p class="mt_15">More than of the public reviews by our users mention amazing and super fast customer support as one of our Lorem ipsum dolor sit amet, consectetur and adipiscing elit. Donec felis, suscipit you takeer action against fraud.</p>
-                                </div>
-                                <div class="inner-box">
-                                    <div class="single-item">
-                                        <div class="icon-box"><i class="icon-43"></i></div>
-                                        <div class="inner">
-                                            <h3>Call Us</h3>
-                                            <p><a href="tel:8881234576243">919.934.2145</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="single-item">
-                                        <div class="icon-box"><i class="icon-18"></i></div>
-                                        <div class="inner">
-                                            <h3>Email Us</h3>
-                                            <p><a href="mailto:Info@jlhcommunityaction.org">Info@jlhcommunityaction.org</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="single-item">
-                                        <div class="icon-box"><i class="icon-17"></i></div>
-                                        <div class="inner">
-                                            <h3>Head Office</h3>
-                                            <p>1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 col-sm-12 form-column">
-                            <div class="form-inner">
-                                <form method="post" action="https://azim.hostlin.com/Uphand/sendemail.php" id="contact-form" class="default-form">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label for="f-name">Full Name*</label>
-                                            <input id="f-name" type="text" name="username" autocomplete="name" required>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label for="f-email">Email Address*</label>
-                                            <input id="f-email" type="email" name="email" autocomplete="email" required>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label for="f-phone">Phone No</label>
-                                            <input id="f-phone" type="tel" name="phone" autocomplete="tel">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label for="f-subject">Subject</label>
-                                            <input id="f-subject" type="text" name="subject">
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                            <label for="f-message">Message</label>
-                                            <textarea id="f-message" name="message" placeholder="Your message…"></textarea>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                            <button type="submit" class="theme-btn btn-one" name="submit-form"><span class="text">Submit</span></button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="map-inner">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55945.16225505631!2d-73.90847969206546!3d40.66490264739892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1601263396347!5m2!1sen!2sbd" width="100%" height="500" frameborder="0" style="border:0; width: 100%" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
+            <!-- 2024 Financial Statements -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+              <article class="program-card">
+                <h3 class="program-card__title">2024 Financial Statements</h3>
+                <p class="program-card__sub">JLHCA &middot; Fiscal Year 2024</p>
+                <p class="program-card__desc">JLHCA financial statements for fiscal year 2024 &mdash; revenues, expenditures, and program allocations.</p>
+                <p class="program-card__cta">
+                  <a class="theme-btn btn-one" href="documents/JLHCA 2024 Financial Statements.pdf" target="_blank" rel="noopener noreferrer" aria-label="View 2024 JLHCA Financial Statements (PDF, opens in a new tab)">
+                    <span class="text">View PDF</span>
+                    <i class="icon-2" aria-hidden="true"></i>
+                  </a>
+                </p>
+              </article>
             </div>
-        </section>
-        <!-- contact-section end -->
 
-
-        <!-- funfact-section -->
-        <section class="funfact-section alternat-2 centred">
-            <div class="outer-container">
-                <div class="row clearfix">
-                    <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
-                        <div class="funfact-block-one">
-                            <div class="inner-box">
-                                <div class="count-outer">
-                                    <div class="shape" style="background-image: url(assets/images/shape/shape-10.png);"></div>
-                                    <span class="odometer" data-count="15">00</span><span>k</span>
-                                </div>
-                                <p>Patients Served</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
-                        <div class="funfact-block-one">
-                            <div class="inner-box">
-                                <div class="count-outer">
-                                    <div class="shape" style="background-image: url(assets/images/shape/shape-10.png);"></div>
-                                    <span class="odometer" data-count="30">00</span><span>+</span>
-                                </div>
-                                <p>Operation Bases</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
-                        <div class="funfact-block-one">
-                            <div class="inner-box">
-                                <div class="count-outer">
-                                    <div class="shape" style="background-image: url(assets/images/shape/shape-10.png);"></div>
-                                    <span class="odometer" data-count="100">00</span><span>+</span>
-                                </div>
-                                <p>Specialised Vehicles</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 funfact-block">
-                        <div class="funfact-block-one">
-                            <div class="inner-box">
-                                <div class="count-outer">
-                                    <div class="shape" style="background-image: url(assets/images/shape/shape-10.png);"></div>
-                                    <span class="odometer" data-count="300">00</span><span>+</span>
-                                </div>
-                                <p>Frontline Staff</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- 2023 Audited Financial Statements -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+              <article class="program-card">
+                <h3 class="program-card__title">2023 Audited Financial Statements</h3>
+                <p class="program-card__sub">JLHCA &middot; Independent audit</p>
+                <p class="program-card__desc">Independently-audited financial statements for fiscal year 2023, providing assurance on the accuracy and completeness of our financial records.</p>
+                <p class="program-card__cta">
+                  <a class="theme-btn btn-one" href="documents/JLHCA 2023 Audited Financial Statements.pdf" target="_blank" rel="noopener noreferrer" aria-label="View 2023 JLHCA Audited Financial Statements (PDF, opens in a new tab)">
+                    <span class="text">View PDF</span>
+                    <i class="icon-2" aria-hidden="true"></i>
+                  </a>
+                </p>
+              </article>
             </div>
-        </section>
-        <!-- funfact-section end -->
+
+            <!-- 2023 Form 990 -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+              <article class="program-card">
+                <h3 class="program-card__title">2023 Form 990 &mdash; Tax Returns</h3>
+                <p class="program-card__sub">IRS Form 990 &middot; FY 2023</p>
+                <p class="program-card__desc">IRS Form 990 tax return for Johnston-Lee-Harnett Community Action, Inc., disclosing organizational financials, governance, and program services.</p>
+                <p class="program-card__cta">
+                  <a class="theme-btn btn-one" href="documents/JOHNSTON-LEE-HARNETT COMMUNITY ACTION_ INC._2023_990_Tax Returns.pdf" target="_blank" rel="noopener noreferrer" aria-label="View 2023 Form 990 Tax Returns (PDF, opens in a new tab)">
+                    <span class="text">View PDF</span>
+                    <i class="icon-2" aria-hidden="true"></i>
+                  </a>
+                </p>
+              </article>
+            </div>
+
+            <!-- 2023 Form 990 Public Disclosure -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+              <article class="program-card">
+                <h3 class="program-card__title">2023 Form 990 &mdash; Public Disclosure Copy</h3>
+                <p class="program-card__sub">Year-end June 30, 2023</p>
+                <p class="program-card__desc">Public-disclosure copy of IRS Form 990 for fiscal year ending June 30, 2023. Schedule B donor information has been redacted as permitted by law.</p>
+                <p class="program-card__cta">
+                  <a class="theme-btn btn-one" href="documents/PUBLIC DISCLOSURE COPY Form 990 JLHCA YE 06 30 2023.pdf" target="_blank" rel="noopener noreferrer" aria-label="View 2023 Form 990 Public Disclosure Copy (PDF, opens in a new tab)">
+                    <span class="text">View PDF</span>
+                    <i class="icon-2" aria-hidden="true"></i>
+                  </a>
+                </p>
+              </article>
+            </div>
+
+            <!-- 2021 Audited Financial Statements -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+              <article class="program-card">
+                <h3 class="program-card__title">2021 Audited Financial Statements</h3>
+                <p class="program-card__sub">JLHCA &middot; Independent audit</p>
+                <p class="program-card__desc">Independently-audited financial statements for fiscal year 2021 &mdash; archival reference for historical comparisons.</p>
+                <p class="program-card__cta">
+                  <a class="theme-btn btn-one" href="documents/2021 JLHCA Audited Financial Statements-JLHCA.pdf" target="_blank" rel="noopener noreferrer" aria-label="View 2021 JLHCA Audited Financial Statements (PDF, opens in a new tab)">
+                    <span class="text">View PDF</span>
+                    <i class="icon-2" aria-hidden="true"></i>
+                  </a>
+                </p>
+              </article>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- Reports grid end -->
+
+    </main>
+    <!-- main end -->
 
 
-        <!-- main-footer -->
-        <footer class="main-footer" role="contentinfo">
+    <!-- main-footer -->
+    <footer class="main-footer" role="contentinfo">
       <div class="auto-container">
         <div class="widget-section pt_100 pb_90">
           <div class="row clearfix">
@@ -426,39 +406,82 @@
         </div>
       </div>
     </footer>
-        <!-- main-footer end  -->
+    <!-- main-footer end -->
 
 
+    <!-- Scroll to top -->
+    <!-- FIX 23 (WCAG 2.1.1 + 4.1.2): Bouton scroll-to-top accessible -->
+    <button
+      class="scroll-to-top"
+      aria-label="Retour en haut de page"
+      type="button"
+    >
+      <svg class="scroll-top-inner" viewBox="-1 -1 102 102" aria-hidden="true" focusable="false">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </button>
 
-        <!--Scroll to top-->
-        <div class="scroll-to-top">
-            <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-            </svg>
-        </div>
-        
-    </div>
+  </div>
 
 
-    <!-- jequery plugins -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/validation.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/parallax-scroll.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/scrolltop.min.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/odometer.js"></script>
-    <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
-    <script src="assets/js/language.js"></script>
+  <!-- jQuery plugins -->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/jquery.fancybox.js"></script>
+  <script src="assets/js/appear.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/parallax-scroll.js"></script>
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <script src="assets/js/scrolltop.min.js"></script>
+  <script src="assets/js/jquery-ui.js"></script>
+  <script src="assets/js/odometer.js"></script>
+  <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
+  <script src="assets/js/language.js"></script>
+  <script src="assets/js/script.js"></script>
 
-    <!-- main-js -->
-    <script src="assets/js/script.js"></script>
+  <!-- FIX 24 (WCAG 2.1.1 + 2.2.2): Script accessibilité — gestion aria-expanded et pause carrousel -->
+  <script>
+    // Gestion aria-expanded sur le toggler mobile
+    var toggler = document.querySelector('.mobile-nav-toggler');
+    if (toggler) {
+      toggler.addEventListener('click', function () {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+      });
+    }
 
-</body><!-- End of .page_wrapper -->
+    // Gestion aria-expanded sur les sous-menus dropdown
+    document.querySelectorAll('.navigation .dropdown > a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+      });
+    });
+
+    // Bouton pause carrousel
+    var pauseBtn = document.querySelector('.carousel-pause-btn');
+    var carousel = document.querySelector('.banner-carousel');
+    var isPaused = false;
+    if (pauseBtn && carousel) {
+      pauseBtn.addEventListener('click', function () {
+        isPaused = !isPaused;
+        if (isPaused) {
+          $(carousel).trigger('stop.owl.autoplay');
+          pauseBtn.setAttribute('aria-pressed', 'true');
+          pauseBtn.innerHTML = '▶ Reprendre';
+          pauseBtn.setAttribute('aria-label', 'Reprendre le carrousel');
+        } else {
+          $(carousel).trigger('play.owl.autoplay');
+          pauseBtn.setAttribute('aria-pressed', 'false');
+          pauseBtn.innerHTML = '⏸ Pause';
+          pauseBtn.setAttribute('aria-label', 'Pause le carrousel');
+        }
+      });
+    }
+  </script>
+
+</body>
 </html>
