@@ -2723,6 +2723,50 @@ button.ltr {
   margin: 0;
 }
 
+/* Contact-card variant (used on CSBG page) */
+.program-card__role {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a5e;
+  margin: 0 0 16px;
+}
+
+.program-card__contact {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444444;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  word-break: break-word;
+}
+
+.program-card__contact i {
+  color: #b85515;
+  font-size: 14px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.program-card__contact a {
+  color: #1a1a5e;
+  text-decoration: none;
+}
+
+.program-card__contact a:hover,
+.program-card__contact a:focus-visible {
+  color: #a01040;
+  text-decoration: underline;
+}
+
+.program-card__hint {
+  font-size: 12px;
+  color: #777777;
+  font-style: italic;
+  margin-left: 4px;
+}
+
 /* Letter from Executive Director — signature */
 .letter-signature {
   margin-top: 28px;
