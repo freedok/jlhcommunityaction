@@ -4,9 +4,10 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- FIX 1 (WCAG 1.4.4): Suppression de user-scalable=0 et maximum-scale=1.0 qui bloquaient le zoom -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>VALUES | JLHCA</title>
+<title>S.T.A.R.S. Program | JLHCA</title>
 
 <!-- Fav Icon -->
 <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
@@ -15,7 +16,6 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&amp;display=swap" rel="stylesheet">
-
 
 <!-- Stylesheets -->
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -32,23 +32,28 @@
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/module-css/header.css" rel="stylesheet">
 <link href="assets/css/module-css/page-title.css" rel="stylesheet">
-<link href="assets/css/module-css/about.css" rel="stylesheet">
+<link href="assets/css/module-css/banner.css" rel="stylesheet">
 <link href="assets/css/module-css/service.css" rel="stylesheet">
-<link href="assets/css/module-css/clients.css" rel="stylesheet">
+<link href="assets/css/module-css/about.css" rel="stylesheet">
+<link href="assets/css/module-css/video.css" rel="stylesheet">
+<link href="assets/css/module-css/cause.css" rel="stylesheet">
+<link href="assets/css/module-css/location.css" rel="stylesheet">
+<link href="assets/css/module-css/cta.css" rel="stylesheet">
 <link href="assets/css/module-css/team.css" rel="stylesheet">
 <link href="assets/css/module-css/chooseus.css" rel="stylesheet">
+<link href="assets/css/module-css/clients.css" rel="stylesheet">
 <link href="assets/css/module-css/testimonial.css" rel="stylesheet">
-<link href="assets/css/module-css/funfact.css" rel="stylesheet">
 <link href="assets/css/module-css/footer.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 
 </head>
 
-
-<!-- page wrapper -->
 <body>
 
-    <div class="boxed_wrapper ltr">
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <div class="boxed_wrapper ltr">
+
     <!-- main header -->
     <!-- FIX: Utilisation de <header> avec role="banner" pour renforcer la sémantique -->
     <header class="main-header header-style-two" role="banner">
@@ -113,7 +118,7 @@
                   <ul class="navigation clearfix" role="list">
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="team-2.html">TEAM</a></li>
-                    <li><a href="our-programs.html">OUR PROGRAMS</a></li>
+                    <li class="current"><a href="our-programs.html" aria-current="page">OUR PROGRAMS</a></li>
                     <li><a href="annual-reports.html">ANNUAL REPORTS</a></li>
                     <li><a href="events.html">EVENTS</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
@@ -176,59 +181,116 @@
     <!-- End Mobile Menu -->
 
 
+    <!-- FIX 12 (WCAG 2.4.1): id="main-content" pour le skip-link -->
+    <main id="main-content">
+
+      <!-- page-title -->
+      <section class="page-title centred" aria-label="En-tête de page">
+        <div class="bg-layer" style="background-image: url(assets/images/background/page-title-3.jpg);" aria-hidden="true"></div>
+        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-56.png);" aria-hidden="true"></div>
+        <div class="auto-container">
+          <div class="content-box">
+            <h1>S.T.A.R.S. Program</h1>
+            <ul class="bread-crumb clearfix" aria-label="Fil d'Ariane">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="csbg.html">CSBG</a></li>
+              <li aria-current="page">S.T.A.R.S. Program</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- page-title end -->
 
 
+      <!-- Intro -->
+      <section class="service-section service-page pt_80 pb_40 bg-color-1" aria-labelledby="stars-intro-heading">
+        <div class="auto-container">
+          <div class="sec-title mb_30 centred">
+            <h2 id="stars-intro-heading">Ready to Make a <span>Positive Change?</span></h2>
+            <p class="programs-intro">Johnston-Lee-Harnett Community Action&rsquo;s Community Services Block Grant Program is seeking individuals who are ready to make a positive change in their lives. The <strong>S.T.A.R.S. Program</strong> offers one-on-one support and a clear path toward self-sufficiency.</p>
+          </div>
+        </div>
+      </section>
 
-        <!-- page-title -->
-        <section class="page-title centred">
-            <div class="bg-layer" style="background-image: url(assets/images/background/page-title-4.jpg);"></div>
-            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-56.png);"></div>
-            <div class="auto-container">
-                <div class="content-box">
-                    <h1>Values Statement</h1>
-                    <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
-                        <li>Values Statement</li>
-                    </ul>
-                </div>
+
+      <!-- 7 Service Areas -->
+      <section class="service-section service-page pt_40 pb_80 bg-color-1" aria-labelledby="stars-areas-heading">
+        <div class="auto-container">
+          <div class="sec-title mb_50 centred">
+            <h2 id="stars-areas-heading">What We <span>Cover</span></h2>
+            <p class="programs-intro">The STARS Program offers one-on-one support in the following areas:</p>
+          </div>
+
+          <ul class="hs-enroll-doc-list stars-areas-list" role="list">
+            <li><i class="fas fa-check" aria-hidden="true"></i><strong>Case Management</strong></li>
+            <li><i class="fas fa-check" aria-hidden="true"></i><strong>Setting Goals</strong></li>
+            <li><i class="fas fa-check" aria-hidden="true"></i><strong>Assessing your job skills &amp; locating employment</strong></li>
+            <li><i class="fas fa-check" aria-hidden="true"></i><strong>Educational Assistance</strong></li>
+            <li><i class="fas fa-check" aria-hidden="true"></i><strong>Securing standard affordable housing</strong></li>
+            <li><i class="fas fa-check" aria-hidden="true"></i><strong>Creating an effective r&eacute;sum&eacute;</strong></li>
+            <li><i class="fas fa-check" aria-hidden="true"></i><strong>Budgeting / Money Management / Financial Literacy</strong></li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- CTA / Contact -->
+      <section class="cause-details bg-color-3 pt_80 pb_100" aria-labelledby="stars-contact-heading">
+        <div class="auto-container">
+          <div class="sec-title mb_50 centred">
+            <h2 id="stars-contact-heading">Can You See What the Future Has in Store for You?</h2>
+            <p class="programs-intro">For more information, please call one of our STARS counselors below. <strong>Let us help you find a solution.</strong></p>
+          </div>
+
+          <div class="row clearfix programs-grid stars-contact-grid">
+            <div class="col-lg-4 col-md-6 col-sm-12 program-block">
+              <article class="program-card stars-contact-card">
+                <p class="program-card__sub">Lee County</p>
+                <h3 class="program-card__title">Linda &amp; Michelle</h3>
+                <p class="program-card__contact">
+                  <i class="icon-19" aria-hidden="true"></i>
+                  <a href="tel:9197760746">919-776-0746</a>
+                </p>
+              </article>
             </div>
-        </section>
-        <!-- page-title end -->
 
-
-        <!-- about-style-three -->
-        <section class="about-style-three bg-color-1 pt_120 pb_160">
-            <div class="auto-container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12 image-block">
-                        <div class="image_block_three">
-                            <div class="image-box">
-                                <div class="image-shape" style="background-image: url(assets/images/shape/shape-22.png);"></div>
-                                <figure class="image"><img src="assets/images/resource/about-1.png" alt="JLHCA staff helping community members"></figure>  
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                        <div class="content_block_two">
-                            <div class="content-box ml_60">
-                                <div class="sec-title mb_20">
-                                    <h2>Our Values<span> Statement</span></h2>
-                                </div>
-                                <div class="text-box mb_35">
-                                    <h3>Our agency values professional and quality services conducted with integrity, compassion and commitment.</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 program-block">
+              <article class="program-card stars-contact-card">
+                <p class="program-card__sub">Johnston County</p>
+                <h3 class="program-card__title">Tanisha, Barbara &amp; Amy</h3>
+                <p class="program-card__contact">
+                  <i class="icon-19" aria-hidden="true"></i>
+                  <a href="tel:9199342145">919-934-2145</a>
+                </p>
+              </article>
             </div>
-        </section>
-        <!-- about-style-three end -->
+
+            <div class="col-lg-4 col-md-6 col-sm-12 program-block">
+              <article class="program-card stars-contact-card">
+                <p class="program-card__sub">Harnett County</p>
+                <h3 class="program-card__title">Kelly &amp; Denise</h3>
+                <p class="program-card__contact">
+                  <i class="icon-19" aria-hidden="true"></i>
+                  <a href="tel:9108148360">910-814-8360</a>
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <p class="stars-cta-back">
+            <a class="theme-btn btn-one" href="csbg.html">
+              <span class="text">Back to CSBG</span>
+            </a>
+          </p>
+        </div>
+      </section>
+
+    </main>
+    <!-- main end -->
 
 
-
-        <!-- main-footer -->
-        <footer class="main-footer" role="contentinfo">
+    <!-- main-footer -->
+    <footer class="main-footer" role="contentinfo">
       <div class="auto-container">
         <div class="widget-section pt_100 pb_90">
           <div class="row clearfix">
@@ -312,39 +374,82 @@
         </div>
       </div>
     </footer>
-        <!-- main-footer end  -->
+    <!-- main-footer end -->
 
 
+    <!-- Scroll to top -->
+    <!-- FIX 23 (WCAG 2.1.1 + 4.1.2): Bouton scroll-to-top accessible -->
+    <button
+      class="scroll-to-top"
+      aria-label="Retour en haut de page"
+      type="button"
+    >
+      <svg class="scroll-top-inner" viewBox="-1 -1 102 102" aria-hidden="true" focusable="false">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </button>
 
-        <!--Scroll to top-->
-        <div class="scroll-to-top">
-            <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-            </svg>
-        </div>
-        
-    </div>
+  </div>
 
 
-    <!-- jequery plugins -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/validation.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/parallax-scroll.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/scrolltop.min.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/odometer.js"></script>
-    <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
-    <script src="assets/js/language.js"></script>
+  <!-- jQuery plugins -->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/jquery.fancybox.js"></script>
+  <script src="assets/js/appear.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/parallax-scroll.js"></script>
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <script src="assets/js/scrolltop.min.js"></script>
+  <script src="assets/js/jquery-ui.js"></script>
+  <script src="assets/js/odometer.js"></script>
+  <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
+  <script src="assets/js/language.js"></script>
+  <script src="assets/js/script.js"></script>
 
-    <!-- main-js -->
-    <script src="assets/js/script.js"></script>
+  <!-- FIX 24 (WCAG 2.1.1 + 2.2.2): Script accessibilité — gestion aria-expanded et pause carrousel -->
+  <script>
+    // Gestion aria-expanded sur le toggler mobile
+    var toggler = document.querySelector('.mobile-nav-toggler');
+    if (toggler) {
+      toggler.addEventListener('click', function () {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+      });
+    }
 
-</body><!-- End of .page_wrapper -->
+    // Gestion aria-expanded sur les sous-menus dropdown
+    document.querySelectorAll('.navigation .dropdown > a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+      });
+    });
+
+    // Bouton pause carrousel
+    var pauseBtn = document.querySelector('.carousel-pause-btn');
+    var carousel = document.querySelector('.banner-carousel');
+    var isPaused = false;
+    if (pauseBtn && carousel) {
+      pauseBtn.addEventListener('click', function () {
+        isPaused = !isPaused;
+        if (isPaused) {
+          $(carousel).trigger('stop.owl.autoplay');
+          pauseBtn.setAttribute('aria-pressed', 'true');
+          pauseBtn.innerHTML = '▶ Reprendre';
+          pauseBtn.setAttribute('aria-label', 'Reprendre le carrousel');
+        } else {
+          $(carousel).trigger('play.owl.autoplay');
+          pauseBtn.setAttribute('aria-pressed', 'false');
+          pauseBtn.innerHTML = '⏸ Pause';
+          pauseBtn.setAttribute('aria-label', 'Pause le carrousel');
+        }
+      });
+    }
+  </script>
+
+</body>
 </html>
