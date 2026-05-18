@@ -3809,10 +3809,10 @@ h3.team-dept-desc {
    3. Banner h1 span: mirrors original h2 span rule in color.css (theme color on beige).
    4. Mobile nav language picker: dark em/flag colour (#222) fails on rgba(0,0,0,0.95).
    ===================================================== */
-.sr-only { color: #000000 !important; }
+.sr-only { color: #000000 !important; background-color: #ffffff !important; }
 
-.banner-style-two h1               { color: #111111; }
-.banner-style-two h1 span          { color: var(--theme-color); }
+.banner-style-two h1               { color: #111111 !important; font-weight: 800 !important; }
+.banner-style-two h1 span          { color: #7a0d2d !important; font-weight: 800 !important; }
 
 .mobile-menu .language-picker__flag                       { color: #ffffff; }
 .mobile-menu .language-picker__flag.language-picker__label{ color: #ffffff; }
