@@ -202,7 +202,7 @@
 	// banner-carousel
 	if ($('.banner-carousel').length) {
         $('.banner-carousel').owlCarousel({
-            loop:true,
+            loop:false,
 			margin:0,
 			nav:true,
 			animateOut: 'fadeOut',
