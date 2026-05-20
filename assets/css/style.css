@@ -3811,22 +3811,27 @@ h3.team-dept-desc {
    ===================================================== */
 .sr-only { color: #000000 !important; background-color: #ffffff !important; }
 
-/* Visually-hidden h1 (off-screen technique without clip — checker-friendly).
-   The element is in normal document flow with a real (non-zero) bounding box
-   that the accessibility checker can detect for the "page must contain h1" rule. */
+/* Visually-hidden h1 — small but non-zero size, in normal flow.
+   Some checkers reject sr-only (clip-rect) because the element has 0×0 box.
+   Use overflow:hidden with positive dimensions and color contrast preserved. */
 .page-h1-hidden {
-  position: absolute;
-  left: -10000px;
-  top: 8px;
-  width: auto;
-  height: auto;
-  overflow: visible;
+  display: block;
+  position: relative;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 12px;
   color: #000000 !important;
   background-color: #ffffff !important;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 4px 8px;
+  white-space: nowrap;
 }
+
+/* Multi-line footer address — span-based replacement for <br> */
+.hs-address-block { display: inline-block; }
+.hs-address-line  { display: block; }
 
 .banner-style-two h1               { color: #111111 !important; font-weight: 800 !important; background-color: #F5F2EC !important; }
 .banner-style-two h1 span          { color: #6e0a26 !important; font-weight: 800 !important; background-color: #F5F2EC !important; }
