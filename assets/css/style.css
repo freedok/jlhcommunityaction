@@ -2179,6 +2179,112 @@ button.ltr {
   font-size: 36px;
   text-decoration: underline;
   margin-bottom: 40px;
+  margin-top: 50px;
+}
+.board-directors-section .sector-heading:first-of-type {
+  margin-top: 0;
+}
+
+/* ===== Board of Directors — Members Area login ===== */
+.bod-login-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 16px 20px;
+}
+
+.bod-login-card {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  background: linear-gradient(135deg, #1a1a5e 0%, #2a2a8e 100%);
+  border-radius: 16px;
+  padding: 48px 36px 40px;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(26, 26, 94, 0.18);
+  overflow: hidden;
+}
+
+.bod-login-card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.bod-login-card::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -40px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.bod-login-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  z-index: 1;
+}
+
+.bod-login-icon i {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.bod-login-title {
+  position: relative;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin: 0 0 10px;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+.bod-login-desc {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e0e0e8;
+  margin: 0 auto 26px;
+  max-width: 380px;
+  z-index: 1;
+}
+
+.bod-login-cta {
+  position: relative;
+  margin: 0;
+  z-index: 1;
+}
+
+.bod-login-cta .theme-btn .text {
+  padding: 11px 38px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.bod-login-cta .theme-btn:hover .text,
+.bod-login-cta .theme-btn:focus-visible .text {
+  background-color: #ffffff !important;
+  color: #1a1a5e !important;
 }
 
 .board-directors-section .member-row {
