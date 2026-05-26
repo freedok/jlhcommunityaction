@@ -3554,6 +3554,13 @@ button.ltr {
 }
 
 
+/* ===== Board of Directors — Center Email in Cards ===== */
+.board-directors-section .program-card__contact {
+  justify-content: center;
+  text-align: center;
+}
+
+
 /* ===== Accessibility Statement Page ===== */
 .accessibility-section {
   background-color: #ffffff;
