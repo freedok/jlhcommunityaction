@@ -193,29 +193,29 @@
 
 .main-footer .contact-widget-two{
     position: relative;
-    border-radius: 20px;
-    background-color: #1a1a1a;
-    padding: 5px;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
 }
 
 .main-footer .contact-widget-two .widget-title{
-    border: 1px solid #2e2e2e;
-    border-radius: 20px;
-    padding: 20px;
-    padding-bottom: 25px;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 36px;
+    text-align: left;
 }
 
 .main-footer .contact-widget-two .widget-title h3{
-    margin-bottom: 16px;
+    margin-bottom: 0;
 }
 
-.main-footer .contact-widget-two .widget-title,
 .main-footer .contact-widget-two .widget-title p{
     margin-bottom: 0px;
 }
 
 .main-footer .contact-widget-two .widget-content{
-    padding: 19px 25px 25px 25px;
+    padding: 0;
 }
 
 .main-footer .contact-widget-two .info-list li i,

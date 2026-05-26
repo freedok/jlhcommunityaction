@@ -2411,6 +2411,13 @@ button.ltr {
   color: #1a1a5e !important;
 }
 
+/* Override the wipe-fill pseudo-elements (default --secondary-color is #111
+   which makes dark blue text invisible during the hover sweep). */
+.bod-login-cta .theme-btn .text:before,
+.bod-login-cta .theme-btn .text:after {
+  background: #ffffff !important;
+}
+
 .board-directors-section .member-row {
   text-align: left;
   margin-bottom: 10px;
@@ -3535,22 +3542,46 @@ button.ltr {
   margin: 0;
 }
 
-/* ===== Footer — Remove Contact Widget Frame ===== */
+/* ===== Footer — Contact Widget : aligné comme Quick Links / Partners ===== */
+/* Suppression de l'encadré sombre et alignement à gauche pour matcher les autres colonnes du footer */
 .main-footer .contact-widget-two {
   background-color: transparent;
   border-radius: 0;
   padding: 0;
 }
 
-.main-footer .contact-widget-two .widget-title {
+.main-footer .contact-widget-two .widget-title,
+.main-footer .contact-widget-two .widget-title.centred {
   border: none;
   border-radius: 0;
   padding: 0;
-  padding-bottom: 15px;
+  margin-bottom: 36px;
+  text-align: left;
 }
 
 .main-footer .contact-widget-two .widget-content {
   padding: 0;
+}
+
+/* Liste contact : même rendu visuel que .links-list (taille, espacement, gauche) */
+.main-footer .contact-widget .info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 14px;
+}
+
+.main-footer .contact-widget .info-list li i {
+  font-size: 16px;
+  line-height: 26px;
+  flex-shrink: 0;
+}
+
+.main-footer .contact-widget .info-list li.phone a {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 
