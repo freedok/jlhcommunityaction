@@ -1,14 +1,18 @@
+Voici le code HTML réécrit avec un espace dédié pour la signature manuscrite sur l'écran, placé juste avant le bouton de soumission.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>CSBG · Tell Me About Yourself | Crisis Application - Johnston-Lee-Harnett Community Action</title>
-    <!-- Bootstrap 5.2 CSS + Icons (neutral, professional) -->
+    <!-- Bootstrap 5.2 CSS + Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Signature pad library (smooth signature capture) -->
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
     <style>
-        /* professional, clean, no emojis */
+        /* professional & clean */
         body {
             background: #eef2f5;
             font-family: var(--bs-font-sans-serif);
@@ -75,12 +79,24 @@
         .workshop-grid .form-check {
             margin-bottom: 0.25rem;
         }
-        .signature-line {
-            border-bottom: 1px solid #9aaebf;
-            min-width: 250px;
-            display: inline-block;
+        /* signature canvas styles */
+        .signature-canvas {
+            border: 2px solid #ced4da;
+            border-radius: 0.5rem;
+            background-color: #fff;
             width: 100%;
-            max-width: 380px;
+            height: auto;
+            cursor: crosshair;
+            touch-action: none; /* improves drawing on touch devices */
+        }
+        .signature-pad-container {
+            background: #fefaf5;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px solid #e2dcd5;
+        }
+        .btn-outline-secondary {
+            border-color: #b6bfc6;
         }
         footer {
             background-color: #f8fbfe;
@@ -265,19 +281,28 @@
                     </div>
                 </div>
 
-                <!-- Signature & acknowledgment -->
-                <div class="bg-light rounded-3 p-4 mb-4">
-                    <p class="fw-semibold">By signing this form, I acknowledge my understanding that assistance is not guaranteed. Any assistance will depend upon any available resources at the time of my application.</p>
-                    <div class="row align-items-center mt-3">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                            <label class="form-label">Signature (full name):</label>
-                            <input type="text" class="form-control signature-line" placeholder="electronic signature / legal name">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Date of signature:</label>
-                            <input type="date" class="form-control" value="2026-05-26">
-                        </div>
+                <!-- SIGNATURE PAD SECTION - Hand-drawn signature on screen -->
+                <div class="bg-light rounded-3 p-4 mb-4 signature-pad-container">
+                    <h5 class="fw-bold mb-3">Applicant Signature (Hand-drawn on screen)</h5>
+                    <p class="text-muted small">By signing below, I acknowledge my understanding that assistance is not guaranteed. Any assistance will depend upon available resources at the time of my application.</p>
+                    
+                    <!-- Canvas for signature -->
+                    <div class="mb-3">
+                        <canvas id="signatureCanvas" class="signature-canvas" width="600" height="200" style="width:100%; height:auto; max-width:100%; min-height:180px; background: white;"></canvas>
                     </div>
+                    
+                    <!-- Signature action buttons -->
+                    <div class="d-flex flex-wrap gap-2 mb-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="clearSignatureBtn">
+                            <i class="bi bi-eraser"></i> Clear Signature
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="undoSignatureBtn">
+                            <i class="bi bi-arrow-counterclockwise"></i> Undo
+                        </button>
+                    </div>
+                    <div class="form-text text-muted small">Use your mouse, finger, or stylus to draw your full legal signature in the box above.</div>
+                    <!-- Hidden field to store signature as base64 for form submission -->
+                    <input type="hidden" id="signatureData" name="signatureData" value="">
                 </div>
 
                 <!-- Submit button -->
@@ -326,44 +351,142 @@
     </div>
 </div>
 
-<!-- Simple validation script (professional, no emojis) -->
+<!-- Signature Pad initialization and handling (professional hand-drawn signature) -->
 <script>
     (function() {
-        const form = document.getElementById('crisisForm');
-        if(form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                // check required fields
-                let requiredFields = document.querySelectorAll('#crisisForm input[required], #crisisForm textarea[required]');
-                let missing = false;
-                requiredFields.forEach(field => {
-                    if(!field.value.trim()) {
-                        field.classList.add('is-invalid');
-                        missing = true;
-                    } else {
-                        field.classList.remove('is-invalid');
-                    }
-                });
-                const radioSelf = document.querySelector('input[name="selfSufficiency"]:checked');
-                const radioCounselor = document.querySelector('input[name="counselorMeet"]:checked');
-                if(missing) {
-                    alert("Please complete all required fields (name, telephone, address). This information is necessary to process your request.");
+        // Wait for DOM fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('signatureCanvas');
+            if (!canvas) return;
+            
+            // Adjust canvas dimensions for crisp drawing (account for display size)
+            function resizeCanvas() {
+                const ratio = Math.max(window.devicePixelRatio || 1, 1);
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width * ratio;
+                canvas.height = rect.height * ratio;
+                canvas.style.width = `${rect.width}px`;
+                canvas.style.height = `${rect.height}px`;
+                const ctx = canvas.getContext('2d');
+                ctx.scale(ratio, ratio);
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                // if we have stored signature data, restore after resize would be complex; but we clear
+                if (signaturePad) {
+                    signaturePad.clear(); // ensures blank state after resize
+                }
+            }
+            
+            // Initialize SignaturePad
+            const signaturePad = new SignaturePad(canvas, {
+                backgroundColor: 'rgb(255,255,255)',
+                penColor: '#1a2c3e',
+                velocityFilterWeight: 0.7,
+                minWidth: 1,
+                maxWidth: 2.5,
+                throttle: 16,
+            });
+            
+            // Initial resize + clear any default drawings
+            resizeCanvas();
+            signaturePad.clear();
+            
+            // Handle window resize: reinit canvas but preserve signature if needed? we choose to keep clean behavior (clear on resize to avoid distortion)
+            window.addEventListener('resize', function() {
+                const wasEmpty = signaturePad.isEmpty();
+                const oldData = signaturePad.toData();
+                resizeCanvas();
+                if (!wasEmpty && oldData && oldData.length > 0) {
+                    // Re-add previous points after resize (maintain signature)
+                    signaturePad.fromData(oldData);
                 } else {
-                    let message = "Crisis application recorded (simulation).\n\n";
-                    if(!radioSelf) message += "Note: Question 3a (Self-Sufficiency Program enrollment) has not been selected. A counselor may discuss this option.\n";
-                    if(!radioCounselor) message += "Note: Question 3b (meeting with a counselor) has not been selected.\n";
-                    message += "\nThank you for completing the questionnaire. A staff member will contact you within 2 business days.\n\n(Remember to bring your required documents to the intake interview.)";
-                    alert(message);
-                    // Uncomment below for actual submission:
-                    // form.submit();
+                    signaturePad.clear();
                 }
             });
-            // remove validation style on input
-            const inputs = document.querySelectorAll('#crisisForm input, #crisisForm textarea');
-            inputs.forEach(inp => {
-                inp.addEventListener('input', function() { this.classList.remove('is-invalid'); });
+            
+            // Clear button
+            const clearBtn = document.getElementById('clearSignatureBtn');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function() {
+                    signaturePad.clear();
+                });
+            }
+            
+            // Undo button (remove last stroke)
+            const undoBtn = document.getElementById('undoSignatureBtn');
+            if (undoBtn) {
+                undoBtn.addEventListener('click', function() {
+                    const data = signaturePad.toData();
+                    if (data && data.length > 0) {
+                        data.pop(); // remove last stroke group
+                        signaturePad.fromData(data);
+                    } else {
+                        signaturePad.clear();
+                    }
+                });
+            }
+            
+            // Before form submission, capture signature as base64 and store in hidden field
+            const form = document.getElementById('crisisForm');
+            const hiddenSignature = document.getElementById('signatureData');
+            
+            if (form && hiddenSignature) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();   // prevent actual page reload (simulate)
+                    
+                    // Validate required fields (basic)
+                    let missingRequired = false;
+                    const requiredInputs = document.querySelectorAll('#crisisForm input[required], #crisisForm textarea[required]');
+                    requiredInputs.forEach(field => {
+                        if (!field.value.trim()) {
+                            field.classList.add('is-invalid');
+                            missingRequired = true;
+                        } else {
+                            field.classList.remove('is-invalid');
+                        }
+                    });
+                    
+                    // Validate signature: not empty (applicant must sign)
+                    if (signaturePad.isEmpty()) {
+                        alert("Please provide your handwritten signature in the signature box above. Your signature acknowledges the assistance disclaimer.");
+                        missingRequired = true;
+                        canvas.classList.add('is-invalid');
+                        canvas.style.borderColor = "#dc3545";
+                        return;
+                    } else {
+                        canvas.classList.remove('is-invalid');
+                        canvas.style.borderColor = "#ced4da";
+                        // capture signature as PNG base64
+                        const signatureBase64 = signaturePad.toDataURL('image/png');
+                        hiddenSignature.value = signatureBase64;
+                    }
+                    
+                    if (missingRequired) {
+                        alert("Please complete all required fields (name, telephone, address) before submitting.");
+                        return;
+                    }
+                    
+                    // Optional radio checks (just for info)
+                    const radioSelf = document.querySelector('input[name="selfSufficiency"]:checked');
+                    const radioCounselor = document.querySelector('input[name="counselorMeet"]:checked');
+                    
+                    let msg = "Crisis application received (simulation).\n\n";
+                    if (!radioSelf) msg += "Note: Question 3a (Self-Sufficiency Program) was not selected. A counselor may discuss this option.\n";
+                    if (!radioCounselor) msg += "Note: Question 3b (meeting with a counselor) was not selected.\n";
+                    msg += "\nYour handwritten signature has been recorded. Thank you for completing the questionnaire. A staff member will contact you within 2 business days.\n\n(Remember to bring required documents to your intake interview.)";
+                    alert(msg);
+                    
+                    // If actual backend integration is needed, uncomment the line below:
+                    // form.submit();
+                });
+            }
+            
+            // Remove invalid visual feedback on canvas focus
+            canvas.addEventListener('click', function() {
+                canvas.classList.remove('is-invalid');
+                canvas.style.borderColor = "#ced4da";
             });
-        }
+        });
     })();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
