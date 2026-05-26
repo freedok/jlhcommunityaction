@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>CSBG · Tell Me About Yourself | Crisis Application - Johnston-Lee-Harnett Community Action</title>
+    <!-- Bootstrap 5.2 CSS + Icons (neutral, professional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        /* professional, clean, no emojis */
+        body {
+            background: #eef2f5;
+            font-family: var(--bs-font-sans-serif);
+        }
+        .form-container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 1.25rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .form-header {
+            background: #0b2b3f;
+            color: white;
+            padding: 1.5rem 2rem;
+            border-bottom: 5px solid #f4b942;
+        }
+        .form-header h1 {
+            font-size: 1.85rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .form-header p {
+            margin-bottom: 0;
+            opacity: 0.85;
+            font-size: 0.95rem;
+        }
+        .alert-required {
+            background-color: #fff7e5;
+            border-left: 5px solid #dcb014;
+            font-size: 0.9rem;
+        }
+        .section-card {
+            background: #fff;
+            border-radius: 1rem;
+            border: 1px solid #e0e7ed;
+            transition: box-shadow 0.2s;
+        }
+        .section-title {
+            font-weight: 700;
+            color: #1c4e6f;
+            border-left: 4px solid #f4b942;
+            padding-left: 0.85rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.35rem;
+        }
+        .required-star::after {
+            content: "*";
+            color: #dc3545;
+            margin-left: 4px;
+            font-weight: bold;
+        }
+        .form-label {
+            font-weight: 600;
+            color: #2c3e44;
+        }
+        .workshop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.65rem;
+            margin-top: 0.75rem;
+        }
+        .workshop-grid .form-check {
+            margin-bottom: 0.25rem;
+        }
+        .signature-line {
+            border-bottom: 1px solid #9aaebf;
+            min-width: 250px;
+            display: inline-block;
+            width: 100%;
+            max-width: 380px;
+        }
+        footer {
+            background-color: #f8fbfe;
+            border-top: 1px solid #dee2e6;
+            font-size: 0.75rem;
+            color: #4d6272;
+        }
+        .btn-submit {
+            background-color: #1c6e43;
+            border: none;
+            padding: 0.7rem 2rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .btn-submit:hover {
+            background-color: #0f5937;
+        }
+        .office-use {
+            background-color: #f2f4f8;
+            border-radius: 0.9rem;
+            padding: 1.2rem;
+            font-family: monospace;
+            border: 1px dashed #bac8d3;
+        }
+        @media (max-width: 768px) {
+            .form-header h1 { font-size: 1.4rem; }
+            .section-title { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-3 py-md-4">
+    <div class="form-container">
+        <!-- Header -->
+        <div class="form-header">
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <div>
+                    <h1>Tell us about you & your family</h1>
+                    <p>Johnston-Lee-Harnett Community Action · Crisis Application</p>
+                </div>
+                <div class="mt-2 mt-sm-0">
+                    <span class="badge bg-warning text-dark fs-6">Assistance not guaranteed</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main form area -->
+        <div class="p-4 p-lg-5">
+            <!-- Required documents reminder -->
+            <div class="alert alert-warning alert-required mb-4 d-flex align-items-start" role="alert">
+                <div>
+                    <strong>You will need to provide the following information to complete your intake with a counselor:</strong><br>
+                    Official picture ID, Social Security cards for all household members, proof of income for all household members, the bill you are seeking assistance with, and documentation of your crisis situation.
+                </div>
+            </div>
+            <div class="alert alert-info mb-4 py-2" role="alert">
+                <strong>IMPORTANT:</strong> YOU MUST LIVE IN JOHNSTON COUNTY TO RECEIVE SERVICES IN THIS OFFICE.
+            </div>
+
+            <form id="crisisForm" action="#" method="post">
+                <!-- Basic contact info -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <label class="form-label required-star">Full name</label>
+                        <input type="text" class="form-control" placeholder="e.g., Maria Gonzalez" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label required-star">Telephone number</label>
+                        <input type="tel" class="form-control" placeholder="(XXX) XXX-XXXX" required>
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label required-star">Address (street, city, zip code)</label>
+                        <input type="text" class="form-control" placeholder="Street address, Johnston, NC" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Date</label>
+                        <input type="date" class="form-control" value="2026-05-26">
+                    </div>
+                </div>
+
+                <!-- Questions 1 to 5 -->
+                <div class="section-card p-4 mb-4">
+                    <h3 class="section-title">Your situation & goals</h3>
+                    
+                    <!-- Q1 -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">1. What are you seeking help with today?</label>
+                        <textarea class="form-control" rows="2" placeholder="Describe the reason for your visit (e.g., overdue electricity bill, housing counseling need, etc.)"></textarea>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">2. What can we do to help you reach your goals / resolve your situation?</label>
+                        <textarea class="form-control" rows="2" placeholder="Specify the type of assistance or support you are looking for..."></textarea>
+                    </div>
+
+                    <!-- Q3: prevention / self-sufficiency -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">3. With the aim of preventing this situation from occurring again, would you:</label>
+                        <div class="mt-2">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="selfSufficiency" id="enrollYes">
+                                <label class="form-check-label" for="enrollYes">a) Agree to enroll in the Self-Sufficiency Program? <strong class="text-success">Yes</strong></label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="selfSufficiency" id="enrollNo">
+                                <label class="form-check-label" for="enrollNo">a) <strong class="text-secondary">No</strong></label>
+                            </div>
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="radio" name="counselorMeet" id="meetYes">
+                                <label class="form-check-label" for="meetYes">b) Agree to meet with a Counselor to set short or long range goals? <strong class="text-success">Yes</strong></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="counselorMeet" id="meetNo">
+                                <label class="form-check-label" for="meetNo">b) <strong class="text-secondary">No</strong></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q4: short-range goals (6 months) -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">4. What are your short-range goals for the next 6 months?</label>
+                        <textarea class="form-control mb-3" rows="2" placeholder="e.g., find stable employment, improve housing situation, save for unexpected expenses..."></textarea>
+                        
+                        <label class="form-label fw-normal mt-2">a) What plans have you made to reach these short-range goals?</label>
+                        <textarea class="form-control mb-3" rows="2" placeholder="Describe actions already taken or planned (job search, training, budgeting...)"></textarea>
+                        
+                        <label class="form-label fw-normal mt-2">b) What can we do to assist you in reaching these short-range goals?</label>
+                        <textarea class="form-control" rows="2" placeholder="Guidance, workshops, specific referrals..."></textarea>
+                    </div>
+
+                    <!-- Q5: barriers -->
+                    <div class="mb-2">
+                        <label class="form-label fw-bold">5. What do you feel is keeping you from reaching your goals (i.e., lack of education, poor budgeting or money management skills, job readiness skills, etc.)?</label>
+                        <textarea class="form-control" rows="2" placeholder="e.g., lack of training, budgeting difficulties, job skills, transportation issues..."></textarea>
+                        <div class="form-text text-muted mt-1">Examples: lack of education, money management, job readiness skills, etc.</div>
+                    </div>
+                </div>
+
+                <!-- Q6: best time -->
+                <div class="section-card p-4 mb-4">
+                    <h3 class="section-title">6. When would be the best time of the day for you to attend instructional workshops or meet with your Counselor?</h3>
+                    <div class="d-flex flex-wrap gap-4 mt-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="preferredTime" id="timeMorning" value="Morning">
+                            <label class="form-check-label" for="timeMorning">Morning</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="preferredTime" id="timeAfternoon" value="Afternoon">
+                            <label class="form-check-label" for="timeAfternoon">Afternoon</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="preferredTime" id="timeEvening" value="Evening">
+                            <label class="form-check-label" for="timeEvening">Evening</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q7: workshops checkboxes -->
+                <div class="section-card p-4 mb-4">
+                    <h3 class="section-title">7. Please check the instructional workshops you would like to attend. List any others not included below under 'Other'.</h3>
+                    <p class="text-muted small">Please note, these trainings are subject to availability.</p>
+                    <div class="workshop-grid">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wBudget"> <label class="form-check-label" for="wBudget">Budgeting & Money Management</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wComputer"> <label class="form-check-label" for="wComputer">Introduction to Computers</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wCPR"> <label class="form-check-label" for="wCPR">CPR Training</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wJobReadiness"> <label class="form-check-label" for="wJobReadiness">Job Readiness</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wStress"> <label class="form-check-label" for="wStress">Stress Management</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wEmployment"> <label class="form-check-label" for="wEmployment">Employment Counseling</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wWeather"> <label class="form-check-label" for="wWeather">Weatherization</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wESL"> <label class="form-check-label" for="wESL">English as a Second Language</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wContinuing"> <label class="form-check-label" for="wContinuing">Continuing Education</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wHomeBuyer"> <label class="form-check-label" for="wHomeBuyer">First-Time Home Buyer</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wNutrition"> <label class="form-check-label" for="wNutrition">Proper Nutrition</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wCredit"> <label class="form-check-label" for="wCredit">How to Get/Maintain Credit</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="wRenters"> <label class="form-check-label" for="wRenters">Renter's Rights</label></div>
+                    </div>
+                    <div class="mt-3">
+                        <label class="form-label">Other workshops / trainings:</label>
+                        <input type="text" class="form-control" placeholder="Specify if needed (e.g., parenting workshop, resume assistance, etc.)">
+                    </div>
+                </div>
+
+                <!-- Signature & acknowledgment -->
+                <div class="bg-light rounded-3 p-4 mb-4">
+                    <p class="fw-semibold">By signing this form, I acknowledge my understanding that assistance is not guaranteed. Any assistance will depend upon any available resources at the time of my application.</p>
+                    <div class="row align-items-center mt-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label class="form-label">Signature (full name):</label>
+                            <input type="text" class="form-control signature-line" placeholder="electronic signature / legal name">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Date of signature:</label>
+                            <input type="date" class="form-control" value="2026-05-26">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
+                    <button type="submit" class="btn btn-submit text-white px-5 py-2">Submit my application</button>
+                </div>
+            </form>
+
+            <!-- OFFICE USE ONLY section (exactly as original) -->
+            <div class="office-use mt-5">
+                <h6 class="text-uppercase text-secondary mb-2">DO NOT WRITE BELOW THIS LINE — Office use only</h6>
+                <div class="row g-3">
+                    <div class="col-md-5">
+                        <label class="small fw-bold">Counselor's Signature</label>
+                        <div class="border-bottom border-dark border-2 mt-1" style="width: 100%; height: 32px;"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="small fw-bold">Date</label>
+                        <div class="border-bottom border-dark border-2 mt-1" style="height: 32px;"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="small fw-bold">Time</label>
+                        <div class="border-bottom border-dark border-2 mt-1" style="height: 32px;"></div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label class="small fw-bold me-4">Assistance Granted?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="assistanceGranted" id="grantedYes" disabled>
+                        <label class="form-check-label small" for="grantedYes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="assistanceGranted" id="grantedNo" disabled>
+                        <label class="form-check-label small" for="grantedNo">No</label>
+                    </div>
+                    <span class="text-muted ms-3 small">(internal use only)</span>
+                </div>
+            </div>
+
+            <!-- footer note -->
+            <p class="text-center text-muted mt-4 small">Johnston-Lee-Harnett Community Action Inc. – Fields marked with an asterisk (*) are required. <br> Please bring required documentation to your intake appointment.</p>
+        </div>
+        <footer class="p-3 text-center">
+            Johnston County Community Services | Emergency Assistance & Self-Sufficiency
+        </footer>
+    </div>
+</div>
+
+<!-- Simple validation script (professional, no emojis) -->
+<script>
+    (function() {
+        const form = document.getElementById('crisisForm');
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // check required fields
+                let requiredFields = document.querySelectorAll('#crisisForm input[required], #crisisForm textarea[required]');
+                let missing = false;
+                requiredFields.forEach(field => {
+                    if(!field.value.trim()) {
+                        field.classList.add('is-invalid');
+                        missing = true;
+                    } else {
+                        field.classList.remove('is-invalid');
+                    }
+                });
+                const radioSelf = document.querySelector('input[name="selfSufficiency"]:checked');
+                const radioCounselor = document.querySelector('input[name="counselorMeet"]:checked');
+                if(missing) {
+                    alert("Please complete all required fields (name, telephone, address). This information is necessary to process your request.");
+                } else {
+                    let message = "Crisis application recorded (simulation).\n\n";
+                    if(!radioSelf) message += "Note: Question 3a (Self-Sufficiency Program enrollment) has not been selected. A counselor may discuss this option.\n";
+                    if(!radioCounselor) message += "Note: Question 3b (meeting with a counselor) has not been selected.\n";
+                    message += "\nThank you for completing the questionnaire. A staff member will contact you within 2 business days.\n\n(Remember to bring your required documents to the intake interview.)";
+                    alert(message);
+                    // Uncomment below for actual submission:
+                    // form.submit();
+                }
+            });
+            // remove validation style on input
+            const inputs = document.querySelectorAll('#crisisForm input, #crisisForm textarea');
+            inputs.forEach(inp => {
+                inp.addEventListener('input', function() { this.classList.remove('is-invalid'); });
+            });
+        }
+    })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+```
