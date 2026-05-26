@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EVENT | JLHCA</title>
+<title>Accessibility &amp; ADA | JLHCA</title>
 
 <!-- Fav Icon -->
 <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
@@ -15,7 +15,6 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&amp;display=swap" rel="stylesheet">
-
 
 <!-- Stylesheets -->
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -32,21 +31,18 @@
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/module-css/header.css" rel="stylesheet">
 <link href="assets/css/module-css/page-title.css" rel="stylesheet">
-<link href="assets/css/module-css/event.css" rel="stylesheet">
-<link href="assets/css/module-css/news.css" rel="stylesheet">
-<link href="assets/css/module-css/funfact.css" rel="stylesheet">
+<link href="assets/css/module-css/service.css" rel="stylesheet">
 <link href="assets/css/module-css/footer.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
 
 </head>
 
-
-<!-- page wrapper -->
 <body>
-  <h1 style="font-size:1px;line-height:1;color:#000000;background-color:#ffffff;margin:0;padding:0;border:0;height:1px;overflow:hidden;display:block;">Events — JLHCA</h1>
-    <div class="boxed_wrapper ltr">
+  <h1 style="font-size:1px;line-height:1;color:#000000;background-color:#ffffff;margin:0;padding:0;border:0;height:1px;overflow:hidden;display:block;">Accessibility &amp; Compliance Statement — JLHCA</h1>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <div class="boxed_wrapper ltr">
+
     <!-- main header -->
-    <!-- FIX: Utilisation de <header> avec role="banner" pour renforcer la sémantique -->
     <header class="main-header header-style-two" role="banner">
       <!-- header-top -->
       <div class="header-top">
@@ -55,24 +51,9 @@
             <ul class="info-list" aria-label="Coordonnées de contact">
               <li><i class="icon-19" aria-hidden="true"></i><span>Call: <a href="tel:9199342145">919.934.2145</a></span></li>
               <li><i class="icon-18" aria-hidden="true"></i><span>Mail: <a href="mailto:Info@jlhcommunityaction.org">Info@jlhcommunityaction.org</a></span></li>
-              <!-- FIX 3 (WCAG 2.4.4): Suppression du href invalide (adresse texte) — remplacé par un lien Google Maps -->
               <li><i class="icon-17" aria-hidden="true"></i><span>Location: <a href="https://maps.google.com/?q=1102+Massey+Street+Smithfield+NC+27577" target="_blank" rel="noopener noreferrer">1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
             </ul>
-
-            <div class="right-column">
-              <!-- Language picker désactivé
-
-              <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
-                <div class="language-picker__form">
-                  <select name="language-picker-select" id="language-picker-select" class="ignore" aria-label="Select your language">
-                    <option lang="en" value="english" selected>EN</option>
-                    <option lang="es" value="Espagnol">ES</option>
-                  </select>
-                </div>
-              </div>
-
-              -->
-            </div>
+            <div class="right-column"></div>
           </div>
         </div>
       </div>
@@ -83,13 +64,11 @@
           <div class="outer-box">
             <figure class="logo-box">
               <a href="index.html">
-                <!-- FIX 5 (WCAG 1.1.1): Texte alternatif descriptif sur le logo -->
                 <img src="assets/images/logo.png" alt="JLHCA — Johnston-Lee-Harnett Community Action, Inc.">
               </a>
             </figure>
 
             <div class="menu-area">
-              <!-- FIX 6 (WCAG 2.1.1 + 4.1.2): Remplacement du <div> par un <button> accessible -->
               <button
                 class="mobile-nav-toggler"
                 aria-label="Ouvrir le menu de navigation"
@@ -102,7 +81,6 @@
                 <i class="icon-bar" aria-hidden="true"></i>
               </button>
 
-              <!-- FIX 7 (WCAG 2.4.2): Navigation avec aria-label pour la distinguer des autres nav -->
               <nav class="main-menu navbar-expand-md navbar-light clearfix" aria-label="Navigation principale">
                 <div class="collapse navbar-collapse show clearfix">
                   <ul class="navigation clearfix" role="list">
@@ -110,7 +88,7 @@
                     <li><a href="team-2.html">TEAM</a></li>
                     <li><a href="our-programs.html">OUR PROGRAMS</a></li>
                     <li><a href="annual-reports.html">ANNUAL REPORTS</a></li>
-                    <li class="current"><a href="events.html" aria-current="page">EVENTS</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
                   </ul>
                 </div>
@@ -145,7 +123,6 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-nav-dialog" role="dialog" aria-modal="true" aria-label="Menu de navigation mobile">
       <div class="menu-backdrop"></div>
-      <!-- FIX 11 (WCAG 2.1.1): Bouton fermeture accessible -->
       <button class="close-btn" aria-label="Fermer le menu" type="button">
         <i class="fas fa-times" aria-hidden="true"></i>
       </button>
@@ -171,99 +148,129 @@
     <!-- End Mobile Menu -->
 
 
+    <main id="main-content">
+
+      <!-- page-title -->
+      <section class="page-title centred" aria-label="En-tête de page">
+        <div class="bg-layer" style="background-image: url(assets/images/background/page-title-5.jpg);" aria-hidden="true"></div>
+        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-56.png);" aria-hidden="true"></div>
+        <div class="auto-container">
+          <div class="content-box">
+            <h1>Accessibility &amp; ADA</h1>
+            <ul class="bread-crumb clearfix" aria-label="Fil d'Ariane">
+              <li><a href="index.html">Home</a></li>
+              <li aria-current="page">Accessibility &amp; ADA</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- page-title end -->
 
 
+      <!-- Accessibility content -->
+      <section class="accessibility-section pt_80 pb_100" aria-labelledby="accessibility-heading">
+        <div class="auto-container">
+          <div class="accessibility-wrapper">
 
-        <!-- page-title -->
-        <section class="page-title centred">
-            <div class="bg-layer" style="background-image: url(assets/images/background/page-title.jpg);"></div>
-            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-56.png);"></div>
-            <div class="auto-container">
-                <div class="content-box">
-                    <h1>Our Events</h1>
-                    <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
-                        <li>Events</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- page-title end -->
+            <header class="accessibility-intro">
+              <h2 id="accessibility-heading">Accessibility &amp; Compliance Statement</h2>
+              <p class="accessibility-org">Johnston-Lee-Harnett Community Action, Inc.</p>
+              <p>Johnston-Lee-Harnett Community Action, Inc. (JLHCA) is committed to ensuring that all individuals &mdash; including people with disabilities &mdash; have full and equal access to our programs, services, activities, facilities, and digital content. As a Community Action Agency receiving federal funding, we comply with the Americans with Disabilities Act (ADA), the Rehabilitation Act of 1973 (Sections 504 and 508), and follow CAPLAW guidance on nondiscrimination and equal access.</p>
+              <p>Our mission is rooted in equity, dignity, and inclusion. We work continuously to ensure that our physical spaces, communication methods, and online services are accessible to everyone.</p>
+            </header>
+
+            <section class="accessibility-block" aria-labelledby="digital-standards-heading">
+              <h3 id="digital-standards-heading">Digital Accessibility Standards</h3>
+              <p>JLHCA strives to ensure that <a href="index.html">jlhcommunityaction.org</a> meets or exceeds:</p>
+              <ul class="accessibility-list">
+                <li>WCAG 2.1 Level AA</li>
+                <li>WCAG 2.2 emerging standards</li>
+                <li>Section 508 accessibility requirements</li>
+              </ul>
+              <p>To support an inclusive digital experience, we maintain:</p>
+              <ul class="accessibility-list">
+                <li>Keyboard-accessible navigation</li>
+                <li>Text alternatives for images</li>
+                <li>Semantic HTML structure</li>
+                <li>WCAG-compliant color contrast</li>
+                <li>Accessible online forms with clear labels and error messages</li>
+                <li>Responsive design for all devices</li>
+                <li>Consistent navigation patterns</li>
+              </ul>
+              <p>We regularly review our website to improve clarity, usability, and accessibility.</p>
+            </section>
+
+            <section class="accessibility-block" aria-labelledby="ada-compliance-heading">
+              <h3 id="ada-compliance-heading">ADA Compliance &amp; Equal Access</h3>
+              <p>In accordance with the ADA and CAPLAW guidance, JLHCA ensures that no individual is excluded, denied services, or discriminated against on the basis of disability. We provide reasonable accommodations to ensure equal participation in all programs and activities.</p>
+              <p>Examples of accommodation include:</p>
+              <ul class="accessibility-list">
+                <li>Alternative formats (large print, accessible PDFs, plain text)</li>
+                <li>Assistance completing applications or forms</li>
+                <li>Sign language interpreters or relay services</li>
+                <li>Language access services</li>
+                <li>Communication supports for individuals with hearing, vision, or cognitive disabilities</li>
+                <li>Website accessibility support</li>
+              </ul>
+              <p class="accessibility-callout">Accommodation is provided <strong>free of charge</strong>.</p>
+            </section>
+
+            <section class="accessibility-block" aria-labelledby="section-508-heading">
+              <h3 id="section-508-heading">Section 508 Compliance</h3>
+              <p>As a federally funded organization, JLHCA works to ensure that our electronic and information technology is accessible to individuals with disabilities. Our Section 508 efforts include:</p>
+              <ul class="accessibility-list">
+                <li>Ensuring compatibility with assistive technologies</li>
+                <li>Remediating or replacing inaccessible PDFs and documents</li>
+                <li>Providing captions or transcripts for multimedia content</li>
+                <li>Ensuring keyboard-only access to all interactive components</li>
+                <li>Using ARIA attributes where appropriate</li>
+                <li>Maintaining accessible online forms for Crisis Assistance, Head Start, Weatherization, and other programs</li>
+              </ul>
+            </section>
+
+            <section class="accessibility-block" aria-labelledby="request-accommodations-heading">
+              <h3 id="request-accommodations-heading">Requesting Accommodations or Reporting Barriers</h3>
+              <p>If you need accommodation, encounter an accessibility barrier, or require information in an alternative format, please contact our ADA Coordinator:</p>
+              <div class="accessibility-contact-card">
+                <p class="accessibility-contact-card__title"><strong>ADA Coordinator</strong></p>
+                <p class="accessibility-contact-card__org">Johnston-Lee-Harnett Community Action, Inc.</p>
+                <ul class="accessibility-contact-list" aria-label="Coordonnées de l'ADA Coordinator">
+                  <li><i class="icon-19" aria-hidden="true"></i><span><strong>Phone:</strong> <a href="tel:9199342145">919-934-2145</a></span></li>
+                  <li><i class="icon-18" aria-hidden="true"></i><span><strong>Email:</strong> <a href="mailto:ADA@jlhcommunityaction.org">ADA@jlhcommunityaction.org</a></span></li>
+                  <li><i class="icon-17" aria-hidden="true"></i><span><strong>Address:</strong> 1102 Massey St. | P.O. Drawer 711, Smithfield, NC 27577</span></li>
+                </ul>
+              </div>
+              <p>We will respond promptly and work to ensure you have equal access to our services.</p>
+            </section>
+
+            <section class="accessibility-block" aria-labelledby="grievance-heading">
+              <h3 id="grievance-heading">ADA Grievance Procedure</h3>
+              <p>Individuals who believe they have been denied access or discriminated against based on disability may file a grievance with the ADA Coordinator. Complaints may be submitted verbally or in writing and will be addressed promptly, fairly, and in accordance with federal civil rights requirements.</p>
+            </section>
+
+            <section class="accessibility-block" aria-labelledby="commitment-heading">
+              <h3 id="commitment-heading">Ongoing Commitment</h3>
+              <p>Accessibility is an ongoing process. JLHCA is actively working to:</p>
+              <ul class="accessibility-list">
+                <li>Expand accessible online forms, including Crisis Assistance and program applications</li>
+                <li>Improve document accessibility across all departments</li>
+                <li>Train staff on ADA, Section 508, and digital accessibility best practices</li>
+                <li>Integrate accessibility into future website updates and redesigns</li>
+              </ul>
+            </section>
+
+            <p class="accessibility-review-date"><em>This statement was last reviewed in May 2026.</em></p>
+
+          </div>
+        </div>
+      </section>
+      <!-- Accessibility content end -->
+
+    </main>
+    <!-- main end -->
 
 
-        <!-- event-page-section -->
-        <section class="event-page-section bg-color-3 pt_120 pb_120">
-            <div class="auto-container">
-                <div class="sec-title centred mb_50">
-                    <span class="sub-title">Our Event</span>
-                    <h2>Together for a Cause</h2>
-                </div>
-                <div class="row clearfix">
-                    <div class="col-lg-12 col-md-12 col-sm-12 event-block">
-                        <div class="event-block-one">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="assets/images/resource/event-19.png" alt="JLHCA community event"></figure>
-                                <div class="content-box">
-                                    <div class="event-date"><i class="icon-32"></i><span>May 19 - 22, 2026</span></div>
-                                    <h2><a href="#">NCCAA ANNUAL RAFFLE</a></h2>
-                                    <h4>1st Prize 2000</h4>
-                                      <h4>2nd Prize 1000</h4>
-                                      <h4>3nd Prize 500</h4>
-                                    <p>Tickets for the 2026 NCCAA Annual Raffle are $3 per ticket.
-All ticket stubs, payments and unsold tickets must be counted, bound and returned with the attached Raffle Ticket Distribution Log by Friday, April 24th to:</p>
-                                    <div class="btn-box"><a href="documents/NCAA-RAFFLE-2026.pdf" class="theme-btn btn-two"><span class="text">View All Events</span><i class="icon-2"></i></a></div>
-                                    <div class="lower-box">
-                                        <ul class="info-list">
-                                            
-                                            <li><i class="icon-38"></i><span>North Carolina Community Action Association
-Attn: Faye Minga
-4428 Louisburg Road, Suite 101Raleigh, NC 27616
-
-Email: faye.minga@nccaa.net</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    
-
-                    
-            </div>
-                <div class="row clearfix">
-                    <div class="col-lg-12 col-md-12 col-sm-12 event-block">
-                        <div class="event-block-one">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="assets/images/resource/event-1.jpg" alt="JLHCA community event"></figure>
-                                <div class="content-box">
-                                    <div class="event-date"><i class="icon-32"></i><span>Apr 20, 2026</span></div>
-                                    <h3><a href="#">Spring Into A Healthier You</a></h3>
-                                    <h4><a href="#">Discussing better health, eating, and choices</a></h4>
-                                    <p>Explore how eating healthier boots your physical strength and how important it is to witch what you consume.</p>
-                                    <div class="btn-box"><a href="#" class="theme-btn btn-two"><span class="text">View All Events</span><i class="icon-2"></i></a></div>
-                                    <div class="lower-box">
-                                        <ul class="info-list">
-                                            <li><i class="icon-37"></i><span>02:00PM</span></li>
-                                            <li><i class="icon-38"></i><span>Via Zoom</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    
-
-                    
-            </div>
-        </section>
-        <!-- event-page-section -->
-
-
-
-
-        <!-- main-footer -->
+    <!-- main-footer -->
     <footer class="main-footer" role="contentinfo">
       <div class="auto-container">
         <div class="widget-section pt_100 pb_90">
@@ -278,7 +285,7 @@ Email: faye.minga@nccaa.net</span></li>
                   <ul class="links-list clearfix" aria-label="Liens rapides">
                       <li><a href="boardofdirector.html">Board of Directors</a></li>
                       <li><a href="career.html">Career</a></li>
-                      <li><a href="accessibility.html">Accessibility & ADA</a></li>
+                      <li><a href="accessibility.html" aria-current="page">Accessibility &amp; ADA</a></li>
                       <li><a href="terms.html">Terms &amp; Conditions</a></li>
                     </ul>
                 </div>
@@ -308,17 +315,15 @@ Email: faye.minga@nccaa.net</span></li>
                   <h3>Contact</h3>
                 </div>
                 <div class="widget-content">
-                                    <ul class="info-list">
+                  <ul class="info-list">
                       <li><i class="icon-17" aria-hidden="true"></i><span class="hs-address-block"><span class="hs-address-line">1102 Massey Street</span><span class="hs-address-line">P.O. Drawer 711</span><span class="hs-address-line">Smithfield, NC 27577</span></span></li>
                       <li><i class="icon-18" aria-hidden="true"></i><a href="mailto:Info@jlhcommunityaction.org">Info@jlhcommunityaction.org</a></li>
-                      <!-- FIX 22 (WCAG 4.1.1): Balise <a> correctement fermée (était non fermée) -->
                       <li class="phone"><i class="icon-19" aria-hidden="true"></i><a href="tel:9199342145">919.934.2145</a></li>
                     </ul>
                 </div>
               </div>
             </div>
 
-          
           </div>
 
           <div class="row clearfix">
@@ -341,39 +346,56 @@ Email: faye.minga@nccaa.net</span></li>
         </div>
       </div>
     </footer>
-        <!-- main-footer end  -->
+    <!-- main-footer end -->
 
 
+    <!-- Scroll to top -->
+    <button
+      class="scroll-to-top"
+      aria-label="Retour en haut de page"
+      type="button"
+    >
+      <svg class="scroll-top-inner" viewBox="-1 -1 102 102" aria-hidden="true" focusable="false">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </button>
 
-        <!--Scroll to top-->
-        <div class="scroll-to-top">
-            <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-            </svg>
-        </div>
-        
-    </div>
+  </div>
 
 
-    <!-- jequery plugins -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/validation.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/parallax-scroll.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/scrolltop.min.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/odometer.js"></script>
-    <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
-    <script src="assets/js/language.js"></script>
+  <!-- jQuery plugins -->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/jquery.fancybox.js"></script>
+  <script src="assets/js/appear.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/parallax-scroll.js"></script>
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <script src="assets/js/scrolltop.min.js"></script>
+  <script src="assets/js/jquery-ui.js"></script>
+  <script src="assets/js/odometer.js"></script>
+  <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
+  <script src="assets/js/language.js"></script>
+  <script src="assets/js/script.js"></script>
 
-    <!-- main-js -->
-    <script src="assets/js/script.js"></script>
+  <script>
+    var toggler = document.querySelector('.mobile-nav-toggler');
+    if (toggler) {
+      toggler.addEventListener('click', function () {
+        var expanded = toggler.getAttribute('aria-expanded') === 'true';
+        toggler.setAttribute('aria-expanded', String(!expanded));
+      });
+    }
+    var closeBtn = document.querySelector('.mobile-menu .close-btn');
+    if (closeBtn && toggler) {
+      closeBtn.addEventListener('click', function () {
+        toggler.setAttribute('aria-expanded', 'false');
+      });
+    }
+  </script>
 
-</body><!-- End of .page_wrapper -->
+</body>
 </html>
