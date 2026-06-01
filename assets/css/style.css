@@ -3989,11 +3989,27 @@ button.ltr {
   color: #e86a1a;
 }
 
-/* ===== Team Page — Uniform Card Shape ===== */
-/* Force all team images to share the same aspect ratio so each row has identical card heights, regardless of source image dimensions (some are 300x300, others 250x300). */
+/* ===== Team Page — Uniform Card Shape + Photo Frame ===== */
+/* The card itself stays at the column width; the image lives in a smaller
+   inner "frame" centered on a soft background so the low-resolution source
+   images don't have to stretch to the full card width. */
+.team-section .team-block-one .inner-box {
+  background: #f7f3ea;
+  padding: 22px 22px 18px;
+  border-radius: 14px;
+  border: 1px solid #ece5d3;
+}
+
 .team-section .team-block-one .inner-box .image-box {
+  position: relative;
   aspect-ratio: 1 / 1;
   width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
 }
 
 .team-section .team-block-one .inner-box .image-box img {
