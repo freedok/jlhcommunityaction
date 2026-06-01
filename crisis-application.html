@@ -7,6 +7,37 @@
     <!-- Bootstrap 5.2 CSS + Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Fav Icon -->
+<link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&amp;display=swap" rel="stylesheet">
+
+
+<!-- Stylesheets -->
+<link href="assets/css/font-awesome-all.css" rel="stylesheet">
+<link href="assets/css/flaticon.css" rel="stylesheet">
+<link href="assets/css/owl.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+Links<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/animate.css" rel="stylesheet">
+<link href="assets/css/nice-select.css" rel="stylesheet">
+<link href="assets/css/odometer.css" rel="stylesheet">
+<link href="assets/css/elpath.css" rel="stylesheet">
+<link href="assets/css/color.css" id="jssDefault" rel="stylesheet">
+<link href="assets/css/rtl.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/module-css/header.css" rel="stylesheet">
+<link href="assets/css/module-css/page-title.css" rel="stylesheet">
+<link href="assets/css/module-css/team.css" rel="stylesheet">
+<link href="assets/css/module-css/event.css" rel="stylesheet">
+<link href="assets/css/module-css/news.css" rel="stylesheet">
+<link href="assets/css/module-css/footer.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
+
     <!-- Signature pad library (smooth signature capture) -->
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
     <style>
@@ -126,15 +157,106 @@
     </style>
 </head>
 <body>
+ <header class="main-header header-style-two" role="banner">
+      <!-- header-top -->
+      <div class="header-top">
+        <div class="auto-container">
+          <div class="top-inner">
+            <ul class="info-list" aria-label="Coordonnées de contact">
+              <li><i class="icon-19" aria-hidden="true"></i><span>Call: <a href="tel:9199342145">919.934.2145</a></span></li>
+              <li><i class="icon-18" aria-hidden="true"></i><span>Mail: <a href="mailto:Info@jlhcommunityaction.org">Info@jlhcommunityaction.org</a></span></li>
+              <!-- FIX 3 (WCAG 2.4.4): Suppression du href invalide (adresse texte) — remplacé par un lien Google Maps -->
+              <li><i class="icon-17" aria-hidden="true"></i><span>Location: <a href="https://maps.google.com/?q=1102+Massey+Street+Smithfield+NC+27577" target="_blank" rel="noopener noreferrer">1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
+            </ul>
 
+            <div class="right-column">
+              <!-- Language picker désactivé
+
+              <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
+                <div class="language-picker__form">
+                  <select name="language-picker-select" id="language-picker-select" class="ignore" aria-label="Select your language">
+                    <option lang="en" value="english" selected>EN</option>
+                    <option lang="es" value="Espagnol">ES</option>
+                  </select>
+                </div>
+              </div>
+
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- header-lower -->
+      <div class="header-lower">
+        <div class="auto-container">
+          <div class="outer-box">
+            <figure class="logo-box">
+              <a href="index.html">
+                <!-- FIX 5 (WCAG 1.1.1): Texte alternatif descriptif sur le logo -->
+                <img src="assets/images/logo.png" alt="JLHCA — Johnston-Lee-Harnett Community Action, Inc.">
+              </a>
+            </figure>
+
+            <div class="menu-area">
+              <!-- FIX 6 (WCAG 2.1.1 + 4.1.2): Remplacement du <div> par un <button> accessible -->
+              <button
+                class="mobile-nav-toggler"
+                aria-label="Ouvrir le menu de navigation"
+                aria-expanded="false"
+                aria-controls="mobile-nav-dialog"
+                type="button"
+              >
+                <i class="icon-bar" aria-hidden="true"></i>
+                <i class="icon-bar" aria-hidden="true"></i>
+                <i class="icon-bar" aria-hidden="true"></i>
+              </button>
+
+              <!-- FIX 7 (WCAG 2.4.2): Navigation avec aria-label pour la distinguer des autres nav -->
+              <nav class="main-menu navbar-expand-md navbar-light clearfix" aria-label="Navigation principale">
+                <div class="collapse navbar-collapse show clearfix">
+                  <ul class="navigation clearfix" role="list">
+                    <li><a href="index.html">HOME</a></li>
+                    <li class="current"><a href="team-2.html" aria-current="page">TEAM</a></li>
+                    <li><a href="our-programs.html">OUR PROGRAMS</a></li>
+                    <li><a href="annual-reports.html">ANNUAL REPORTS</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sticky Header -->
+      <div class="sticky-header" aria-hidden="true">
+        <div class="auto-container">
+          <div class="outer-box">
+            <figure class="logo-box mr_50">
+              <a href="index.html" tabindex="-1">
+                <img src="assets/images/logo.png" alt="" role="presentation">
+              </a>
+            </figure>
+            <div class="menu-area">
+              <nav class="main-menu clearfix" aria-hidden="true" tabindex="-1">
+                <!-- Menu injecté via JS -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
 <div class="container py-3 py-md-4">
     <div class="form-container">
         <!-- Header -->
         <div class="form-header">
             <div class="d-flex flex-wrap justify-content-between align-items-center">
-                <div>
-                    <h1>Tell us about you & your family</h1>
-                    <p>Johnston-Lee-Harnett Community Action · Crisis Application</p>
+                <div >
+                <h1 style="color: white;">Tell us about you & your family</h1>
+                <p style="color: white;">Johnston-Lee-Harnett Community Action · Crisis Application</p>
                 </div>
                 <div class="mt-2 mt-sm-0">
                     <span class="badge bg-warning text-dark fs-6">Assistance not guaranteed</span>
@@ -309,46 +431,88 @@
                 </div>
             </form>
 
-            <!-- OFFICE USE ONLY section (exactly as original) -->
-            <div class="office-use mt-5">
-                <h6 class="text-uppercase text-secondary mb-2">DO NOT WRITE BELOW THIS LINE — Office use only</h6>
-                <div class="row g-3">
-                    <div class="col-md-5">
-                        <label class="small fw-bold">Counselor's Signature</label>
-                        <div class="border-bottom border-dark border-2 mt-1" style="width: 100%; height: 32px;"></div>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="small fw-bold">Date</label>
-                        <div class="border-bottom border-dark border-2 mt-1" style="height: 32px;"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="small fw-bold">Time</label>
-                        <div class="border-bottom border-dark border-2 mt-1" style="height: 32px;"></div>
-                    </div>
+           
+        </div>
+       </div>
+</div>
+   <!-- main-footer -->
+    <footer class="main-footer" role="contentinfo">
+      <div class="auto-container">
+        <div class="widget-section pt_100 pb_90">
+          <div class="row clearfix">
+
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget links-widget ml_50">
+                <div class="widget-title">
+                  <h3>Quick Links</h3>
                 </div>
-                <div class="mt-3">
-                    <label class="small fw-bold me-4">Assistance Granted?</label>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="assistanceGranted" id="grantedYes" disabled>
-                        <label class="form-check-label small" for="grantedYes">Yes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="assistanceGranted" id="grantedNo" disabled>
-                        <label class="form-check-label small" for="grantedNo">No</label>
-                    </div>
-                    <span class="text-muted ms-3 small">(internal use only)</span>
+                <div class="widget-content">
+                  <ul class="links-list clearfix" aria-label="Liens rapides">
+                      <li><a href="boardofdirector.html">Board of Directors</a></li>
+                      <li><a href="career.html">Career</a></li>
+                      <li><a href="accessibility.html">Accessibility & ADA</a></li>
+                      <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                    </ul>
                 </div>
+              </div>
             </div>
 
-            <!-- footer note -->
-            <p class="text-center text-muted mt-4 small">Johnston-Lee-Harnett Community Action Inc. – Fields marked with an asterisk (*) are required. <br> Please bring required documentation to your intake appointment.</p>
-        </div>
-        <footer class="p-3 text-center">
-            Johnston County Community Services | Emergency Assistance & Self-Sufficiency
-        </footer>
-    </div>
-</div>
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget links-widget ml_30">
+                <div class="widget-title">
+                  <h3>Partners</h3>
+                </div>
+                <div class="widget-content">
+                  <ul class="links-list clearfix" aria-label="Partenaires">
+                      <li><a href="https://communityactionpartnership.com/" target="_blank" rel="noopener noreferrer" aria-label="COMMUNITY ACTION PARTNERSHIPS (opens in a new tab)">COMMUNITY ACTION PARTNERSHIPS</a></li>
+                      <li><a href="https://www.nccaa.net/" target="_blank" rel="noopener noreferrer" aria-label="NCCAA (opens in a new tab)">NCCAA</a></li>
+                      <li><a href="https://seacaa.org/" target="_blank" rel="noopener noreferrer" aria-label="SEACAA (opens in a new tab)">SEACAA</a></li>
+                      <li><a href="https://www.unitedwaytriangle.org/" target="_blank" rel="noopener noreferrer" aria-label="UNITED WAY (opens in a new tab)">UNITED WAY</a></li>
+                      <li><a href="https://www.leecountyunitedway.org/" target="_blank" rel="noopener noreferrer" aria-label="UNITED WAY LEE COUNTY (opens in a new tab)">UNITED WAY LEE COUNTY</a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget contact-widget contact-widget-two">
+                <div class="widget-title centred">
+                  <h3>Contact</h3>
+                </div>
+                <div class="widget-content">
+                                    <ul class="info-list">
+                      <li><i class="icon-17" aria-hidden="true"></i><span class="hs-address-block"><span class="hs-address-line">1102 Massey Street</span><span class="hs-address-line">P.O. Drawer 711</span><span class="hs-address-line">Smithfield, NC 27577</span></span></li>
+                      <li><i class="icon-18" aria-hidden="true"></i><a href="mailto:Info@jlhcommunityaction.org">Info@jlhcommunityaction.org</a></li>
+                      <!-- FIX 22 (WCAG 4.1.1): Balise <a> correctement fermée (était non fermée) -->
+                      <li class="phone"><i class="icon-19" aria-hidden="true"></i><a href="tel:9199342145">919.934.2145</a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+
+          
+          </div>
+
+          <div class="row clearfix">
+            <div class="col-lg-12 footer-column">
+              <div class="footer-widget about-widget footer-widget--funding">
+                <div class="widget-title"><h3>Funding Support</h3></div>
+                <div class="widget-content">
+                  <p class="footer-grant-text">This website is supported by the following Grant Numbers: 00047170 (Community Services Block Grant), 04CH011698 (Head Start/Early Head Start), 2401NCLIEA (LIEAP), 48198 (Rapid Rehousing), Agreement #7223 (School Food), 46936 (SFRF — Choosing Home) and DE-EE0009920 (Weatherization) from the Office of Community Services and the Office of Head Start within the Administration for Children and Families, a division of the U.S. Department of Health and Human Services. Neither the Administration for Children and Families nor any of its components operate, control, are responsible for, or necessarily endorse this website (including without limitation, its content, technical infrastructure, and policies, and any services or tools provided). The opinions, findings, conclusions, and recommendations expressed are those of the author(s) and do not necessarily reflect the views of the Administration for Children and Families, the Office of Community Services, or the Office of Head Start.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="footer-bottom centred">
+          <div class="copyright">
+            <p>Copyright &copy; 2026 by <a href="index.html">JLHCA, Inc.</a> All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 <!-- Signature Pad initialization and handling (professional hand-drawn signature) -->
 <script>
     (function() {
