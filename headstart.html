@@ -17,6 +17,134 @@
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&amp;display=swap" rel="stylesheet">
 
 <!-- Stylesheets -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (optionnel mais élégant) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles personnalisés pour conserver l'apparence des cartes */
+        body {
+            background: #f5f7fb;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            padding: 2rem;
+        }
+
+        .hs-enroll-forms {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hs-enroll-forms h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1e2a3e;
+            text-align: center;
+        }
+
+        /* Grille modifiée : UN SEUL ARTICLE PAR LIGNE, centré */
+        .row.clearfix.programs-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        /* Chaque colonne prend la largeur max qu'elle souhaite mais centrée */
+        .program-block {
+            width: 100%;
+            max-width: 550px;   /* largeur confortable pour garder les proportions */
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Carte (article) - dimensions d'origine conservées */
+        .program-card {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 1.8rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
+            border: 1px solid #e9edf2;
+        }
+
+        .program-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .program-card__sub {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #dc3545;      /* touche de rouge professionnelle */
+            margin-bottom: 0.5rem;
+        }
+
+        .program-card__title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #1f2a3a;
+        }
+
+        .program-card__desc {
+            font-size: 0.9rem;
+            color: #4a5a6e;
+            line-height: 1.45;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Bouton identique à l'original (theme-btn btn-one) */
+        .theme-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #1f2a3a;
+            color: white;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: background 0.2s, transform 0.1s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .theme-btn:hover {
+            background-color: #dc3545;
+            color: white;
+            text-decoration: none;
+        }
+
+        .theme-btn i, .theme-btn .icon-2 {
+            font-size: 0.9rem;
+        }
+
+        /* Pour simuler l'icône sans FontAwesome si besoin, mais on utilise FA */
+        .icon-2 {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+
+        /* Ajustement responsive */
+        @media (max-width: 640px) {
+            .program-block {
+                max-width: 94%;
+            }
+            .program-card {
+                padding: 1.4rem;
+            }
+            .program-card__title {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
 <link href="assets/css/flaticon.css" rel="stylesheet">
 <link href="assets/css/owl.css" rel="stylesheet">
@@ -37,6 +165,7 @@
 <link href="assets/css/module-css/team.css" rel="stylesheet">
 <link href="assets/css/module-css/footer.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -265,7 +394,7 @@
                 </ul>
             </div>
 
-            <!-- Forms to print -->
+            <!-- Forms to print 
             <div class="hs-enroll-forms">
                 <h3>Forms to Print</h3>
                 <div class="row clearfix programs-grid">
@@ -339,8 +468,86 @@
                         </article>
                     </div>
                 </div>
+            </div> -->
+ <div class="hs-enroll-forms">
+        <h3>Forms to Print</h3>
+        <div class="row clearfix programs-grid">
+            <!-- 1 - Physical Form -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+                <article class="program-card">
+                    <p class="program-card__sub">Health</p>
+                    <h3 class="program-card__title">Physical Form</h3>
+                    <p class="program-card__desc">Health screening required prior to enrollment.</p>
+                    <p class="program-card__cta">
+                        <a class="theme-btn btn-one" href="https://www.jlhcommunityaction.org/_files/ugd/027fef_525d9602c87d4bffb3ac160ebac82b73.pdf" target="_blank" rel="noopener noreferrer" aria-label="Print physical form">
+                            <span class="text">Print form</span>
+                            <i class="icon-2 fas fa-print" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </article>
             </div>
 
+            <!-- 2 - Dental Form -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+                <article class="program-card">
+                    <p class="program-card__sub">Health</p>
+                    <h3 class="program-card__title">Dental Form</h3>
+                    <p class="program-card__desc">Dental check-up required as part of enrollment.</p>
+                    <p class="program-card__cta">
+                        <a class="theme-btn btn-one" href="https://www.jlhcommunityaction.org/_files/ugd/027fef_59d2684e4b494600ac3794cd660cd783.pdf" target="_blank" rel="noopener noreferrer" aria-label="Print dental form">
+                            <span class="text">Print form</span>
+                            <i class="icon-2 fas fa-print" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </article>
+            </div>
+
+            <!-- 3 - Medication Form -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+                <article class="program-card">
+                    <p class="program-card__sub">Health</p>
+                    <h3 class="program-card__title">Medication Form</h3>
+                    <p class="program-card__desc">Required if your child takes any prescribed medication during school hours.</p>
+                    <p class="program-card__cta">
+                        <a class="theme-btn btn-one" href="https://www.jlhcommunityaction.org/_files/ugd/027fef_fcc23872aa62431082af77c6c1d789e3.doc" target="_blank" rel="noopener noreferrer" aria-label="Print medication form">
+                            <span class="text">Print form</span>
+                            <i class="icon-2 fas fa-print" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </article>
+            </div>
+
+            <!-- 4 - Meal Modification -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+                <article class="program-card">
+                    <p class="program-card__sub">Nutrition</p>
+                    <h3 class="program-card__title">Meal Modification</h3>
+                    <p class="program-card__desc">Required for any dietary restrictions, food allergies, or special meal needs.</p>
+                    <p class="program-card__cta">
+                        <a class="theme-btn btn-one" href="#" aria-label="Print meal modification form">
+                            <span class="text">Print form</span>
+                            <i class="icon-2 fas fa-print" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </article>
+            </div>
+
+            <!-- 5 - Pick-Up Form -->
+            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
+                <article class="program-card">
+                    <p class="program-card__sub">Authorization</p>
+                    <h3 class="program-card__title">Pick-Up Form</h3>
+                    <p class="program-card__desc">List of authorized adults allowed to pick up your child from our centers.</p>
+                    <p class="program-card__cta">
+                        <a class="theme-btn btn-one" href="#" aria-label="Print pick-up form">
+                            <span class="text">Print form</span>
+                            <i class="icon-2 fas fa-print" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
         </div>
     </section>
     <!-- Enrollment end -->
