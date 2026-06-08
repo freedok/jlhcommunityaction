@@ -4067,7 +4067,7 @@ button.ltr {
   overflow: hidden;
 }
 
-.team-section .team-block-one .inner-box .image-box img {
+..team-section .team-block-one .inner-box .image-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -4075,6 +4075,33 @@ button.ltr {
   display: block;
 }
 
+.team-section .team-block {
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.team-section .team-block-one {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-section .team-block-one .inner-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 360px;
+}
+
+.team-section .team-block-one .inner-box .content-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 /* ===== Footer — Grant Disclaimer Text ===== */
 .footer-grant-text {
