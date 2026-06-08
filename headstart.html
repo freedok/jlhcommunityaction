@@ -17,134 +17,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&amp;display=swap" rel="stylesheet">
 
 <!-- Stylesheets -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome (optionnel mais élégant) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Styles personnalisés pour conserver l'apparence des cartes */
-        body {
-            background: #f5f7fb;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            padding: 2rem;
-        }
-
-        .hs-enroll-forms {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hs-enroll-forms h3 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: #1e2a3e;
-            text-align: center;
-        }
-
-        /* Grille modifiée : UN SEUL ARTICLE PAR LIGNE, centré */
-        .row.clearfix.programs-grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        /* Chaque colonne prend la largeur max qu'elle souhaite mais centrée */
-        .program-block {
-            width: 100%;
-            max-width: 550px;   /* largeur confortable pour garder les proportions */
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Carte (article) - dimensions d'origine conservées */
-        .program-card {
-            background: white;
-            border-radius: 1.25rem;
-            padding: 1.8rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            width: 100%;
-            border: 1px solid #e9edf2;
-        }
-
-        .program-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .program-card__sub {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            color: #dc3545;      /* touche de rouge professionnelle */
-            margin-bottom: 0.5rem;
-        }
-
-        .program-card__title {
-            font-size: 1.45rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: #1f2a3a;
-        }
-
-        .program-card__desc {
-            font-size: 0.9rem;
-            color: #4a5a6e;
-            line-height: 1.45;
-            margin-bottom: 1.25rem;
-        }
-
-        /* Bouton identique à l'original (theme-btn btn-one) */
-        .theme-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: #1f2a3a;
-            color: white;
-            padding: 0.6rem 1.4rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.85rem;
-            transition: background 0.2s, transform 0.1s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .theme-btn:hover {
-            background-color: #dc3545;
-            color: white;
-            text-decoration: none;
-        }
-
-        .theme-btn i, .theme-btn .icon-2 {
-            font-size: 0.9rem;
-        }
-
-        /* Pour simuler l'icône sans FontAwesome si besoin, mais on utilise FA */
-        .icon-2 {
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-        }
-
-        /* Ajustement responsive */
-        @media (max-width: 640px) {
-            .program-block {
-                max-width: 94%;
-            }
-            .program-card {
-                padding: 1.4rem;
-            }
-            .program-card__title {
-                font-size: 1.25rem;
-            }
-        }
-    </style>
 <link href="assets/css/font-awesome-all.css" rel="stylesheet">
 <link href="assets/css/flaticon.css" rel="stylesheet">
 <link href="assets/css/owl.css" rel="stylesheet">
@@ -165,7 +37,15 @@
 <link href="assets/css/module-css/team.css" rel="stylesheet">
 <link href="assets/css/module-css/footer.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
-
+    <style>
+        .conteneur {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+    </style>
 </head>
 
 <body>
@@ -394,12 +274,12 @@
                 </ul>
             </div>
 
-            <!-- Forms to print 
+            <!-- Forms to print -->
             <div class="hs-enroll-forms">
                 <h3>Forms to Print</h3>
                 <div class="row clearfix programs-grid">
                     <div class="col-lg-6 col-md-6 col-sm-12 program-block">
-                        <article class="program-card">
+                        <article class="conteneur program-card">
                             <p class="program-card__sub">Health</p>
                             <h3 class="program-card__title">Physical Form</h3>
                             <p class="program-card__desc">Health screening required prior to enrollment.</p>
@@ -413,7 +293,7 @@
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 program-block">
-                        <article class="program-card">
+                        <article class="conteneur program-card">
                             <p class="program-card__sub">Health</p>
                             <h3 class="program-card__title">Dental Form</h3>
                             <p class="program-card__desc">Dental check-up required as part of enrollment.</p>
@@ -427,7 +307,7 @@
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 program-block">
-                        <article class="program-card">
+                        <article class="conteneur program-card">
                             <p class="program-card__sub">Health</p>
                             <h3 class="program-card__title">Medication Form</h3>
                             <p class="program-card__desc">Required if your child takes any prescribed medication during school hours.</p>
@@ -441,7 +321,7 @@
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 program-block">
-                        <article class="program-card">
+                        <article class="conteneur program-card">
                             <p class="program-card__sub">Nutrition</p>
                             <h3 class="program-card__title">Meal Modification</h3>
                             <p class="program-card__desc">Required for any dietary restrictions, food allergies, or special meal needs.</p>
@@ -455,7 +335,7 @@
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 program-block">
-                        <article class="program-card">
+                        <article class="conteneur program-card">
                             <p class="program-card__sub">Authorization</p>
                             <h3 class="program-card__title">Pick-Up Form</h3>
                             <p class="program-card__desc">List of authorized adults allowed to pick up your child from our centers.</p>
@@ -468,86 +348,8 @@
                         </article>
                     </div>
                 </div>
-            </div> -->
- <div class="hs-enroll-forms">
-        <h3>Forms to Print</h3>
-        <div class="row clearfix programs-grid">
-            <!-- 1 - Physical Form -->
-            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
-                <article class="program-card">
-                    <p class="program-card__sub">Health</p>
-                    <h3 class="program-card__title">Physical Form</h3>
-                    <p class="program-card__desc">Health screening required prior to enrollment.</p>
-                    <p class="program-card__cta">
-                        <a class="theme-btn btn-one" href="https://www.jlhcommunityaction.org/_files/ugd/027fef_525d9602c87d4bffb3ac160ebac82b73.pdf" target="_blank" rel="noopener noreferrer" aria-label="Print physical form">
-                            <span class="text">Print form</span>
-                            <i class="icon-2 fas fa-print" aria-hidden="true"></i>
-                        </a>
-                    </p>
-                </article>
             </div>
 
-            <!-- 2 - Dental Form -->
-            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
-                <article class="program-card">
-                    <p class="program-card__sub">Health</p>
-                    <h3 class="program-card__title">Dental Form</h3>
-                    <p class="program-card__desc">Dental check-up required as part of enrollment.</p>
-                    <p class="program-card__cta">
-                        <a class="theme-btn btn-one" href="https://www.jlhcommunityaction.org/_files/ugd/027fef_59d2684e4b494600ac3794cd660cd783.pdf" target="_blank" rel="noopener noreferrer" aria-label="Print dental form">
-                            <span class="text">Print form</span>
-                            <i class="icon-2 fas fa-print" aria-hidden="true"></i>
-                        </a>
-                    </p>
-                </article>
-            </div>
-
-            <!-- 3 - Medication Form -->
-            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
-                <article class="program-card">
-                    <p class="program-card__sub">Health</p>
-                    <h3 class="program-card__title">Medication Form</h3>
-                    <p class="program-card__desc">Required if your child takes any prescribed medication during school hours.</p>
-                    <p class="program-card__cta">
-                        <a class="theme-btn btn-one" href="https://www.jlhcommunityaction.org/_files/ugd/027fef_fcc23872aa62431082af77c6c1d789e3.doc" target="_blank" rel="noopener noreferrer" aria-label="Print medication form">
-                            <span class="text">Print form</span>
-                            <i class="icon-2 fas fa-print" aria-hidden="true"></i>
-                        </a>
-                    </p>
-                </article>
-            </div>
-
-            <!-- 4 - Meal Modification -->
-            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
-                <article class="program-card">
-                    <p class="program-card__sub">Nutrition</p>
-                    <h3 class="program-card__title">Meal Modification</h3>
-                    <p class="program-card__desc">Required for any dietary restrictions, food allergies, or special meal needs.</p>
-                    <p class="program-card__cta">
-                        <a class="theme-btn btn-one" href="#" aria-label="Print meal modification form">
-                            <span class="text">Print form</span>
-                            <i class="icon-2 fas fa-print" aria-hidden="true"></i>
-                        </a>
-                    </p>
-                </article>
-            </div>
-
-            <!-- 5 - Pick-Up Form -->
-            <div class="col-lg-6 col-md-6 col-sm-12 program-block">
-                <article class="program-card">
-                    <p class="program-card__sub">Authorization</p>
-                    <h3 class="program-card__title">Pick-Up Form</h3>
-                    <p class="program-card__desc">List of authorized adults allowed to pick up your child from our centers.</p>
-                    <p class="program-card__cta">
-                        <a class="theme-btn btn-one" href="#" aria-label="Print pick-up form">
-                            <span class="text">Print form</span>
-                            <i class="icon-2 fas fa-print" aria-hidden="true"></i>
-                        </a>
-                    </p>
-                </article>
-            </div>
-        </div>
-    </div>
         </div>
     </section>
     <!-- Enrollment end -->
@@ -567,8 +369,8 @@
                 <div class="row clearfix wap-staff-row">
                     <div class="col-md-6 col-sm-12 wap-staff-col wap-staff-col--mgmt">
                         <div class="wap-staff-card">
-                            <div class="wap-staff-photo">
-                                <img src="assets/images/team/team-12.jpg" alt="Donna Barnette">
+                            <div class="wap-staff-photo wap-staff-photo--placeholder" aria-hidden="true">
+                                <i class="fas fa-user"></i>
                             </div>
                             <div class="wap-staff-info">
                                 <span class="wap-staff-role">EHS / HS Director</span>
@@ -779,7 +581,7 @@
                     <div class="col-md-6 col-sm-12 hs-center-col">
                         <div class="hs-center-card">
                             <h4>Smithfield Head Start</h4>
-                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">1102 Massey St., Smithfield, NC 27577</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=1102+Massey+St.%2C+Smithfield%2C+NC+27577" target="_blank" rel="noopener noreferrer" title="Click here to see location" aria-label="Open Smithfield Head Start address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
+                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">1102 Massey St., Smithfield, NC 27577</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=1102+Massey+St.%2C+Smithfield%2C+NC+27577" target="_blank" rel="noopener noreferrer" aria-label="Open Smithfield Head Start address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
                             <p><i class="icon-19" aria-hidden="true"></i> <a href="tel:9199342145">919-934-2145</a></p>
                             <p><strong>Center Director:</strong> Patricia Davis</p>
                             <p><strong>Hours:</strong> 8:00&ndash;2:00</p>
@@ -789,7 +591,7 @@
                     <div class="col-md-6 col-sm-12 hs-center-col">
                         <div class="hs-center-card">
                             <h4>Clayton Head Start</h4>
-                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">301 Champion St., Clayton, NC 27520</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=301+Champion+St.%2C+Clayton%2C+NC+27520" target="_blank" rel="noopener noreferrer" title="Click here to see location" aria-label="Open Clayton Head Start address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
+                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">301 Champion St., Clayton, NC 27520</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=301+Champion+St.%2C+Clayton%2C+NC+27520" target="_blank" rel="noopener noreferrer" aria-label="Open Clayton Head Start address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
                             <p><i class="icon-19" aria-hidden="true"></i> <a href="tel:9195533681">919-553-3681</a></p>
                             <p><strong>Lead Teacher:</strong> Gail Lyford</p>
                             <p><strong>Hours:</strong> 8:00&ndash;2:00</p>
@@ -799,7 +601,7 @@
                     <div class="col-md-6 col-sm-12 hs-center-col">
                         <div class="hs-center-card">
                             <h4>Early Head Start Learning Center</h4>
-                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">907 N Webb St., Selma, NC 27576</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=907+N+Webb+St.%2C+Selma%2C+NC+27576" target="_blank" rel="noopener noreferrer" title="Click here to see location" aria-label="Open Early Head Start Learning Center address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
+                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">907 N Webb St., Selma, NC 27576</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=907+N+Webb+St.%2C+Selma%2C+NC+27576" target="_blank" rel="noopener noreferrer" aria-label="Open Early Head Start Learning Center address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
                             <p><i class="icon-19" aria-hidden="true"></i> <a href="tel:9199652211">919-965-2211</a></p>
                             <p><strong>Center Director:</strong> Marla Shearin</p>
                             <p><strong>Hours:</strong> 8:00&ndash;2:00</p>
@@ -809,7 +611,7 @@
                     <div class="col-md-6 col-sm-12 hs-center-col">
                         <div class="hs-center-card">
                             <h4>Edgerton Court Head Start</h4>
-                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">1605 Dail St., Smithfield, NC 27577</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=1605+Dail+St.%2C+Smithfield%2C+NC+27577" target="_blank" rel="noopener noreferrer" title="Click here to see location" aria-label="Open Edgerton Court Head Start address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
+                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">1605 Dail St., Smithfield, NC 27577</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=1605+Dail+St.%2C+Smithfield%2C+NC+27577" target="_blank" rel="noopener noreferrer" aria-label="Open Edgerton Court Head Start address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
                             <p><i class="icon-19" aria-hidden="true"></i> <a href="tel:9192090389">919-209-0389</a></p>
                             <p><strong>Lead Teacher:</strong> Shannon Smith</p>
                             <p><strong>Hours:</strong> 8:00&ndash;2:00</p>
@@ -819,7 +621,7 @@
                     <div class="col-md-6 col-sm-12 hs-center-col">
                         <div class="hs-center-card">
                             <h4>Princeton Head Start</h4>
-                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">308 S. James St., Princeton, NC 27569</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=308+S.+James+St.%2C+Princeton%2C+NC+27569" target="_blank" rel="noopener noreferrer" title="Click here to see location" aria-label="Open Princeton Head Start address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
+                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">308 S. James St., Princeton, NC 27569</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=308+S.+James+St.%2C+Princeton%2C+NC+27569" target="_blank" rel="noopener noreferrer" aria-label="Open Princeton Head Start address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
                             <p><i class="icon-19" aria-hidden="true"></i> <a href="tel:9199362604">919-936-2604</a></p>
                             <p><strong>Lead Teacher:</strong> Michelle Sauls</p>
                             <p><strong>Hours:</strong> 8:00&ndash;2:00</p>
@@ -829,7 +631,7 @@
                     <div class="col-md-6 col-sm-12 hs-center-col">
                         <div class="hs-center-card">
                             <h4>Church Street</h4>
-                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">215 S 3rd St, Smithfield, NC 27577</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=215+S+3rd+St%2C+Smithfield%2C+NC+27577" target="_blank" rel="noopener noreferrer" title="Click here to see location" aria-label="Open Church Street address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
+                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">215 S 3rd St, Smithfield, NC 27577</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=215+S+3rd+St%2C+Smithfield%2C+NC+27577" target="_blank" rel="noopener noreferrer" aria-label="Open Church Street address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
                             <p><i class="icon-19" aria-hidden="true"></i> <a href="tel:9843018074">984-301-8074</a></p>
                             <p><strong>Center Director:</strong> Cassandra Barns</p>
                             <p><strong>Hours:</strong> 8:00&ndash;2:00</p>
@@ -846,7 +648,7 @@
                     <div class="col-md-6 col-sm-12 hs-center-col">
                         <div class="hs-center-card">
                             <h4>Dunn Head Start</h4>
-                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">670 E. Johnson St., Dunn, NC 28334</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=670+E.+Johnson+St.%2C+Dunn%2C+NC+28334" target="_blank" rel="noopener noreferrer" title="Click here to see location" aria-label="Open Dunn Head Start address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
+                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">670 E. Johnson St., Dunn, NC 28334</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=670+E.+Johnson+St.%2C+Dunn%2C+NC+28334" target="_blank" rel="noopener noreferrer" aria-label="Open Dunn Head Start address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
                             <p><i class="icon-19" aria-hidden="true"></i> <a href="tel:9102300276">910-230-0276</a></p>
                             <p><strong>Center Director:</strong> Andoria Williams</p>
                             <p><strong>Hours:</strong> 8:00&ndash;2:00</p>
@@ -856,7 +658,7 @@
                     <div class="col-md-6 col-sm-12 hs-center-col">
                         <div class="hs-center-card">
                             <h4>SWCDC</h4>
-                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">274 Irene Roberts Rd., Lillington, NC 27546</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=274+Irene+Roberts+Rd.%2C+Lillington%2C+NC+27546" target="_blank" rel="noopener noreferrer" title="Click here to see location" aria-label="Open SWCDC address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
+                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">274 Irene Roberts Rd., Lillington, NC 27546</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=274+Irene+Roberts+Rd.%2C+Lillington%2C+NC+27546" target="_blank" rel="noopener noreferrer" aria-label="Open SWCDC address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
                             <p><i class="icon-19" aria-hidden="true"></i> <a href="tel:9108142651">910-814-2651</a></p>
                             <p><strong>Center Director:</strong> Alicia Jones</p>
                             <p><strong>Hours:</strong> 8:00&ndash;2:00</p>
@@ -873,7 +675,7 @@
                     <div class="col-md-6 col-sm-12 hs-center-col">
                         <div class="hs-center-card">
                             <h4>Lee County Head Start Learning Center</h4>
-                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">209 McCormick Rd., Lemon Springs, NC 28355</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=209+McCormick+Rd.%2C+Lemon+Springs%2C+NC+28355" target="_blank" rel="noopener noreferrer" title="Click here to see location" aria-label="Open Lee County Head Start Learning Center address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
+                            <p class="hs-center-card__address"><i class="icon-17" aria-hidden="true"></i> <span class="hs-center-card__address-text">209 McCormick Rd., Lemon Springs, NC 28355</span> <a class="hs-center-card__map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=209+McCormick+Rd.%2C+Lemon+Springs%2C+NC+28355" target="_blank" rel="noopener noreferrer" aria-label="Open Lee County Head Start Learning Center address in Google Maps (opens in a new tab)"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Map</span></a></p>
                             <p><i class="icon-19" aria-hidden="true"></i> <a href="tel:9197779073">919-777-9073</a></p>
                             <p><strong>Center Director:</strong> Evette Fairley</p>
                         </div>
