@@ -22,7 +22,7 @@
 <link href="assets/css/flaticon.css" rel="stylesheet">
 <link href="assets/css/owl.css" rel="stylesheet">
 <link href="assets/css/bootstrap.css" rel="stylesheet">
-Links<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
 <link href="assets/css/animate.css" rel="stylesheet">
 <link href="assets/css/nice-select.css" rel="stylesheet">
 <link href="assets/css/odometer.css" rel="stylesheet">
@@ -40,6 +40,40 @@ Links<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
 
     <!-- Signature pad library (smooth signature capture) -->
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 50px;
+        }
+
+        /* Conteneur des boutons radio - centré et sur une ligne */
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Style simple pour chaque option */
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .radio-option label {
+            font-size: 18px;
+            font-weight: normal;
+            color: #333;
+        }
+
+        .radio-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+    </style>
     <style>
         /* professional & clean */
         body {
@@ -273,9 +307,22 @@ Links<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
                     Official picture ID, Social Security cards for all household members, proof of income for all household members, the bill you are seeking assistance with, and documentation of your crisis situation.
                 </div>
             </div>
-            <div class="alert alert-info mb-4 py-2" role="alert">
-                <strong>IMPORTANT:</strong> YOU MUST LIVE IN JOHNSTON COUNTY TO RECEIVE SERVICES IN THIS OFFICE.
-            </div>
+            <div class="radio-group">
+        <div class="radio-option">
+            <input type="radio" id="johnston" name="county" value="johnston">
+            <label for="johnston">JOHNSTON COUNTY</label>
+        </div>
+        <div class="radio-option">
+            <input type="radio" id="harnett" name="county" value="harnett">
+            <label for="harnett">HARNETT COUNTY</label>
+        </div>
+        <div class="radio-option">
+            <input type="radio" id="lee" name="county" value="lee">
+            <label for="lee">LEE COUNTY OFFICE</label>
+
+        </div>
+        <br>
+    </div>
 
             <form id="crisisForm" action="#" method="post">
                 <!-- Basic contact info -->
