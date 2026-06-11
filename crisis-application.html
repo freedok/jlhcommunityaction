@@ -40,7 +40,7 @@
 
     <!-- Signature pad library (smooth signature capture) -->
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
-    <style>
+       <style>
         body {
             font-family: Arial, sans-serif;
             background: #f0f2f5;
@@ -53,6 +53,8 @@
             justify-content: center;
             gap: 30px;
             flex-wrap: wrap;
+            margin-top: 20px;      /* Espace en haut */
+            margin-bottom: 50px;   /* Espace en bas */
         }
 
         /* Style simple pour chaque option */
@@ -307,7 +309,10 @@
                     Official picture ID, Social Security cards for all household members, proof of income for all household members, the bill you are seeking assistance with, and documentation of your crisis situation.
                 </div>
             </div>
+            <div style="display: flex; justify-content: center; align-items: center;" class=""> Which county are you applying for?</div>
+
             <div class="radio-group">
+               
         <div class="radio-option">
             <input type="radio" id="johnston" name="county" value="johnston">
             <label for="johnston">JOHNSTON COUNTY</label>
@@ -321,7 +326,7 @@
             <label for="lee">LEE COUNTY OFFICE</label>
 
         </div>
-        <br>
+
     </div>
 
             <form id="crisisForm" action="#" method="post">
