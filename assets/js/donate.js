@@ -169,7 +169,7 @@
     if (!selectedAmount || selectedAmount < 1) {
       e.preventDefault();
       customInput.focus();
-      customInput.style.borderColor = '#e86a1a';
+      customInput.style.borderColor = '#e84393';
       setTimeout(function () { customInput.style.borderColor = ''; }, 2000);
     }
   });
