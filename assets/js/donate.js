@@ -109,7 +109,15 @@
     document.body.style.overflow = '';
   }
 
-  /* ── 5. Triggers: all .donate-box-btn clicks ──────────────────────── */
+  /* ── 5. Inject heart icon into nav donate buttons ────────────────── */
+  document.querySelectorAll('a.nav-donate-btn').forEach(function (btn) {
+    var icon = document.createElement('i');
+    icon.className = 'fas fa-heart';
+    icon.setAttribute('aria-hidden', 'true');
+    btn.insertBefore(icon, btn.firstChild);
+  });
+
+  /* ── 6. Triggers: all .donate-box-btn clicks ──────────────────────── */
   document.addEventListener('click', function (e) {
     var trigger = e.target.closest('.donate-box-btn');
     if (trigger) {
@@ -169,7 +177,7 @@
     if (!selectedAmount || selectedAmount < 1) {
       e.preventDefault();
       customInput.focus();
-      customInput.style.borderColor = '#e84393';
+      customInput.style.borderColor = '#dc3545';
       setTimeout(function () { customInput.style.borderColor = ''; }, 2000);
     }
   });

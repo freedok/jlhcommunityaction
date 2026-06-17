@@ -4900,7 +4900,7 @@ section .carousel-pause-btn {
   display: inline-flex !important;
   align-items: center;
   gap: 6px;
-  background: #e84393;
+  background: #dc3545;
   color: #fff !important;
   font-weight: 700;
   font-size: 12px;
@@ -4912,14 +4912,12 @@ section .carousel-pause-btn {
   margin-top: 20px;
   margin-bottom: 20px;
   line-height: 1 !important;
-  box-shadow: 0 4px 16px rgba(232,67,147,0.4);
+  box-shadow: 0 4px 16px rgba(220,53,69,0.35);
   transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
 }
-.main-menu .navigation > li > a.nav-donate-btn::before {
-  content: "\f004";
-  font-family: "Font Awesome 5 Pro";
-  font-weight: 900;
-  font-size: 10px;
+.main-menu .navigation > li > a.nav-donate-btn .fa-heart {
+  font-size: 11px;
+  color: #fff;
 }
 .main-menu .navigation > li > a.nav-donate-btn:hover {
   background: #1a1a5e;
@@ -4950,7 +4948,7 @@ section .carousel-pause-btn {
 .donate-header-icon {
   width: 56px; height: 56px;
   border-radius: 50%;
-  background: #e84393;
+  background: #dc3545;
   color: #fff;
   font-size: 22px;
   display: inline-flex;
@@ -5017,11 +5015,11 @@ section .carousel-pause-btn {
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s, color 0.2s;
 }
-.amt-btn:hover { border-color: #e84393; color: #e84393; }
+.amt-btn:hover { border-color: #dc3545; color: #dc3545; }
 .amt-btn.active {
-  border-color: #e84393;
-  background: #fff0f7;
-  color: #e84393;
+  border-color: #dc3545;
+  background: #fff5f5;
+  color: #dc3545;
 }
 
 /* ── Custom amount ── */
@@ -5033,7 +5031,7 @@ section .carousel-pause-btn {
 .donate-custom-field {
   display: flex;
   align-items: center;
-  border: 2px solid #e84393;
+  border: 2px solid #dc3545;
   border-radius: 10px;
   overflow: hidden;
   background: #fff;
@@ -5042,9 +5040,9 @@ section .carousel-pause-btn {
   padding: 0 14px;
   font-size: 18px;
   font-weight: 700;
-  color: #e84393;
-  border-right: 2px solid #e84393;
-  background: #fff0f7;
+  color: #dc3545;
+  border-right: 2px solid #dc3545;
+  background: #fff5f5;
 }
 .donate-custom-field input {
   flex: 1;
@@ -5077,7 +5075,7 @@ section .carousel-pause-btn {
 .donate-submit-btn {
   display: block;
   width: 100%;
-  background: #e84393;
+  background: #dc3545;
   color: #fff;
   border: none;
   border-radius: 50px;
