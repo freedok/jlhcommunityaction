@@ -2185,6 +2185,27 @@ button.ltr {
   margin-top: 0;
 }
 
+/* Board wap-staff-card overrides — 2 per row via Bootstrap gutter */
+.board-directors-section .wap-staff-row {
+  gap: 0;
+}
+.board-directors-section .wap-staff-col {
+  flex: 0 0 50% !important;
+  max-width: 50% !important;
+  padding: 12px !important;
+}
+.board-directors-section .wap-staff-card {
+  margin-bottom: 0;
+  text-align: left;
+  height: 100%;
+}
+@media (max-width: 767px) {
+  .board-directors-section .wap-staff-col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 /* ===== Board of Directors — table layout ===== */
 .bod-table-wrap {
   overflow-x: auto;
