@@ -5134,3 +5134,34 @@ section .carousel-pause-btn {
   transition: background 0.2s;
 }
 .donate-popup .close-donate:hover { background: rgba(255,255,255,0.3); }
+
+/* Image caption */
+.wap-img-caption {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  font-style: italic;
+  text-align: center;
+  margin-top: 8px;
+  padding: 0 8px;
+}
+
+/* Image section title */
+.wap-img-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a5e;
+  margin: 0 0 14px;
+  line-height: 1.3;
+}
+
+/* Image description paragraph */
+.wap-img-desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #444;
+  margin-top: 16px;
+  border-left: 4px solid #dc3545;
+  padding-left: 16px;
+}
