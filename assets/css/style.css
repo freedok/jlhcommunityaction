@@ -5165,3 +5165,14 @@ section .carousel-pause-btn {
   border-left: 4px solid #dc3545;
   padding-left: 16px;
 }
+
+/* Multiple county badges on one card */
+.rrh-county-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.rrh-county-badges .rrh-county-badge {
+  margin-bottom: 0;
+}
