@@ -68,12 +68,30 @@
             z-index: 1;
         }
 
+        /* WCAG 2.4.11 — visually-hidden (sr-only) */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         /* Contenu texte */
+        /* Réinitialise héritage couleur blanc du banner template */
+        .slide-content, .slide-content * {
+            color: inherit;
+        }
+
         .slide-content {
             position: relative;
             z-index: 2;
             max-width: 70%;
-            background: rgba(255, 250, 240, 0.96);
+            background: #fffaf0; /* 100% opaque — contraste WCAG AA garanti */
             backdrop-filter: blur(12px);
             padding: 2rem 2.5rem;
             border-radius: 2rem;
@@ -90,21 +108,21 @@
         .slide-icon {
             font-size: 3.2rem;
             margin-bottom: 0.75rem;
-            color: #dc3545;
+            color: #dc3545 !important;
         }
 
         .slide-title {
             font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
-            color: #2c2418;
+            color: #1a1a5e !important;
             letter-spacing: -0.3px;
         }
 
         .slide-message {
             font-size: 1.15rem;
             line-height: 1.5;
-            color: #3b2f20;
+            color: #2c2418 !important;
             font-weight: 500;
         }
 
@@ -194,11 +212,22 @@
             box-shadow: 0 0 8px rgba(220,53,69,0.8);
         }
 
-        /* Aucun contour étranger */
+        /* Aucun contour étranger sur les conteneurs non-interactifs */
         .fullwidth-carousel, .slider-wrapper, .slides-container, .slide {
-            outline: none;
             border: none;
             box-shadow: none;
+        }
+
+        /* WCAG 2.4.7 — Focus visible sur les boutons du carrousel */
+        .nav-btn-float:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 3px;
+            box-shadow: 0 0 0 5px #dc3545;
+        }
+        .dot:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 3px;
+            box-shadow: 0 0 0 5px #dc3545;
         }
 
         body, .fullwidth-carousel {
@@ -317,7 +346,7 @@
 </head>
 
 <body>
-  <h1 style="font-size:1px;line-height:1;color:#000000;background-color:#ffffff;margin:0;padding:0;border:0;height:1px;overflow:hidden;display:block;">Johnston-Lee-Harnett Community Action, Inc. — Helping People, Changing Lives</h1>
+  <h1 class="sr-only">Johnston-Lee-Harnett Community Action, Inc. — Helping People, Changing Lives</h1>
   <a href="#main-content" class="skip-link">Aller au contenu principal</a>
   <div class="boxed_wrapper ltr">
 
@@ -453,40 +482,41 @@
 
       <!-- banner-section -->
       <section class="banner-style-two" aria-label="Bannière principale — Helping People, Changing Lives">
-        <div class="fullwidth-carousel">
+        <div class="fullwidth-carousel" role="region" aria-roledescription="carousel" aria-label="Diaporama JLHCA">
+          <!-- Région live pour annoncer le slide courant aux lecteurs d'écran -->
+          <div aria-live="polite" aria-atomic="true" class="sr-only" id="carouselStatus"></div>
     <div class="slider-wrapper">
         <div class="slides-container" id="slidesContainer">
             <!-- SLIDE 1 -->
-            <div class="slide" id="slide1" style="background-image: url('assets/images/shape/shape-67.avif');">
-                <div class="slide-overlay"></div>
+            <div class="slide" id="slide1" role="group" aria-roledescription="slide" aria-label="Slide 1 sur 4 : Crisis Application" style="background-image: url('assets/images/shape/shape-67.avif');">
+                <div class="slide-overlay" aria-hidden="true"></div>
                 <div class="slide-content">
-                    <div class="slide-icon"><i class="bi bi-tree-fill"></i></div>
-                    <div class="slide-title">Crisis Application</div>
+                    <div class="slide-icon" aria-hidden="true"><i class="bi bi-tree-fill"></i></div>
+                    <p class="slide-title">Crisis Application</p>
                     <div class="slide-message">
-                         <a href="crisis-application.html" target="_blank" rel="noopener noreferrer" class="theme-btn btn-one">
-                          <span class="text">Apply Now <br></span></a>
-                       
+                         <a href="crisis-application.html" target="_blank" rel="noopener noreferrer" class="theme-btn btn-one" aria-label="Apply Now — Crisis Application (opens in a new tab)">
+                          <span class="text">Apply Now</span></a>
                     </div>
                 </div>
             </div>
             <!-- SLIDE 2 -->
-            <div class="slide" id="slide2" style="background-image: url('assets/images/shape/shape-14.avif');">
-                <div class="slide-overlay"></div>
+            <div class="slide" id="slide2" role="group" aria-roledescription="slide" aria-label="Slide 2 sur 4 : Helping People, Changing Lives" style="background-image: url('assets/images/shape/shape-14.avif');">
+                <div class="slide-overlay" aria-hidden="true"></div>
                 <div class="slide-content">
-                    <div class="slide-icon"><i class="bi bi-brightness-high-fill"></i></div>
-                    <div class="slide-title">HELPING PEOPLE</div>
+                    <div class="slide-icon" aria-hidden="true"><i class="bi bi-brightness-high-fill"></i></div>
+                    <p class="slide-title">HELPING PEOPLE</p>
                     <div class="slide-message">
-                        CHANGING LIVES 
+                        CHANGING LIVES
                     </div>
                 </div>
             </div>
 
-              <!-- SLIDE 3 -->
-            <div class="slide" id="slide3" style="background-image: url('assets/images/shape/shape-120.avif');">
-                <div class="slide-overlay"></div>
+            <!-- SLIDE 3 -->
+            <div class="slide" id="slide3" role="group" aria-roledescription="slide" aria-label="Slide 3 sur 4 : Employment Opportunities" style="background-image: url('assets/images/shape/shape-120.avif');">
+                <div class="slide-overlay" aria-hidden="true"></div>
                 <div class="slide-content">
-                    <div class="slide-icon"><i class="bi bi-brightness-high-fill"></i></div>
-                    <div class="slide-title">Employment Opportunities</div>
+                    <div class="slide-icon" aria-hidden="true"><i class="bi bi-brightness-high-fill"></i></div>
+                    <p class="slide-title">Employment Opportunities</p>
                     <div class="slide-message">
                        <a href="career.html" class="theme-btn btn-one">
                           <span class="text">Apply for a Career</span></a>
@@ -495,11 +525,11 @@
             </div>
 
             <!-- SLIDE 4 — DONATE -->
-            <div class="slide" id="slide4" style="background-image: url('assets/images/banner/donate-banner.avif');">
-                <div class="slide-overlay" style="background: linear-gradient(135deg, rgba(90,7,31,0.65) 0%, rgba(220,53,69,0.45) 100%);"></div>
+            <div class="slide" id="slide4" role="group" aria-roledescription="slide" aria-label="Slide 4 sur 4 : Make a Difference — Donate" style="background-image: url('assets/images/banner/donate-banner.avif');">
+                <div class="slide-overlay" aria-hidden="true" style="background: linear-gradient(135deg, rgba(90,7,31,0.65) 0%, rgba(220,53,69,0.45) 100%);"></div>
                 <div class="slide-content">
-                    <div class="slide-icon"><i class="fas fa-heart"></i></div>
-                    <div class="slide-title">Make a Difference</div>
+                    <div class="slide-icon" aria-hidden="true"><i class="fas fa-heart"></i></div>
+                    <p class="slide-title">Make a Difference</p>
                     <div class="slide-message" style="margin-bottom:20px;">
                         Your generosity helps families in Johnston, Lee &amp; Harnett County
                     </div>
@@ -512,18 +542,22 @@
             </div>
         </div>
 
-        <!-- ========= BOUTONS DE NAVIGATION DIRECTEMENT SUR LE SLIDE ========= -->
-        <div class="nav-overlay">
-            <button class="nav-btn-float btn-prev" id="prevSlideBtn"><i class="bi bi-chevron-left"></i></button>
-            <button class="nav-btn-float btn-next" id="nextSlideBtn"><i class="bi bi-chevron-right"></i></button>
+        <!-- Boutons navigation carrousel — WCAG 4.1.2 : aria-label obligatoire -->
+        <div class="nav-overlay" aria-hidden="true">
+            <button class="nav-btn-float btn-prev" id="prevSlideBtn" aria-label="Slide précédent" aria-controls="slidesContainer">
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="nav-btn-float btn-next" id="nextSlideBtn" aria-label="Slide suivant" aria-controls="slidesContainer">
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
         </div>
 
-        <!-- indicateurs (dots) toujours positionnés sur le slide en bas -->
-        <div class="carousel-indicators" id="indicators">
-            <button class="dot active" data-index="0"></button>
-            <button class="dot" data-index="1"></button>
-            <button class="dot" data-index="2"></button>
-            <button class="dot" data-index="3"></button>
+        <!-- Indicateurs de position (dots) — WCAG 4.1.2 + 2.4.7 -->
+        <div class="carousel-indicators" id="indicators" role="group" aria-label="Navigation entre les slides">
+            <button class="dot active" data-index="0" aria-label="Slide 1 : Crisis Application" aria-current="true"></button>
+            <button class="dot" data-index="1" aria-label="Slide 2 : Helping People" aria-current="false"></button>
+            <button class="dot" data-index="2" aria-label="Slide 3 : Employment Opportunities" aria-current="false"></button>
+            <button class="dot" data-index="3" aria-label="Slide 4 : Donate" aria-current="false"></button>
         </div>
     </div>
 </div>
@@ -875,14 +909,22 @@ When you consider the ever increasing threats to the well-being of our disadvant
                 slidesContainer.style.transform = `translateX(${offset}%)`;
             }
             
-            // Mise à jour des dots
+            // Mise à jour des dots + aria-current (WCAG 4.1.2)
             dots.forEach((dot, idx) => {
                 if (idx === currentIndex) {
                     dot.classList.add('active');
+                    dot.setAttribute('aria-current', 'true');
                 } else {
                     dot.classList.remove('active');
+                    dot.setAttribute('aria-current', 'false');
                 }
             });
+            // Annonce live pour lecteurs d'écran (WCAG 4.1.3)
+            const status = document.getElementById('carouselStatus');
+            if (status) {
+                const slideLabel = slides[currentIndex].getAttribute('aria-label') || ('Slide ' + (currentIndex + 1));
+                status.textContent = slideLabel;
+            }
         }
         
         // Aller à un slide spécifique
@@ -967,11 +1009,7 @@ When you consider the ever increasing threats to the well-being of our disadvant
             }, 100);
         });
         
-        // Supprimer les outlines indésirables
-        const allInteractive = document.querySelectorAll('.dot, .nav-btn-float');
-        allInteractive.forEach(el => {
-            el.style.outline = 'none';
-        });
+        // Pas de suppression d'outline — focus visible requis par WCAG 2.4.7
         
         console.log('Carrousel · 2 slides · Navigation directement sur le slide (boutons latéraux) · couleur #dc3545');
     })();

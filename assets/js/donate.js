@@ -12,7 +12,7 @@
 
     /* header */
     '      <div class="donate-header">',
-    '        <div class="donate-header-icon"><i class="fas fa-heart" aria-hidden="true"></i></div>',
+    '        <div class="donate-header-icon" aria-hidden="true"><i class="fas fa-heart" aria-hidden="true"></i></div>',
     '        <h2 id="donate-heading">Support JLHCA</h2>',
     '        <p>Your generosity helps us serve Johnston, Lee &amp; Harnett County communities — providing housing, energy assistance, early education, and crisis support.</p>',
     '      </div>',
