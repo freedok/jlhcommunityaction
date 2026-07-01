@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Employment Application | JLHCA</title>
+
+<!-- Fav Icon -->
+<link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&amp;display=swap" rel="stylesheet">
+
+<!-- Stylesheets -->
+<link href="assets/css/font-awesome-all.css" rel="stylesheet">
+<link href="assets/css/flaticon.css" rel="stylesheet">
+<link href="assets/css/owl.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/animate.css" rel="stylesheet">
+<link href="assets/css/nice-select.css" rel="stylesheet">
+<link href="assets/css/odometer.css" rel="stylesheet">
+<link href="assets/css/elpath.css" rel="stylesheet">
+<link href="assets/css/color.css" id="jssDefault" rel="stylesheet">
+<link href="assets/css/rtl.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/module-css/header.css" rel="stylesheet">
+<link href="assets/css/module-css/page-title.css" rel="stylesheet">
+<link href="assets/css/module-css/footer.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
+
+<style>
+/* ═══ Application Form — design tokens du site ═══════════════════════
+   Palette : navy #1a1a5e · orange #b85515 · cream #f7f3ea · red #dc3545
+   Fonts   : Quicksand (titres) · DM Sans (corps)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Wrapper section ─────────────────────────────────────────── */
+.appform-section {
+  padding: 80px 0 100px;
+  background: #f7f3ea;
+}
+
+/* ─── Progress stepper ────────────────────────────────────────── */
+.appform-stepper {
+  display: flex;
+  gap: 0;
+  margin-bottom: 48px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(26,26,94,.07);
+  overflow: hidden;
+}
+
+.appform-step {
+  flex: 1;
+  padding: 18px 10px 16px;
+  text-align: center;
+  cursor: default;
+  border-bottom: 4px solid transparent;
+  transition: border-color .2s, background .2s;
+  position: relative;
+}
+
+.appform-step + .appform-step {
+  border-left: 1px solid #ede4d2;
+}
+
+.appform-step__num {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e8e4dc;
+  color: #888;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: var(--title-font);
+  margin-bottom: 6px;
+  transition: background .2s, color .2s;
+}
+
+.appform-step__label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--title-font);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #aaa;
+  transition: color .2s;
+}
+
+.appform-step.is-done {
+  border-bottom-color: #b85515;
+}
+.appform-step.is-done .appform-step__num {
+  background: #b85515;
+  color: #fff;
+}
+.appform-step.is-done .appform-step__label { color: #b85515; }
+
+.appform-step.is-active {
+  border-bottom-color: #1a1a5e;
+}
+.appform-step.is-active .appform-step__num {
+  background: #1a1a5e;
+  color: #fff;
+}
+.appform-step.is-active .appform-step__label { color: #1a1a5e; }
+
+/* ─── Card (form container) ───────────────────────────────────── */
+.appform-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 22px 60px -22px rgba(26,26,94,.18), 0 4px 12px rgba(0,0,0,.04);
+  border: 1px solid #ede4d2;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.appform-card__head {
+  padding: 30px 40px 28px;
+  background: #1a1a5e;
+  position: relative;
+  overflow: hidden;
+}
+
+.appform-card__head::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+}
+
+.appform-card__eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+  font-family: var(--title-font);
+  margin-bottom: 6px;
+}
+
+.appform-card__title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  font-family: var(--title-font);
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.appform-card__sub {
+  font-size: 13px;
+  color: rgba(255,255,255,.72);
+  margin: 0;
+}
+
+.appform-card__body {
+  padding: 36px 40px;
+}
+
+/* ─── Section divider inside form ─────────────────────────────── */
+.appform-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 30px 0 22px;
+}
+
+.appform-divider:first-child { margin-top: 0; }
+
+.appform-divider__label {
+  font-size: 11px;
+  font-weight: 800;
+  font-family: var(--title-font);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #b85515;
+  white-space: nowrap;
+}
+
+.appform-divider__line {
+  flex: 1;
+  height: 1px;
+  background: #ede4d2;
+}
+
+/* ─── Grid rows ───────────────────────────────────────────────── */
+.appform-row { display: grid; gap: 18px; margin-bottom: 18px; }
+.appform-row:last-child { margin-bottom: 0; }
+.appform-row.c2 { grid-template-columns: 1fr 1fr; }
+.appform-row.c3 { grid-template-columns: 1fr 1fr 1fr; }
+.appform-row.c4 { grid-template-columns: 2fr 1fr 1fr 1fr; }
+.appform-row.c12 { grid-template-columns: 1fr 2fr; }
+
+/* ─── Field ───────────────────────────────────────────────────── */
+.appform-field { display: flex; flex-direction: column; gap: 6px; }
+
+.appform-field label {
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--title-font);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.appform-field label .req { color: #dc3545; margin-left: 2px; }
+
+.appform-field input,
+.appform-field select,
+.appform-field textarea {
+  width: 100%;
+  padding: 11px 16px;
+  border: 1.5px solid #ddd6c8;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: var(--text-font);
+  color: #222;
+  background: #fff;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  line-height: 1.5;
+}
+
+.appform-field input:focus,
+.appform-field select:focus,
+.appform-field textarea:focus {
+  border-color: #1a1a5e;
+  box-shadow: 0 0 0 3px rgba(26,26,94,.1);
+}
+
+.appform-field input.has-error,
+.appform-field select.has-error,
+.appform-field textarea.has-error {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220,53,69,.08);
+}
+
+.appform-field__hint {
+  font-size: 11px;
+  color: #999;
+}
+
+.appform-field__error {
+  font-size: 11px;
+  font-weight: 700;
+  color: #dc3545;
+  display: none;
+}
+
+.appform-field.is-invalid .appform-field__error { display: block; }
+.appform-field textarea { resize: vertical; min-height: 68px; }
+
+/* ─── Yes / No toggle ─────────────────────────────────────────── */
+.yn-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0ebe2;
+}
+
+.yn-row:last-child { border-bottom: none; }
+
+.yn-question {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #333;
+  padding-top: 2px;
+}
+
+.yn-btns {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.yn-btns input[type="radio"] { display: none; }
+
+.yn-btns label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  padding: 7px 14px;
+  border: 1.5px solid #ddd6c8;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--title-font);
+  color: #666;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+  white-space: nowrap;
+}
+
+.yn-btns input:checked + label {
+  border-color: #1a1a5e;
+  background: #1a1a5e;
+  color: #fff;
+}
+
+/* ─── Conditional sub-panel ───────────────────────────────────── */
+.appform-subpanel {
+  background: #faf7f2;
+  border-left: 3px solid #b85515;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 18px;
+  margin-top: 6px;
+  display: none;
+}
+.appform-subpanel.is-open { display: block; }
+
+/* ─── Radio chip group (Gender) ───────────────────────────────── */
+.appform-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.appform-chips input[type="radio"] { display: none; }
+
+.appform-chips label {
+  padding: 8px 20px;
+  border: 1.5px solid #ddd6c8;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--title-font);
+  color: #555;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.appform-chips input:checked + label {
+  border-color: #1a1a5e;
+  background: #1a1a5e;
+  color: #fff;
+}
+
+/* ─── Education table ─────────────────────────────────────────── */
+.appform-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.appform-table thead th {
+  padding: 10px 14px;
+  background: #f7f3ea;
+  border: 1px solid #ede4d2;
+  font-size: 10px;
+  font-weight: 800;
+  font-family: var(--title-font);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #666;
+  text-align: left;
+}
+
+.appform-table tbody td {
+  border: 1px solid #ede4d2;
+  padding: 0;
+}
+
+.appform-table tbody td.row-label {
+  padding: 12px 14px;
+  font-weight: 700;
+  font-family: var(--title-font);
+  font-size: 12px;
+  color: #1a1a5e;
+  background: #faf7f2;
+  white-space: nowrap;
+  width: 22%;
+}
+
+.appform-table tbody td input {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  font-size: 13px;
+  font-family: var(--text-font);
+  color: #222;
+  background: transparent;
+  outline: none;
+}
+
+.appform-table tbody tr:hover td { background: #fdfaf6; }
+.appform-table tbody tr:hover td.row-label { background: #f7f3ea; }
+
+/* ─── Job history block ───────────────────────────────────────── */
+.appform-jobblock {
+  background: #faf7f2;
+  border: 1.5px solid #ede4d2;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.appform-jobblock:last-of-type { margin-bottom: 0; }
+
+.appform-jobblock__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.appform-jobblock__badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1a1a5e;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: var(--title-font);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.appform-jobblock__title {
+  font-size: 14px;
+  font-weight: 800;
+  font-family: var(--title-font);
+  color: #1a1a5e;
+  margin: 0;
+}
+
+/* ─── Navigation buttons ──────────────────────────────────────── */
+.appform-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid #ede4d2;
+}
+
+.appform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--title-font);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s, color .2s, border-color .2s, transform .2s, box-shadow .2s;
+}
+
+.appform-btn--primary {
+  background: #1a1a5e;
+  color: #fff;
+  border-color: #1a1a5e;
+}
+.appform-btn--primary:hover {
+  background: #2a2a8e;
+  border-color: #2a2a8e;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -10px rgba(26,26,94,.5);
+  text-decoration: none;
+}
+
+.appform-btn--ghost {
+  background: transparent;
+  color: #555;
+  border-color: #ddd6c8;
+}
+.appform-btn--ghost:hover {
+  border-color: #1a1a5e;
+  color: #1a1a5e;
+  text-decoration: none;
+}
+
+.appform-btn--orange {
+  background: #b85515;
+  color: #fff;
+  border-color: #b85515;
+}
+.appform-btn--orange:hover {
+  background: #9a450f;
+  border-color: #9a450f;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -10px rgba(184,85,21,.5);
+  text-decoration: none;
+}
+
+.appform-btn--lg { padding: 15px 36px; font-size: 15px; }
+
+/* ─── Alert banner ────────────────────────────────────────────── */
+.appform-alert {
+  display: none;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.appform-alert.is-open { display: flex; }
+.appform-alert--error { background: #fde8e8; color: #991b1b; border: 1px solid #fca5a5; }
+
+/* ─── Statement box ───────────────────────────────────────────── */
+.appform-statement {
+  background: #f7f3ea;
+  border: 1px solid #ede4d2;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-top: 24px;
+}
+
+.appform-statement h4 {
+  font-family: var(--title-font);
+  font-size: 14px;
+  font-weight: 800;
+  color: #1a1a5e;
+  margin-bottom: 10px;
+}
+
+.appform-statement p {
+  font-size: 12px;
+  line-height: 1.75;
+  color: #666;
+  margin: 0;
+}
+
+/* ─── Step panels visibility ──────────────────────────────────── */
+.appform-panel { display: none; }
+.appform-panel.is-active { display: block; }
+
+/* ─── Preview modal ───────────────────────────────────────────── */
+.appform-modal-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,30,.65);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.appform-modal-bg.is-open { display: flex; }
+
+.appform-modal {
+  background: #fff;
+  border-radius: 18px;
+  width: 95vw;
+  max-width: 920px;
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,.4);
+}
+
+.appform-modal__head {
+  padding: 18px 24px;
+  border-bottom: 1px solid #ede4d2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.appform-modal__icon {
+  width: 36px;
+  height: 36px;
+  background: #1a1a5e;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 15px;
+}
+
+.appform-modal__head h3 {
+  font-family: var(--title-font);
+  font-size: 17px;
+  font-weight: 800;
+  color: #1a1a5e;
+  margin: 0;
+  flex: 1;
+}
+
+.appform-modal__close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f0ebe2;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  transition: background .15s, color .15s;
+}
+.appform-modal__close:hover { background: #1a1a5e; color: #fff; }
+
+.appform-modal__body { flex: 1; overflow: hidden; }
+.appform-modal__body iframe { width: 100%; height: 70vh; border: none; }
+
+.appform-modal__foot {
+  padding: 18px 24px;
+  border-top: 1px solid #ede4d2;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* ─── Loading overlay ─────────────────────────────────────────── */
+.appform-loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(247,243,234,.88);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
+}
+.appform-loader.is-open { display: flex; }
+
+.appform-loader__spin {
+  width: 52px;
+  height: 52px;
+  border: 5px solid #ede4d2;
+  border-top-color: #1a1a5e;
+  border-radius: 50%;
+  animation: af-spin .7s linear infinite;
+}
+
+.appform-loader__text {
+  font-family: var(--title-font);
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a5e;
+}
+
+@keyframes af-spin { to { transform: rotate(360deg); } }
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .appform-card__body { padding: 24px 20px; }
+  .appform-card__head { padding: 22px 20px 20px; }
+  .appform-row.c2, .appform-row.c3, .appform-row.c4, .appform-row.c12 {
+    grid-template-columns: 1fr;
+  }
+  .appform-step__label { display: none; }
+  .appform-stepper { border-radius: 0; }
+  .appform-section { padding: 50px 0 70px; }
+}
+
+@media (max-width: 500px) {
+  .appform-nav { flex-direction: column; gap: 12px; }
+  .appform-btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+
+<!-- page wrapper -->
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="boxed_wrapper ltr">
+
+    <!-- ═══ Main Header ═══════════════════════════════════════════════ -->
+    <header class="main-header header-style-two" role="banner">
+      <!-- header-top -->
+      <div class="header-top">
+        <div class="auto-container">
+          <div class="top-inner">
+            <ul class="info-list" aria-label="Contact information">
+              <li><i class="icon-19" aria-hidden="true"></i><span>Call: <a href="tel:9199342145">919.934.2145</a></span></li>
+              <li><i class="icon-18" aria-hidden="true"></i><span>Mail: <a href="mailto:Info@jlhcommunityaction.org">Info@jlhcommunityaction.org</a></span></li>
+              <li><i class="icon-17" aria-hidden="true"></i><span>Location: <a href="https://maps.google.com/?q=1102+Massey+Street+Smithfield+NC+27577" target="_blank" rel="noopener noreferrer">1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
+            </ul>
+            <div class="right-column"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- header-lower -->
+      <div class="header-lower">
+        <div class="auto-container">
+          <div class="outer-box">
+            <figure class="logo-box">
+              <a href="index.html">
+                <img src="assets/images/logo.avif" alt="JLHCA — Johnston-Lee-Harnett Community Action, Inc.">
+              </a>
+            </figure>
+            <div class="menu-area">
+              <button
+                class="mobile-nav-toggler"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobile-nav-dialog"
+                type="button"
+              >
+                <i class="icon-bar" aria-hidden="true"></i>
+                <i class="icon-bar" aria-hidden="true"></i>
+                <i class="icon-bar" aria-hidden="true"></i>
+              </button>
+              <nav class="main-menu navbar-expand-md navbar-light clearfix" aria-label="Main navigation">
+                <div class="collapse navbar-collapse show clearfix">
+                  <ul class="navigation clearfix" role="list">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="team-2.html">TEAM</a></li>
+                    <li><a href="our-programs.html">OUR PROGRAMS</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="#" class="donate-box-btn nav-donate-btn" aria-haspopup="dialog">DONATE</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sticky Header -->
+      <div class="sticky-header" aria-hidden="true">
+        <div class="auto-container">
+          <div class="outer-box">
+            <figure class="logo-box mr_50">
+              <a href="index.html" tabindex="-1">
+                <img src="assets/images/logo.avif" alt="" role="presentation">
+              </a>
+            </figure>
+            <div class="menu-area">
+              <nav class="main-menu clearfix" aria-hidden="true" tabindex="-1"></nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- main-header end -->
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-nav-dialog" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <div class="menu-backdrop"></div>
+      <button class="close-btn" aria-label="Close menu" type="button">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <nav class="menu-box" aria-label="Mobile navigation">
+        <div class="nav-logo">
+          <a href="index.html"><img src="assets/images/logo-2.avif" alt="JLHCA"></a>
+        </div>
+        <div class="menu-outer"></div>
+        <div class="contact-info">
+          <p class="mobile-contact-label" role="heading" aria-level="3">Contact Info</p>
+          <address>
+            <ul>
+              <li>1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</li>
+              <li><a href="tel:9199342145">919.934.2145</a></li>
+              <li><a href="mailto:Info@jlhcommunityaction.org">Info@jlhcommunityaction.org</a></li>
+            </ul>
+          </address>
+        </div>
+      </nav>
+    </div>
+    <!-- End Mobile Menu -->
+
+
+    <main id="main-content">
+
+      <!-- ═══ Page Title ════════════════════════════════════════════ -->
+      <section class="page-title centred">
+        <div class="bg-layer" style="background-image: url(assets/images/background/page-title.avif);"></div>
+        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-56.avif);"></div>
+        <div class="auto-container">
+          <div class="content-box">
+            <h1>Employment Application</h1>
+            <ul class="bread-crumb clearfix">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="career.html">Careers</a></li>
+              <li>Apply Online</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- page-title end -->
+
+
+      <!-- ═══ Application Form Section ══════════════════════════════ -->
+      <section class="appform-section">
+        <div class="auto-container">
+
+          <!-- Global alert -->
+          <div class="appform-alert appform-alert--error" id="js-alert" role="alert" aria-live="polite">
+            <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+            <span id="js-alert-msg">Please fill in all required fields before continuing.</span>
+          </div>
+
+          <!-- Progress stepper -->
+          <nav class="appform-stepper" aria-label="Application steps" id="js-stepper">
+            <div class="appform-step is-active" data-step="1">
+              <div class="appform-step__num">1</div>
+              <span class="appform-step__label">Personal Info</span>
+            </div>
+            <div class="appform-step" data-step="2">
+              <div class="appform-step__num">2</div>
+              <span class="appform-step__label">Questions</span>
+            </div>
+            <div class="appform-step" data-step="3">
+              <div class="appform-step__num">3</div>
+              <span class="appform-step__label">Position &amp; Education</span>
+            </div>
+            <div class="appform-step" data-step="4">
+              <div class="appform-step__num">4</div>
+              <span class="appform-step__label">Work History</span>
+            </div>
+            <div class="appform-step" data-step="5">
+              <div class="appform-step__num">5</div>
+              <span class="appform-step__label">References</span>
+            </div>
+          </nav>
+
+
+          <!-- ══ PANEL 1 — Personal Information ═══════════════════ -->
+          <div class="appform-panel is-active" id="panel1">
+            <div class="appform-card">
+              <div class="appform-card__head">
+                <p class="appform-card__eyebrow">Step 1 of 5</p>
+                <h2 class="appform-card__title">Personal Information</h2>
+                <p class="appform-card__sub">Johnston-Lee-Harnett Community Action, Inc. &mdash; 1102 Massey Street, Smithfield NC 27577</p>
+              </div>
+              <div class="appform-card__body">
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Full Name</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="appform-row c3">
+                  <div class="appform-field">
+                    <label for="f-lastName">Last Name <span class="req">*</span></label>
+                    <input type="text" id="f-lastName" name="lastName" required autocomplete="family-name">
+                    <span class="appform-field__error">Required</span>
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-firstName">First Name <span class="req">*</span></label>
+                    <input type="text" id="f-firstName" name="firstName" required autocomplete="given-name">
+                    <span class="appform-field__error">Required</span>
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-middleName">Middle Name</label>
+                    <input type="text" id="f-middleName" name="middleName" autocomplete="additional-name">
+                  </div>
+                </div>
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Contact</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="appform-row c12">
+                  <div class="appform-field">
+                    <label for="f-phone">Phone <span class="req">*</span></label>
+                    <input type="tel" id="f-phone" name="phone" required placeholder="(919) 000-0000" autocomplete="tel">
+                    <span class="appform-field__error">Valid phone required</span>
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-email">Email Address <span class="req">*</span></label>
+                    <input type="email" id="f-email" name="email" required autocomplete="email">
+                    <span class="appform-field__error">Valid email required</span>
+                  </div>
+                </div>
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Address</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="appform-row">
+                  <div class="appform-field">
+                    <label for="f-street">Street Address <span class="req">*</span></label>
+                    <input type="text" id="f-street" name="street" required autocomplete="street-address">
+                    <span class="appform-field__error">Required</span>
+                  </div>
+                </div>
+                <div class="appform-row c3">
+                  <div class="appform-field">
+                    <label for="f-city">City <span class="req">*</span></label>
+                    <input type="text" id="f-city" name="city" required autocomplete="address-level2">
+                    <span class="appform-field__error">Required</span>
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-state">State <span class="req">*</span></label>
+                    <select id="f-state" name="state" required autocomplete="address-level1">
+                      <option value="">Select…</option>
+                      <option value="NC" selected>NC</option>
+                      <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option>
+                      <option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option>
+                      <option value="CT">CT</option><option value="DE">DE</option><option value="FL">FL</option>
+                      <option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option>
+                      <option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option>
+                      <option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option>
+                      <option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option>
+                      <option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option>
+                      <option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option>
+                      <option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option>
+                      <option value="NM">NM</option><option value="NY">NY</option><option value="ND">ND</option>
+                      <option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option>
+                      <option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option>
+                      <option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option>
+                      <option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option>
+                      <option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option>
+                      <option value="WY">WY</option>
+                    </select>
+                    <span class="appform-field__error">Required</span>
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-zip">Zip Code <span class="req">*</span></label>
+                    <input type="text" id="f-zip" name="zip" required maxlength="10" autocomplete="postal-code">
+                    <span class="appform-field__error">Required</span>
+                  </div>
+                </div>
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Additional</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="appform-row c2">
+                  <div class="appform-field">
+                    <label for="f-appDate">Date of Application</label>
+                    <input type="date" id="f-appDate" name="appDate">
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-ssn">Social Security Number</label>
+                    <input type="text" id="f-ssn" name="ssn" placeholder="XXX-XX-XXXX" maxlength="11"
+                      autocomplete="off" aria-describedby="ssn-hint">
+                    <span class="appform-field__hint" id="ssn-hint">Format: 123-45-6789</span>
+                  </div>
+                </div>
+                <div class="appform-row">
+                  <div class="appform-field">
+                    <label>Gender</label>
+                    <div class="appform-chips" role="radiogroup" aria-label="Gender">
+                      <input type="radio" name="gender" id="f-gMale" value="Male">
+                      <label for="f-gMale">Male</label>
+                      <input type="radio" name="gender" id="f-gFemale" value="Female">
+                      <label for="f-gFemale">Female</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="appform-nav">
+                  <span></span>
+                  <button class="appform-btn appform-btn--primary" onclick="App.next(1)">
+                    Continue <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ══ PANEL 2 — Eligibility Questions ══════════════════ -->
+          <div class="appform-panel" id="panel2">
+            <div class="appform-card">
+              <div class="appform-card__head">
+                <p class="appform-card__eyebrow">Step 2 of 5</p>
+                <h2 class="appform-card__title">Eligibility Questions</h2>
+                <p class="appform-card__sub">Please answer all questions honestly.</p>
+              </div>
+              <div class="appform-card__body">
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Eligibility</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+
+                <div class="yn-row">
+                  <span class="yn-question">Are you 18 years of age or older?</span>
+                  <div class="yn-btns" role="radiogroup" aria-label="Are you 18 or older">
+                    <input type="radio" name="age18" id="f-age18y" value="Yes">
+                    <label for="f-age18y">Yes</label>
+                    <input type="radio" name="age18" id="f-age18n" value="No">
+                    <label for="f-age18n">No</label>
+                  </div>
+                </div>
+
+                <div class="yn-row">
+                  <span class="yn-question">If hired, can you provide written evidence that you are authorized to work in the United States?</span>
+                  <div class="yn-btns" role="radiogroup" aria-label="Work authorization">
+                    <input type="radio" name="workAuth" id="f-workAuthy" value="Yes">
+                    <label for="f-workAuthy">Yes</label>
+                    <input type="radio" name="workAuth" id="f-workAuthn" value="No">
+                    <label for="f-workAuthn">No</label>
+                  </div>
+                </div>
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Relations</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+
+                <div class="yn-row">
+                  <span class="yn-question">Are you related by birth, marriage or adoption to any JLHCA, INC. employee?</span>
+                  <div class="yn-btns" role="radiogroup" aria-label="Related to JLHCA employee">
+                    <input type="radio" name="relEmployee" id="f-relEmpy" value="Yes"
+                      onchange="App.togglePanel('sub-relEmp', this.value==='Yes')">
+                    <label for="f-relEmpy">Yes</label>
+                    <input type="radio" name="relEmployee" id="f-relEmpn" value="No"
+                      onchange="App.togglePanel('sub-relEmp', false)">
+                    <label for="f-relEmpn">No</label>
+                  </div>
+                </div>
+                <div class="appform-subpanel" id="sub-relEmp">
+                  <div class="appform-field">
+                    <label for="f-relEmpName">Name of relative</label>
+                    <input type="text" id="f-relEmpName" name="relEmpName">
+                  </div>
+                </div>
+
+                <div class="yn-row">
+                  <span class="yn-question">Are you related by birth, marriage or adoption to any JLHCA, INC. Board member?</span>
+                  <div class="yn-btns" role="radiogroup" aria-label="Related to Board member">
+                    <input type="radio" name="relBoard" id="f-relBoardy" value="Yes"
+                      onchange="App.togglePanel('sub-relBoard', this.value==='Yes')">
+                    <label for="f-relBoardy">Yes</label>
+                    <input type="radio" name="relBoard" id="f-relBoardn" value="No"
+                      onchange="App.togglePanel('sub-relBoard', false)">
+                    <label for="f-relBoardn">No</label>
+                  </div>
+                </div>
+                <div class="appform-subpanel" id="sub-relBoard">
+                  <div class="appform-field">
+                    <label for="f-relBoardName">Name of relative</label>
+                    <input type="text" id="f-relBoardName" name="relBoardRelName">
+                  </div>
+                </div>
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Employment Status</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+
+                <div class="yn-row">
+                  <span class="yn-question">Have you ever been employed with us previously?</span>
+                  <div class="yn-btns" role="radiogroup" aria-label="Previously employed">
+                    <input type="radio" name="prevEmp" id="f-prevEmpy" value="Yes"
+                      onchange="App.togglePanel('sub-prevEmp', this.value==='Yes')">
+                    <label for="f-prevEmpy">Yes</label>
+                    <input type="radio" name="prevEmp" id="f-prevEmpn" value="No"
+                      onchange="App.togglePanel('sub-prevEmp', false)">
+                    <label for="f-prevEmpn">No</label>
+                  </div>
+                </div>
+                <div class="appform-subpanel" id="sub-prevEmp">
+                  <div class="appform-row c2">
+                    <div class="appform-field">
+                      <label for="f-prevEmpWhen">When</label>
+                      <input type="text" id="f-prevEmpWhen" name="prevEmpWhen" placeholder="e.g. 2018–2020">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-prevEmpLocation">Location</label>
+                      <input type="text" id="f-prevEmpLocation" name="prevEmpLocation">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="yn-row">
+                  <span class="yn-question">Are you available for full-time employment?</span>
+                  <div class="yn-btns" role="radiogroup" aria-label="Full-time availability">
+                    <input type="radio" name="fullTime" id="f-fullTimey" value="Yes"
+                      onchange="App.togglePanel('sub-hours', false)">
+                    <label for="f-fullTimey">Yes</label>
+                    <input type="radio" name="fullTime" id="f-fullTimen" value="No"
+                      onchange="App.togglePanel('sub-hours', true)">
+                    <label for="f-fullTimen">No</label>
+                  </div>
+                </div>
+                <div class="appform-subpanel" id="sub-hours">
+                  <div class="appform-field">
+                    <label for="f-hoursPerWeek">Number of hours available per week</label>
+                    <input type="number" id="f-hoursPerWeek" name="hoursPerWeek" min="1" max="40" style="max-width:140px">
+                  </div>
+                </div>
+
+                <div class="yn-row">
+                  <span class="yn-question">Because our work sometimes requires flexible hours, can you work such a schedule?</span>
+                  <div class="yn-btns" role="radiogroup" aria-label="Flexible schedule">
+                    <input type="radio" name="flexible" id="f-flexy" value="Yes">
+                    <label for="f-flexy">Yes</label>
+                    <input type="radio" name="flexible" id="f-flexn" value="No">
+                    <label for="f-flexn">No</label>
+                  </div>
+                </div>
+
+                <div class="yn-row">
+                  <span class="yn-question">Have you ever been <em>convicted</em> of a crime, other than minor traffic violations?</span>
+                  <div class="yn-btns" role="radiogroup" aria-label="Criminal conviction">
+                    <input type="radio" name="convicted" id="f-convictedy" value="Yes"
+                      onchange="App.togglePanel('sub-convicted', this.value==='Yes')">
+                    <label for="f-convictedy">Yes</label>
+                    <input type="radio" name="convicted" id="f-convictedn" value="No"
+                      onchange="App.togglePanel('sub-convicted', false)">
+                    <label for="f-convictedn">No</label>
+                  </div>
+                </div>
+                <div class="appform-subpanel" id="sub-convicted">
+                  <div class="appform-field">
+                    <label for="f-convictedSpecify">Please specify</label>
+                    <textarea id="f-convictedSpecify" name="convictedSpecify" rows="2"></textarea>
+                  </div>
+                </div>
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Referral</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="appform-row">
+                  <div class="appform-field">
+                    <label for="f-referredBy">How were you referred to our agency?</label>
+                    <input type="text" id="f-referredBy" name="referredBy" placeholder="e.g. Friend, Job board, JLHCA website…">
+                  </div>
+                </div>
+
+                <div class="appform-nav">
+                  <button class="appform-btn appform-btn--ghost" onclick="App.prev(2)">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                  </button>
+                  <button class="appform-btn appform-btn--primary" onclick="App.next(2)">
+                    Continue <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ══ PANEL 3 — Position & Education ═══════════════════ -->
+          <div class="appform-panel" id="panel3">
+            <div class="appform-card">
+              <div class="appform-card__head">
+                <p class="appform-card__eyebrow">Step 3 of 5</p>
+                <h2 class="appform-card__title">Position Desired &amp; Education</h2>
+                <p class="appform-card__sub">Tell us which role you're targeting and your educational background.</p>
+              </div>
+              <div class="appform-card__body">
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Employment Desired</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="appform-row c2">
+                  <div class="appform-field">
+                    <label for="f-position">Position Applied For <span class="req">*</span></label>
+                    <input type="text" id="f-position" name="position" required>
+                    <span class="appform-field__error">Required</span>
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-salary">Salary Desired</label>
+                    <input type="text" id="f-salary" name="salary" placeholder="e.g. $45,000 / year">
+                  </div>
+                </div>
+                <div class="appform-row c2">
+                  <div class="appform-field">
+                    <label for="f-startDate">Date You Can Start</label>
+                    <input type="date" id="f-startDate" name="startDate">
+                  </div>
+                </div>
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Education Record</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <p style="font-size:13px;color:#888;margin-bottom:18px">Leave blank if not applicable.</p>
+
+                <div style="overflow-x:auto;border-radius:10px;border:1px solid #ede4d2">
+                  <table class="appform-table">
+                    <thead>
+                      <tr>
+                        <th style="width:22%">School Type</th>
+                        <th>Name &amp; Location</th>
+                        <th style="width:18%">Course of Study</th>
+                        <th style="width:10%">Years</th>
+                        <th style="width:14%">Degree / Diploma</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="row-label">Grammar School</td>
+                        <td><input type="text" id="f-grammarSchool" name="grammarSchool" aria-label="Grammar school name and location"></td>
+                        <td><input type="text" id="f-grammarCourse" name="grammarCourse" aria-label="Grammar school course of study"></td>
+                        <td><input type="text" id="f-grammarYears" name="grammarYears" aria-label="Grammar school years"></td>
+                        <td><input type="text" id="f-grammarDegree" name="grammarDegree" aria-label="Grammar school degree"></td>
+                      </tr>
+                      <tr>
+                        <td class="row-label">High School</td>
+                        <td><input type="text" id="f-highSchool" name="highSchool" aria-label="High school name and location"></td>
+                        <td><input type="text" id="f-highCourse" name="highCourse" aria-label="High school course of study"></td>
+                        <td><input type="text" id="f-highYears" name="highYears" aria-label="High school years"></td>
+                        <td><input type="text" id="f-highDegree" name="highDegree" aria-label="High school degree"></td>
+                      </tr>
+                      <tr>
+                        <td class="row-label">College</td>
+                        <td><input type="text" id="f-college" name="college" aria-label="College name and location"></td>
+                        <td><input type="text" id="f-collegeCourse" name="collegeCourse" aria-label="College course of study"></td>
+                        <td><input type="text" id="f-collegeYears" name="collegeYears" aria-label="College years"></td>
+                        <td><input type="text" id="f-collegeDegree" name="collegeDegree" aria-label="College degree"></td>
+                      </tr>
+                      <tr>
+                        <td class="row-label">Technical / Other</td>
+                        <td><input type="text" id="f-technical" name="technical" aria-label="Technical school name and location"></td>
+                        <td><input type="text" id="f-technicalCourse" name="technicalCourse" aria-label="Technical course of study"></td>
+                        <td><input type="text" id="f-technicalYears" name="technicalYears" aria-label="Technical school years"></td>
+                        <td><input type="text" id="f-technicalDegree" name="technicalDegree" aria-label="Technical degree"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="appform-nav">
+                  <button class="appform-btn appform-btn--ghost" onclick="App.prev(3)">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                  </button>
+                  <button class="appform-btn appform-btn--primary" onclick="App.next(3)">
+                    Continue <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ══ PANEL 4 — Work History ═════════════════════════════ -->
+          <div class="appform-panel" id="panel4">
+            <div class="appform-card">
+              <div class="appform-card__head">
+                <p class="appform-card__eyebrow">Step 4 of 5</p>
+                <h2 class="appform-card__title">Employment Record</h2>
+                <p class="appform-card__sub">List your last three employers, most recent first.</p>
+              </div>
+              <div class="appform-card__body">
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Contact current employer?</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="yn-row" style="border-bottom:none;padding-bottom:0;margin-bottom:24px">
+                  <span class="yn-question">Can we contact your current employer regarding your employment?</span>
+                  <div class="yn-btns" role="radiogroup" aria-label="Contact current employer">
+                    <input type="radio" name="contactCurrent" id="f-contacty" value="Yes">
+                    <label for="f-contacty">Yes</label>
+                    <input type="radio" name="contactCurrent" id="f-contactn" value="No">
+                    <label for="f-contactn">No</label>
+                  </div>
+                </div>
+
+                <!-- Job 1 -->
+                <div class="appform-jobblock">
+                  <div class="appform-jobblock__head">
+                    <span class="appform-jobblock__badge">1</span>
+                    <h3 class="appform-jobblock__title">Most Recent Position</h3>
+                  </div>
+                  <div class="appform-row">
+                    <div class="appform-field">
+                      <label for="f-job1Company">Company Name &amp; Address</label>
+                      <input type="text" id="f-job1Company" name="job1Company">
+                    </div>
+                  </div>
+                  <div class="appform-row">
+                    <div class="appform-field">
+                      <label for="f-job1Supervisor">Supervisor Name &amp; Telephone</label>
+                      <input type="text" id="f-job1Supervisor" name="job1Supervisor">
+                    </div>
+                  </div>
+                  <div class="appform-row c4">
+                    <div class="appform-field">
+                      <label for="f-job1From">From</label>
+                      <input type="text" id="f-job1From" name="job1From" placeholder="MM/YYYY">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job1To">To</label>
+                      <input type="text" id="f-job1To" name="job1To" placeholder="MM/YYYY">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job1Pay">Pay</label>
+                      <input type="text" id="f-job1Pay" name="job1Pay" placeholder="$0.00/hr">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job1Reason">Reason for Leaving</label>
+                      <input type="text" id="f-job1Reason" name="job1Reason">
+                    </div>
+                  </div>
+                  <div class="appform-row c2">
+                    <div class="appform-field">
+                      <label for="f-job1Title">Job Title</label>
+                      <input type="text" id="f-job1Title" name="job1Title">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job1Description">Brief Description of Duties</label>
+                      <input type="text" id="f-job1Description" name="job1Description">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="appform-jobblock">
+                  <div class="appform-jobblock__head">
+                    <span class="appform-jobblock__badge">2</span>
+                    <h3 class="appform-jobblock__title">Previous Position</h3>
+                  </div>
+                  <div class="appform-row">
+                    <div class="appform-field">
+                      <label for="f-job2Company">Company Name &amp; Address</label>
+                      <input type="text" id="f-job2Company" name="job2Company">
+                    </div>
+                  </div>
+                  <div class="appform-row">
+                    <div class="appform-field">
+                      <label for="f-job2Supervisor">Supervisor Name &amp; Telephone</label>
+                      <input type="text" id="f-job2Supervisor" name="job2Supervisor">
+                    </div>
+                  </div>
+                  <div class="appform-row c4">
+                    <div class="appform-field">
+                      <label for="f-job2From">From</label>
+                      <input type="text" id="f-job2From" name="job2From" placeholder="MM/YYYY">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job2To">To</label>
+                      <input type="text" id="f-job2To" name="job2To" placeholder="MM/YYYY">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job2Pay">Pay</label>
+                      <input type="text" id="f-job2Pay" name="job2Pay" placeholder="$0.00/hr">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job2Reason">Reason for Leaving</label>
+                      <input type="text" id="f-job2Reason" name="job2Reason">
+                    </div>
+                  </div>
+                  <div class="appform-row c2">
+                    <div class="appform-field">
+                      <label for="f-job2Title">Job Title</label>
+                      <input type="text" id="f-job2Title" name="job2Title">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job2Description">Brief Description of Duties</label>
+                      <input type="text" id="f-job2Description" name="job2Description">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="appform-jobblock">
+                  <div class="appform-jobblock__head">
+                    <span class="appform-jobblock__badge">3</span>
+                    <h3 class="appform-jobblock__title">Earlier Position</h3>
+                  </div>
+                  <div class="appform-row">
+                    <div class="appform-field">
+                      <label for="f-job3Company">Company Name &amp; Address</label>
+                      <input type="text" id="f-job3Company" name="job3Company">
+                    </div>
+                  </div>
+                  <div class="appform-row">
+                    <div class="appform-field">
+                      <label for="f-job3Supervisor">Supervisor Name &amp; Telephone</label>
+                      <input type="text" id="f-job3Supervisor" name="job3Supervisor">
+                    </div>
+                  </div>
+                  <div class="appform-row c4">
+                    <div class="appform-field">
+                      <label for="f-job3From">From</label>
+                      <input type="text" id="f-job3From" name="job3From" placeholder="MM/YYYY">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job3To">To</label>
+                      <input type="text" id="f-job3To" name="job3To" placeholder="MM/YYYY">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job3Pay">Pay</label>
+                      <input type="text" id="f-job3Pay" name="job3Pay" placeholder="$0.00/hr">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job3Reason">Reason for Leaving</label>
+                      <input type="text" id="f-job3Reason" name="job3Reason">
+                    </div>
+                  </div>
+                  <div class="appform-row c2">
+                    <div class="appform-field">
+                      <label for="f-job3Title">Job Title</label>
+                      <input type="text" id="f-job3Title" name="job3Title">
+                    </div>
+                    <div class="appform-field">
+                      <label for="f-job3Description">Brief Description of Duties</label>
+                      <input type="text" id="f-job3Description" name="job3Description">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Additional</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="appform-row">
+                  <div class="appform-field">
+                    <label for="f-additionalInfo">Licenses, skills, or professional memberships</label>
+                    <textarea id="f-additionalInfo" name="additionalInfo" rows="3"></textarea>
+                  </div>
+                </div>
+
+                <div class="appform-nav">
+                  <button class="appform-btn appform-btn--ghost" onclick="App.prev(4)">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                  </button>
+                  <button class="appform-btn appform-btn--primary" onclick="App.next(4)">
+                    Continue <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ══ PANEL 5 — References ══════════════════════════════ -->
+          <div class="appform-panel" id="panel5">
+            <div class="appform-card">
+              <div class="appform-card__head">
+                <p class="appform-card__eyebrow">Step 5 of 5</p>
+                <h2 class="appform-card__title">Professional References</h2>
+                <p class="appform-card__sub">Do not include relatives. Provide at least one professional reference.</p>
+              </div>
+              <div class="appform-card__body">
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Reference 1</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="appform-row c3">
+                  <div class="appform-field">
+                    <label for="f-ref1Name">Name &amp; Address <span class="req">*</span></label>
+                    <input type="text" id="f-ref1Name" name="ref1Name" required>
+                    <span class="appform-field__error">At least one reference is required</span>
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-ref1Occupation">Occupation</label>
+                    <input type="text" id="f-ref1Occupation" name="ref1Occupation">
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-ref1Phone">Telephone</label>
+                    <input type="tel" id="f-ref1Phone" name="ref1Phone">
+                  </div>
+                </div>
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Reference 2</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="appform-row c3">
+                  <div class="appform-field">
+                    <label for="f-ref2Name">Name &amp; Address</label>
+                    <input type="text" id="f-ref2Name" name="ref2Name">
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-ref2Occupation">Occupation</label>
+                    <input type="text" id="f-ref2Occupation" name="ref2Occupation">
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-ref2Phone">Telephone</label>
+                    <input type="tel" id="f-ref2Phone" name="ref2Phone">
+                  </div>
+                </div>
+
+                <div class="appform-divider">
+                  <span class="appform-divider__label">Reference 3</span>
+                  <span class="appform-divider__line" aria-hidden="true"></span>
+                </div>
+                <div class="appform-row c3">
+                  <div class="appform-field">
+                    <label for="f-ref3Name">Name &amp; Address</label>
+                    <input type="text" id="f-ref3Name" name="ref3Name">
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-ref3Occupation">Occupation</label>
+                    <input type="text" id="f-ref3Occupation" name="ref3Occupation">
+                  </div>
+                  <div class="appform-field">
+                    <label for="f-ref3Phone">Telephone</label>
+                    <input type="tel" id="f-ref3Phone" name="ref3Phone">
+                  </div>
+                </div>
+
+                <div class="appform-statement">
+                  <h4>Applicant's Statement</h4>
+                  <p>
+                    I understand that the employer follows an "employment at will" policy. I understand that this application
+                    will be active for a period of 90 days. I certify that all statements herein are true and understand that
+                    any falsification or willful omission shall be sufficient cause for dismissal or refusal of employment.
+                    I understand that, if hired, I will be required to submit to alcohol/drug testing.
+                  </p>
+                </div>
+
+                <div class="appform-nav">
+                  <button class="appform-btn appform-btn--ghost" onclick="App.prev(5)">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                  </button>
+                  <button class="appform-btn appform-btn--orange appform-btn--lg" onclick="App.generatePDF()">
+                    <i class="fas fa-file-pdf" aria-hidden="true"></i> Preview &amp; Download PDF
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- appform-section end -->
+
+    </main>
+
+
+    <!-- ═══ Footer ════════════════════════════════════════════════════ -->
+    <footer class="main-footer" role="contentinfo">
+      <div class="auto-container">
+        <div class="widget-section pt_100 pb_90">
+          <div class="row clearfix">
+
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget links-widget ml_50">
+                <div class="widget-title"><h3>Quick Links</h3></div>
+                <div class="widget-content">
+                  <ul class="links-list clearfix" aria-label="Quick links">
+                    <li><a href="annual-reports.html">Annual Reports</a></li>
+                    <li><a href="boardofdirector.html">Board of Directors</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="accessibility.html">Accessibility &amp; ADA</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget links-widget ml_30">
+                <div class="widget-title"><h3>Partners</h3></div>
+                <div class="widget-content">
+                  <ul class="links-list clearfix" aria-label="Partners">
+                    <li><a href="https://communityactionpartnership.com/" target="_blank" rel="noopener noreferrer">COMMUNITY ACTION PARTNERSHIPS</a></li>
+                    <li><a href="https://www.nccaa.net/" target="_blank" rel="noopener noreferrer">NCCAA</a></li>
+                    <li><a href="https://seacaa.org/" target="_blank" rel="noopener noreferrer">SEACAA</a></li>
+                    <li><a href="https://www.unitedwaytriangle.org/" target="_blank" rel="noopener noreferrer">UNITED WAY</a></li>
+                    <li><a href="https://www.leecountyunitedway.org/" target="_blank" rel="noopener noreferrer">UNITED WAY LEE COUNTY</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget contact-widget contact-widget-two">
+                <div class="widget-title centred"><h3>Contact</h3></div>
+                <div class="widget-content">
+                  <ul class="info-list">
+                    <li><i class="icon-17" aria-hidden="true"></i><span>1102 Massey Street, P.O. Drawer 711, Smithfield, NC 27577</span></li>
+                    <li><i class="icon-18" aria-hidden="true"></i><a href="mailto:Info@jlhcommunityaction.org">Info@jlhcommunityaction.org</a></li>
+                    <li class="phone"><i class="icon-19" aria-hidden="true"></i><a href="tel:9199342145">919.934.2145</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row clearfix">
+            <div class="col-lg-12 footer-column">
+              <div class="footer-widget about-widget footer-widget--funding">
+                <div class="widget-title"><h3>Funding Support</h3></div>
+                <div class="widget-content">
+                  <p class="footer-grant-text">This website is supported by the following Grant Numbers: 00047170 (Community Services Block Grant), 04CH011698 (Head Start/Early Head Start), 2401NCLIEA (LIEAP), 48198 (Rapid Rehousing), Agreement #7223 (School Food), 46936 (SFRF — Choosing Home) and DE-EE0009920 (Weatherization) from the Office of Community Services and the Office of Head Start within the Administration for Children and Families, a division of the U.S. Department of Health and Human Services. Neither the Administration for Children and Families nor any of its components operate, control, are responsible for, or necessarily endorse this website (including without limitation, its content, technical infrastructure, and policies, and any services or tools provided). The opinions, findings, conclusions, and recommendations expressed are those of the author(s) and do not necessarily reflect the views of the Administration for Children and Families, the Office of Community Services, or the Office of Head Start.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom centred">
+          <div class="copyright">
+            <p>Copyright &copy; 2026 by <a href="index.html">JLHCA, Inc.</a> All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- main-footer end -->
+
+    <!-- Scroll to top -->
+    <div class="scroll-to-top">
+      <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+  </div><!-- .boxed_wrapper end -->
+
+
+  <!-- ═══ Preview Modal ═══════════════════════════════════════════════ -->
+  <div class="appform-modal-bg" id="js-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="appform-modal">
+      <div class="appform-modal__head">
+        <div class="appform-modal__icon" aria-hidden="true"><i class="fas fa-file-pdf"></i></div>
+        <h3 id="modal-title">Application Preview</h3>
+        <button class="appform-modal__close" onclick="App.closeModal()" aria-label="Close preview">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="appform-modal__body">
+        <iframe id="js-preview-frame" title="PDF Preview" aria-label="Employment application PDF preview"></iframe>
+      </div>
+      <div class="appform-modal__foot">
+        <button class="appform-btn appform-btn--ghost" onclick="App.closeModal()">
+          <i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit Application
+        </button>
+        <button class="appform-btn appform-btn--orange appform-btn--lg" onclick="App.download()">
+          <i class="fas fa-download" aria-hidden="true"></i> Download PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Loading Overlay ═════════════════════════════════════════════ -->
+  <div class="appform-loader" id="js-loader" aria-live="polite" aria-label="Generating PDF">
+    <div class="appform-loader__spin"></div>
+    <p class="appform-loader__text">Generating your PDF…</p>
+  </div>
+
+
+  <!-- ═══ Site Scripts ═════════════════════════════════════════════════ -->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/jquery.fancybox.js"></script>
+  <script src="assets/js/appear.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/parallax-scroll.js"></script>
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <script src="assets/js/scrolltop.min.js"></script>
+  <script src="assets/js/jquery-ui.js"></script>
+  <script src="assets/js/odometer.js"></script>
+  <script src="assets/js/jquery.bootstrap-touchspin.js"></script>
+  <script src="assets/js/language.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/donate.js"></script>
+
+  <!-- pdf-lib -->
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+  <script>
+/* ╔════════════════════════════════════════════════════════════════
+   ║  FIELD MAP — coordinate overlay (PDF points, origin bottom-left)
+   ║  Page size: 612 × 792 pt (US Letter)
+   ╚════════════════════════════════════════════════════════════════ */
+const PDF_PATH = 'documents/JLHCA Application.pdf';
+
+const FIELD_MAP = {
+  /* ── Page 1 ─────────────────────────────────────────────────── */
+  appDate:           { page: 0, x: 455, y: 742, size: 9 },
+  ssn:               { page: 0, x: 395, y: 722, size: 9 },
+  lastName:          { page: 0, x:  86, y: 697, size: 9 },
+  firstName:         { page: 0, x: 263, y: 697, size: 9 },
+  middleName:        { page: 0, x: 440, y: 697, size: 9 },
+  street:            { page: 0, x:  86, y: 668, size: 9 },
+  city:              { page: 0, x:  86, y: 645, size: 9 },
+  state:             { page: 0, x: 295, y: 645, size: 9 },
+  zip:               { page: 0, x: 455, y: 645, size: 9 },
+  phone:             { page: 0, x: 113, y: 621, size: 9 },
+  email:             { page: 0, x: 285, y: 621, size: 9 },
+  age18Yes:          { page: 0, x: 254, y: 598, size: 9, type: 'check', radioName: 'age18',       match: 'Yes' },
+  age18No:           { page: 0, x: 293, y: 598, size: 9, type: 'check', radioName: 'age18',       match: 'No'  },
+  genderMale:        { page: 0, x: 506, y: 598, size: 9, type: 'check', radioName: 'gender',      match: 'Male'   },
+  genderFemale:      { page: 0, x: 551, y: 598, size: 9, type: 'check', radioName: 'gender',      match: 'Female' },
+  workAuthYes:       { page: 0, x: 507, y: 578, size: 9, type: 'check', radioName: 'workAuth',    match: 'Yes' },
+  workAuthNo:        { page: 0, x: 540, y: 578, size: 9, type: 'check', radioName: 'workAuth',    match: 'No'  },
+  relEmployeeYes:    { page: 0, x: 430, y: 558, size: 9, type: 'check', radioName: 'relEmployee', match: 'Yes' },
+  relEmployeeNo:     { page: 0, x: 459, y: 558, size: 9, type: 'check', radioName: 'relEmployee', match: 'No'  },
+  relEmpName:        { page: 0, x: 120, y: 536, size: 9 },
+  relBoardYes:       { page: 0, x: 460, y: 515, size: 9, type: 'check', radioName: 'relBoard',    match: 'Yes' },
+  relBoardNo:        { page: 0, x: 489, y: 515, size: 9, type: 'check', radioName: 'relBoard',    match: 'No'  },
+  relBoardRelName:   { page: 0, x: 120, y: 493, size: 9 },
+  prevEmpYes:        { page: 0, x: 282, y: 472, size: 9, type: 'check', radioName: 'prevEmp',     match: 'Yes' },
+  prevEmpNo:         { page: 0, x: 311, y: 472, size: 9, type: 'check', radioName: 'prevEmp',     match: 'No'  },
+  prevEmpWhen:       { page: 0, x: 175, y: 449, size: 9 },
+  prevEmpLocation:   { page: 0, x: 375, y: 449, size: 9 },
+  fullTimeYes:       { page: 0, x: 258, y: 428, size: 9, type: 'check', radioName: 'fullTime',    match: 'Yes' },
+  fullTimeNo:        { page: 0, x: 287, y: 428, size: 9, type: 'check', radioName: 'fullTime',    match: 'No'  },
+  hoursPerWeek:      { page: 0, x: 479, y: 428, size: 9 },
+  flexibleYes:       { page: 0, x: 449, y: 407, size: 9, type: 'check', radioName: 'flexible',    match: 'Yes' },
+  flexibleNo:        { page: 0, x: 478, y: 407, size: 9, type: 'check', radioName: 'flexible',    match: 'No'  },
+  convictedYes:      { page: 0, x: 395, y: 386, size: 9, type: 'check', radioName: 'convicted',   match: 'Yes' },
+  convictedNo:       { page: 0, x: 424, y: 386, size: 9, type: 'check', radioName: 'convicted',   match: 'No'  },
+  convictedSpecify:  { page: 0, x: 120, y: 362, size: 9 },
+  referredBy:        { page: 0, x: 247, y: 340, size: 9 },
+  position:          { page: 0, x:  86, y: 309, size: 9 },
+  salary:            { page: 0, x: 392, y: 309, size: 9 },
+  startDate:         { page: 0, x: 168, y: 286, size: 9 },
+  grammarSchool:     { page: 0, x: 168, y: 250, size: 9 },
+  grammarCourse:     { page: 0, x: 368, y: 250, size: 9 },
+  grammarYears:      { page: 0, x: 480, y: 250, size: 9 },
+  grammarDegree:     { page: 0, x: 534, y: 250, size: 9 },
+  highSchool:        { page: 0, x: 168, y: 227, size: 9 },
+  highCourse:        { page: 0, x: 368, y: 227, size: 9 },
+  highYears:         { page: 0, x: 480, y: 227, size: 9 },
+  highDegree:        { page: 0, x: 534, y: 227, size: 9 },
+  college:           { page: 0, x: 168, y: 204, size: 9 },
+  collegeCourse:     { page: 0, x: 368, y: 204, size: 9 },
+  collegeYears:      { page: 0, x: 480, y: 204, size: 9 },
+  collegeDegree:     { page: 0, x: 534, y: 204, size: 9 },
+  technical:         { page: 0, x: 168, y: 181, size: 9 },
+  technicalCourse:   { page: 0, x: 368, y: 181, size: 9 },
+  technicalYears:    { page: 0, x: 480, y: 181, size: 9 },
+  technicalDegree:   { page: 0, x: 534, y: 181, size: 9 },
+
+  /* ── Page 2 ─────────────────────────────────────────────────── */
+  job1Company:       { page: 1, x:  80, y: 715, size: 9 },
+  job1Supervisor:    { page: 1, x:  80, y: 685, size: 9 },
+  job1From:          { page: 1, x:  84, y: 654, size: 9 },
+  job1To:            { page: 1, x: 197, y: 654, size: 9 },
+  job1Pay:           { page: 1, x: 298, y: 654, size: 9 },
+  job1Reason:        { page: 1, x: 440, y: 654, size: 9 },
+  job1Title:         { page: 1, x:  80, y: 623, size: 9 },
+  job1Description:   { page: 1, x:  80, y: 594, size: 9 },
+  job2Company:       { page: 1, x:  80, y: 551, size: 9 },
+  job2Supervisor:    { page: 1, x:  80, y: 521, size: 9 },
+  job2From:          { page: 1, x:  84, y: 490, size: 9 },
+  job2To:            { page: 1, x: 197, y: 490, size: 9 },
+  job2Pay:           { page: 1, x: 298, y: 490, size: 9 },
+  job2Reason:        { page: 1, x: 440, y: 490, size: 9 },
+  job2Title:         { page: 1, x:  80, y: 459, size: 9 },
+  job2Description:   { page: 1, x:  80, y: 430, size: 9 },
+  job3Company:       { page: 1, x:  80, y: 389, size: 9 },
+  job3Supervisor:    { page: 1, x:  80, y: 358, size: 9 },
+  job3From:          { page: 1, x:  84, y: 328, size: 9 },
+  job3To:            { page: 1, x: 197, y: 328, size: 9 },
+  job3Pay:           { page: 1, x: 298, y: 328, size: 9 },
+  job3Reason:        { page: 1, x: 440, y: 328, size: 9 },
+  job3Title:         { page: 1, x:  80, y: 297, size: 9 },
+  job3Description:   { page: 1, x:  80, y: 268, size: 9 },
+  additionalInfo:    { page: 1, x:  80, y: 237, size: 9 },
+  contactCurrentYes: { page: 1, x: 367, y: 210, size: 9, type: 'check', radioName: 'contactCurrent', match: 'Yes' },
+  contactCurrentNo:  { page: 1, x: 400, y: 210, size: 9, type: 'check', radioName: 'contactCurrent', match: 'No'  },
+  ref1Name:          { page: 1, x:  80, y: 173, size: 9 },
+  ref1Occupation:    { page: 1, x: 340, y: 173, size: 9 },
+  ref1Phone:         { page: 1, x: 480, y: 173, size: 9 },
+  ref2Name:          { page: 1, x:  80, y: 148, size: 9 },
+  ref2Occupation:    { page: 1, x: 340, y: 148, size: 9 },
+  ref2Phone:         { page: 1, x: 480, y: 148, size: 9 },
+  ref3Name:          { page: 1, x:  80, y: 123, size: 9 },
+  ref3Occupation:    { page: 1, x: 340, y: 123, size: 9 },
+  ref3Phone:         { page: 1, x: 480, y: 123, size: 9 },
+};
+
+/* ── Form Collector ──────────────────────────────────────────── */
+const Collector = {
+  collect() {
+    const d = {};
+    document.querySelectorAll('input[name], select[name], textarea[name]').forEach(el => {
+      if (el.type === 'radio') { if (el.checked) d[el.name] = el.value; }
+      else d[el.name] = el.value.trim();
+    });
+    if (d.appDate)   d.appDate   = this._fmt(d.appDate);
+    if (d.startDate) d.startDate = this._fmt(d.startDate);
+    return d;
+  },
+  _fmt(iso) {
+    try { const [y,m,dd] = iso.split('-'); return `${m}/${dd}/${y}`; }
+    catch { return iso; }
+  }
+};
+
+/* ── Validator ───────────────────────────────────────────────── */
+const Validator = {
+  rules: {
+    1: ['f-lastName','f-firstName','f-phone','f-email','f-street','f-city','f-state','f-zip'],
+    3: ['f-position'],
+    5: ['f-ref1Name'],
+  },
+  validateStep(step) {
+    const ids = this.rules[step] || [];
+    let ok = true;
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const field = el.closest('.appform-field');
+      let valid = el.value.trim().length > 0;
+      if (id === 'f-email') valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+      el.classList.toggle('has-error', !valid);
+      field && field.classList.toggle('is-invalid', !valid);
+      if (!valid) ok = false;
+    });
+    return ok;
+  }
+};
+
+/* ── PDF Service ─────────────────────────────────────────────── */
+const PDFService = {
+  _tpl: null, _filled: null,
+
+  async loadTemplate() {
+    if (this._tpl) return this._tpl;
+    const r = await fetch(PDF_PATH);
+    if (!r.ok) throw new Error(`Cannot load PDF: ${r.status} ${r.statusText}`);
+    this._tpl = await r.arrayBuffer();
+    return this._tpl;
+  },
+
+  async fill(data) {
+    await this.loadTemplate();
+    const { PDFDocument, rgb, StandardFonts } = PDFLib;
+    const doc   = await PDFDocument.load(this._tpl, { ignoreEncryption: true });
+    const font  = await doc.embedFont(StandardFonts.Helvetica);
+    const pages = doc.getPages();
+    const ink   = rgb(0, 0, 0.52);
+
+    for (const [fieldName, cfg] of Object.entries(FIELD_MAP)) {
+      const page = pages[cfg.page];
+      if (!page) continue;
+      if (cfg.type === 'check') {
+        if ((data[cfg.radioName] || '') === cfg.match)
+          page.drawText('X', { x: cfg.x, y: cfg.y, size: cfg.size, font, color: ink });
+      } else {
+        const val = String(data[fieldName] || '').trim();
+        if (val) page.drawText(val, { x: cfg.x, y: cfg.y, size: cfg.size, font, color: ink });
+      }
+    }
+
+    this._filled = await doc.save();
+    return this._filled;
+  },
+
+  blobURL() {
+    const blob = new Blob([this._filled], { type: 'application/pdf' });
+    return URL.createObjectURL(blob);
+  },
+
+  download(name) {
+    const url = this.blobURL();
+    const a = document.createElement('a');
+    a.href = url; a.download = name; a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 8000);
+  }
+};
+
+/* ── App Controller ──────────────────────────────────────────── */
+const App = {
+  current: 1,
+  total: 5,
+  _blobURL: null,
+
+  next(from) {
+    if (!Validator.validateStep(from)) {
+      this._alert('Please fill in all required fields before continuing.');
+      return;
+    }
+    this._clearAlert();
+    this._go(from + 1);
+  },
+
+  prev(from) {
+    this._clearAlert();
+    this._go(from - 1);
+  },
+
+  _go(step) {
+    if (step < 1 || step > this.total) return;
+    document.getElementById(`panel${this.current}`).classList.remove('is-active');
+    this.current = step;
+    document.getElementById(`panel${this.current}`).classList.add('is-active');
+    this._updateStepper();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },
+
+  _updateStepper() {
+    document.querySelectorAll('.appform-step').forEach(el => {
+      const s = parseInt(el.dataset.step);
+      el.classList.toggle('is-active', s === this.current);
+      el.classList.toggle('is-done',   s < this.current);
+    });
+  },
+
+  togglePanel(id, show) {
+    document.getElementById(id)?.classList.toggle('is-open', show);
+  },
+
+  async generatePDF() {
+    if (!Validator.validateStep(5)) {
+      this._alert('Please provide at least one professional reference.');
+      return;
+    }
+    this._clearAlert();
+    this._showLoader();
+
+    try {
+      const data = Collector.collect();
+      await PDFService.fill(data);
+
+      if (this._blobURL) URL.revokeObjectURL(this._blobURL);
+      this._blobURL = PDFService.blobURL();
+      document.getElementById('js-preview-frame').src = this._blobURL;
+      this._hideLoader();
+      document.getElementById('js-modal').classList.add('is-open');
+    } catch (err) {
+      this._hideLoader();
+      console.error(err);
+      this._alert(`Error generating PDF: ${err.message}. Please verify the file exists at: ${PDF_PATH}`);
+    }
+  },
+
+  closeModal() {
+    document.getElementById('js-modal').classList.remove('is-open');
+  },
+
+  download() {
+    const data = Collector.collect();
+    const last = (data.lastName || 'Application').replace(/\s+/g, '-');
+    PDFService.download(`JLHCA-Application-${last}.pdf`);
+  },
+
+  _alert(msg) {
+    const el = document.getElementById('js-alert');
+    document.getElementById('js-alert-msg').textContent = msg;
+    el.classList.add('is-open');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  },
+  _clearAlert() { document.getElementById('js-alert').classList.remove('is-open'); },
+  _showLoader()  { document.getElementById('js-loader').classList.add('is-open'); },
+  _hideLoader()  { document.getElementById('js-loader').classList.remove('is-open'); },
+
+  init() {
+    const appDate = document.getElementById('f-appDate');
+    if (appDate) appDate.value = new Date().toISOString().split('T')[0];
+
+    const ssnEl = document.getElementById('f-ssn');
+    if (ssnEl) {
+      ssnEl.addEventListener('input', function () {
+        let v = this.value.replace(/\D/g, '');
+        if (v.length > 3) v = v.slice(0,3) + '-' + v.slice(3);
+        if (v.length > 6) v = v.slice(0,6) + '-' + v.slice(6);
+        this.value = v.slice(0,11);
+      });
+    }
+
+    document.getElementById('js-modal').addEventListener('click', e => {
+      if (e.target === document.getElementById('js-modal')) this.closeModal();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') this.closeModal();
+    });
+
+    PDFService.loadTemplate().catch(() => {});
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => App.init());
+  </script>
+
+</body>
+</html>
