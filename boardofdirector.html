@@ -57,7 +57,7 @@
               <li><i class="icon-19" aria-hidden="true"></i><span>Call: <a href="tel:9199342145">919.934.2145</a></span></li>
               <li><i class="icon-18" aria-hidden="true"></i><span>Mail: <a href="mailto:Info@jlhcommunityaction.org">Info@jlhcommunityaction.org</a></span></li>
               <!-- FIX 3 (WCAG 2.4.4): Suppression du href invalide (adresse texte) — remplacé par un lien Google Maps -->
-              <li><i class="icon-17" aria-hidden="true"></i><span>Location: <a href="https://maps.google.com/?q=1102+Massey+Street+Smithfield+NC+27577" target="_blank" rel="noopener noreferrer">1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
+              <li><i class="icon-17" aria-hidden="true"></i><span>Location: <a href="https://maps.google.com/?q=1102+Massey+Street+Smithfield+NC+27577" target="_blank" rel="noopener noreferrer" aria-label="1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577 (opens in a new tab)">1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
             </ul>
 
             <div class="right-column">
@@ -171,13 +171,14 @@
       </nav>
     </div>
     <!-- End Mobile Menu -->
+    <main id="main-content">
 
 
 
 
 
         <!-- page-title -->
-        <section class="page-title centred">
+        <section class="page-title centred" aria-label="Page title">
             <div class="bg-layer" style="background-image: url(assets/images/background/page-title-5.avif);"></div>
             <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-56.avif);"></div>
             <div class="auto-container">
@@ -516,6 +517,7 @@
        
 
         <!-- main-footer -->
+    </main>
     <footer class="main-footer" role="contentinfo">
       <div class="auto-container">
         <div class="widget-section pt_100 pb_90">
@@ -599,11 +601,11 @@
 
 
         <!--Scroll to top-->
-        <div class="scroll-to-top">
-            <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
+        <button class="scroll-to-top" type="button" aria-label="Back to top">
+            <svg class="scroll-top-inner" aria-hidden="true" focusable="false" viewBox="-1 -1 102 102">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
             </svg>
-        </div>
+    </button>
         
     </div>
 

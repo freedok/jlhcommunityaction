@@ -203,7 +203,7 @@
               <li><i class="icon-19" aria-hidden="true"></i><span>Call: <a href="tel:9199342145">919.934.2145</a></span></li>
               <li><i class="icon-18" aria-hidden="true"></i><span>Mail: <a href="mailto:Info@jlhcommunityaction.org">Info@jlhcommunityaction.org</a></span></li>
               <!-- FIX 3 (WCAG 2.4.4): Suppression du href invalide (adresse texte) — remplacé par un lien Google Maps -->
-              <li><i class="icon-17" aria-hidden="true"></i><span>Location: <a href="https://maps.google.com/?q=1102+Massey+Street+Smithfield+NC+27577" target="_blank" rel="noopener noreferrer">1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
+              <li><i class="icon-17" aria-hidden="true"></i><span>Location: <a href="https://maps.google.com/?q=1102+Massey+Street+Smithfield+NC+27577" target="_blank" rel="noopener noreferrer" aria-label="1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577 (opens in a new tab)">1102 Massey Street | P.O. Drawer 711, Smithfield, NC 27577</a></span></li>
             </ul>
 
             <div class="right-column">
@@ -287,6 +287,7 @@
       </div>
 
     </header>
+<main id="main-content">
 <div class="container py-3 py-md-4">
     <div class="form-container">
         <!-- Header -->
@@ -335,20 +336,20 @@
                 <!-- Basic contact info -->
                 <div class="row g-4 mb-4">
                     <div class="col-md-6">
-                        <label class="form-label required-star">Full name</label>
-                        <input type="text" class="form-control" placeholder="e.g., Maria Gonzalez" required>
+                        <label class="form-label required-star" for="crisis-name">Full name</label>
+                        <input type="text" id="crisis-name" class="form-control" placeholder="e.g., Maria Gonzalez" required>
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label required-star">Telephone number</label>
-                        <input type="tel" class="form-control" placeholder="(XXX) XXX-XXXX" required>
+                        <label class="form-label required-star" for="crisis-phone">Telephone number</label>
+                        <input type="tel" id="crisis-phone" class="form-control" placeholder="(XXX) XXX-XXXX" required>
                     </div>
                     <div class="col-md-8">
-                        <label class="form-label required-star">Address (street, city, zip code)</label>
-                        <input type="text" class="form-control" placeholder="Street address, Johnston, NC" required>
+                        <label class="form-label required-star" for="crisis-address">Address (street, city, zip code)</label>
+                        <input type="text" id="crisis-address" class="form-control" placeholder="Street address, Johnston, NC" required>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label">Date</label>
-                        <input type="date" class="form-control" value="2026-05-26">
+                        <label class="form-label" for="crisis-date">Date</label>
+                        <input type="date" id="crisis-date" class="form-control" value="2026-05-26">
                     </div>
                 </div>
 
@@ -358,14 +359,14 @@
                     
                     <!-- Q1 -->
                     <div class="mb-4">
-                        <label class="form-label fw-bold">1. What are you seeking help with today?</label>
-                        <textarea class="form-control" rows="2" placeholder="Describe the reason for your visit (e.g., overdue electricity bill, housing counseling need, etc.)"></textarea>
+                        <label class="form-label fw-bold" for="crisis-q1">1. What are you seeking help with today?</label>
+                        <textarea id="crisis-q1" class="form-control" rows="2" placeholder="Describe the reason for your visit (e.g., overdue electricity bill, housing counseling need, etc.)"></textarea>
                     </div>
 
                     <!-- Q2 -->
                     <div class="mb-4">
-                        <label class="form-label fw-bold">2. What can we do to help you reach your goals / resolve your situation?</label>
-                        <textarea class="form-control" rows="2" placeholder="Specify the type of assistance or support you are looking for..."></textarea>
+                        <label class="form-label fw-bold" for="crisis-q2">2. What can we do to help you reach your goals / resolve your situation?</label>
+                        <textarea id="crisis-q2" class="form-control" rows="2" placeholder="Specify the type of assistance or support you are looking for..."></textarea>
                     </div>
 
                     <!-- Q3: prevention / self-sufficiency -->
@@ -393,20 +394,20 @@
 
                     <!-- Q4: short-range goals (6 months) -->
                     <div class="mb-4">
-                        <label class="form-label fw-bold">4. What are your short-range goals for the next 6 months?</label>
-                        <textarea class="form-control mb-3" rows="2" placeholder="e.g., find stable employment, improve housing situation, save for unexpected expenses..."></textarea>
-                        
-                        <label class="form-label fw-normal mt-2">a) What plans have you made to reach these short-range goals?</label>
-                        <textarea class="form-control mb-3" rows="2" placeholder="Describe actions already taken or planned (job search, training, budgeting...)"></textarea>
-                        
-                        <label class="form-label fw-normal mt-2">b) What can we do to assist you in reaching these short-range goals?</label>
-                        <textarea class="form-control" rows="2" placeholder="Guidance, workshops, specific referrals..."></textarea>
+                        <label class="form-label fw-bold" for="crisis-q4">4. What are your short-range goals for the next 6 months?</label>
+                        <textarea id="crisis-q4" class="form-control mb-3" rows="2" placeholder="e.g., find stable employment, improve housing situation, save for unexpected expenses..."></textarea>
+
+                        <label class="form-label fw-normal mt-2" for="crisis-q4a">a) What plans have you made to reach these short-range goals?</label>
+                        <textarea id="crisis-q4a" class="form-control mb-3" rows="2" placeholder="Describe actions already taken or planned (job search, training, budgeting...)"></textarea>
+
+                        <label class="form-label fw-normal mt-2" for="crisis-q4b">b) What can we do to assist you in reaching these short-range goals?</label>
+                        <textarea id="crisis-q4b" class="form-control" rows="2" placeholder="Guidance, workshops, specific referrals..."></textarea>
                     </div>
 
                     <!-- Q5: barriers -->
                     <div class="mb-2">
-                        <label class="form-label fw-bold">5. What do you feel is keeping you from reaching your goals (i.e., lack of education, poor budgeting or money management skills, job readiness skills, etc.)?</label>
-                        <textarea class="form-control" rows="2" placeholder="e.g., lack of training, budgeting difficulties, job skills, transportation issues..."></textarea>
+                        <label class="form-label fw-bold" for="crisis-q5">5. What do you feel is keeping you from reaching your goals (i.e., lack of education, poor budgeting or money management skills, job readiness skills, etc.)?</label>
+                        <textarea id="crisis-q5" class="form-control" rows="2" placeholder="e.g., lack of training, budgeting difficulties, job skills, transportation issues..."></textarea>
                         <div class="form-text text-muted mt-1">Examples: lack of education, money management, job readiness skills, etc.</div>
                     </div>
                 </div>
@@ -450,8 +451,8 @@
                         <div class="form-check"><input class="form-check-input" type="checkbox" id="wRenters"> <label class="form-check-label" for="wRenters">Renter's Rights</label></div>
                     </div>
                     <div class="mt-3">
-                        <label class="form-label">Other workshops / trainings:</label>
-                        <input type="text" class="form-control" placeholder="Specify if needed (e.g., parenting workshop, resume assistance, etc.)">
+                        <label class="form-label" for="crisis-other-workshops">Other workshops / trainings:</label>
+                        <input type="text" id="crisis-other-workshops" class="form-control" placeholder="Specify if needed (e.g., parenting workshop, resume assistance, etc.)">
                     </div>
                 </div>
 
@@ -489,6 +490,7 @@
         </div>
        </div>
 </div>
+</main>
    <!-- main-footer -->
     <footer class="main-footer" role="contentinfo">
       <div class="auto-container">

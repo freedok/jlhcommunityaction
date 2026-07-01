@@ -58,7 +58,7 @@
         <!-- preloader -->
         <div class="loader-wrap">
             <div class="preloader">
-                <div id="handle-preloader" class="handle-preloader">
+                <div id="handle-preloader" class="handle-preloader" aria-hidden="true" role="presentation">
                     <div class="animation-preloader">
                         <div class="spinner"></div>
                         <div class="txt-loading">
@@ -170,26 +170,26 @@
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 column">
                                             <div class="form-group">
-                                                <label>Your Name <span>*</span></label>
-                                                <input type="text" name="name" placeholder="xxxxxx" required="">
+                                                <label for="donate-name">Your Name <span aria-hidden="true">*</span></label>
+                                                <input type="text" id="donate-name" name="name" placeholder="xxxxxx" required="">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 column">
                                             <div class="form-group">
-                                                <label>Email Address <span>*</span></label>
-                                                <input type="email" name="email" required="">
+                                                <label for="donate-email">Email Address <span aria-hidden="true">*</span></label>
+                                                <input type="email" id="donate-email" name="email" required="">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 column">
                                             <div class="form-group">
-                                                <label>Phone</label>
-                                                <input type="text" name="phone" required="">
+                                                <label for="donate-phone">Phone</label>
+                                                <input type="text" id="donate-phone" name="phone" required="">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 column">
                                             <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" name="address" required="">
+                                                <label for="donate-address">Address</label>
+                                                <input type="text" id="donate-address" name="address" required="">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 column">
@@ -259,9 +259,9 @@
                         <div class="menu-area">
                             <!--Mobile Navigation Toggler-->
                             <div class="mobile-nav-toggler">
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
+                                <i class="icon-bar" aria-hidden="true"></i>
+                                <i class="icon-bar" aria-hidden="true"></i>
+                                <i class="icon-bar" aria-hidden="true"></i>
                             </div>
                             <nav class="main-menu navbar-expand-md navbar-light clearfix">
                                 <div class="collapse navbar-collapse show clearfix">
@@ -343,11 +343,11 @@
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
-                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+                        <li><a href="index.html" aria-label="Twitter"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
+                        <li><a href="index.html" aria-label="Facebook"><span class="fab fa-facebook-square" aria-hidden="true"></span></a></li>
+                        <li><a href="index.html" aria-label="Pinterest"><span class="fab fa-pinterest-p" aria-hidden="true"></span></a></li>
+                        <li><a href="index.html" aria-label="Instagram"><span class="fab fa-instagram" aria-hidden="true"></span></a></li>
+                        <li><a href="index.html" aria-label="YouTube"><span class="fab fa-youtube" aria-hidden="true"></span></a></li>
                     </ul>
                 </div>
             </nav>
@@ -357,6 +357,7 @@
 
 
         <!-- banner-section -->
+        <main id="main-content">
         <section class="banner-style-two">
             <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-14.avif);"></div>
             <div class="banner-carousel owl-theme owl-carousel owl-dots-none nav-style-one">
@@ -914,6 +915,7 @@
         <!-- testimonial-style-two end -->
 
 
+        </main>
         <!-- main-footer -->
         <footer class="main-footer" role="contentinfo">
       <div class="auto-container">
@@ -998,11 +1000,11 @@
 
 
         <!--Scroll to top-->
-        <div class="scroll-to-top">
-            <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
+        <button class="scroll-to-top" type="button" aria-label="Back to top">
+            <svg class="scroll-top-inner" aria-hidden="true" focusable="false" viewBox="-1 -1 102 102">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
             </svg>
-        </div>
+    </button>
         
     </div>
 
