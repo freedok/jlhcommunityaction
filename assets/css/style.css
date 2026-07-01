@@ -2847,11 +2847,19 @@ button.ltr {
   letter-spacing: 0.3px;
 }
 
-.careerx-job__cta {
+/* ── Actions row (View posting + Apply Online) ── */
+.careerx-job__actions {
   grid-column: 1 / -1;
   margin-top: 10px;
   padding-top: 16px;
   border-top: 1px dashed #ececec;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.careerx-job__cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -2862,6 +2870,7 @@ button.ltr {
   letter-spacing: 0.5px;
   text-transform: uppercase;
   transition: color 0.2s ease, gap 0.2s ease;
+  white-space: nowrap;
 }
 
 .careerx-job__cta i {
@@ -2878,6 +2887,30 @@ button.ltr {
 
 .careerx-job__cta:hover i {
   transform: translateX(2px);
+}
+
+/* Apply Online — outlined pill button */
+.careerx-job__cta--apply {
+  color: #ffffff;
+  background: #b85515;
+  border-radius: 999px;
+  padding: 7px 18px;
+  letter-spacing: 0.4px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  margin-left: auto;
+}
+
+.careerx-job__cta--apply i {
+  font-size: 11px;
+}
+
+.careerx-job__cta--apply:hover,
+.careerx-job__cta--apply:focus-visible {
+  background: #1a1a5e;
+  color: #ffffff;
+  gap: 10px;
+  outline: none;
+  transform: translateY(-1px);
 }
 
 /* ---------- Qualifications callout ---------- */
@@ -3062,7 +3095,8 @@ button.ltr {
   .careerx-job { grid-template-columns: 1fr; }
   .careerx-job__icon { width: 48px; height: 48px; font-size: 18px; border-radius: 12px; }
   .careerx-job__body { grid-column: 1; }
-  .careerx-job__cta { justify-content: center; }
+  .careerx-job__actions { flex-direction: column; gap: 10px; }
+  .careerx-job__cta--apply { margin-left: 0; width: 100%; justify-content: center; }
   .careerx-section-head h2 { font-size: 24px; }
   .careerx-qualifications__title { font-size: 20px; }
   .careerx-hr__name { font-size: 22px; }
@@ -5092,12 +5126,48 @@ section .carousel-pause-btn {
 }
 .donate-impact li strong { color: #1a1a5e; }
 
+/* ── Payment method tabs ── */
+.donate-methods {
+  display: flex;
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.method-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.method-btn.active {
+  background: #1a1a5e;
+  color: #fff;
+}
+.method-btn i { font-size: 15px; }
+
+/* ── Payment panels ── */
+.donate-panel { animation: fadeInPanel 0.2s ease; }
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ── Submit button ── */
 .donate-submit-btn {
   display: block;
   width: 100%;
-  background: #dc3545;
-  color: #fff;
   border: none;
   border-radius: 50px;
   padding: 16px;
@@ -5108,9 +5178,29 @@ section .carousel-pause-btn {
   transition: background 0.25s, transform 0.2s;
   margin-bottom: 14px;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
-.donate-submit-btn:hover {
-  background: #1a1a5e;
+
+/* PayPal button — brand blue */
+.donate-paypal-btn {
+  background: #0070ba;
+  color: #fff;
+}
+.donate-paypal-btn:hover {
+  background: #003087;
+  transform: translateY(-2px);
+}
+
+/* Stripe button — brand purple */
+.donate-stripe-btn {
+  background: #635bff;
+  color: #fff;
+}
+.donate-stripe-btn:hover {
+  background: #4b44cc;
   transform: translateY(-2px);
 }
 

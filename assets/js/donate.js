@@ -1,6 +1,18 @@
 (function () {
   'use strict';
 
+  /* ── STRIPE CONFIG ────────────────────────────────────────────────────
+     1. In your Stripe Dashboard, create a "Donation" product with
+        "Customer chooses price" (one-time) and a subscription product
+        for monthly giving.
+     2. Generate a Payment Link for each and paste the URLs below.
+     3. The ?prefilled_amount= param (in cents) pre-fills the amount.
+     ──────────────────────────────────────────────────────────────────── */
+  var STRIPE = {
+    once:    'https://buy.stripe.com/REPLACE_WITH_YOUR_ONE_TIME_LINK',
+    monthly: 'https://buy.stripe.com/REPLACE_WITH_YOUR_MONTHLY_LINK'
+  };
+
   /* ── 1. Inject popup HTML ─────────────────────────────────────────── */
   var popupHTML = [
     '<div id="donate-popup" class="donate-popup" role="dialog" aria-modal="true" aria-labelledby="donate-heading">',
@@ -48,21 +60,41 @@
     '        <li><strong>$100</strong> housing support services</li>',
     '      </ul>',
 
-    /* PayPal form */
-    '      <form action="https://www.paypal.com/donate" method="post" target="_blank" id="donatePaypalForm" novalidate>',
-    '        <input type="hidden" name="business" value="Info@jlhcommunityaction.org">',
-    '        <input type="hidden" name="item_name" id="donateItemName" value="JLHCA One-Time Donation">',
-    '        <input type="hidden" name="currency_code" value="USD">',
-    '        <input type="hidden" name="amount" id="donatePaypalAmount" value="25">',
-    '        <input type="hidden" name="no_recurring" id="donateRecurring" value="1">',
-    '        <input type="hidden" name="return" value="https://jlhcommunityaction.org/thank-you.html">',
-    '        <input type="hidden" name="cancel_return" value="https://jlhcommunityaction.org/">',
-    '        <button type="submit" class="donate-submit-btn" id="donateSubmitBtn">',
-    '          <i class="fas fa-heart" aria-hidden="true"></i> Donate $<span id="donateBtnAmt">25</span> via PayPal',
+    /* ── Payment method tabs ── */
+    '      <div class="donate-methods" role="group" aria-label="Payment method">',
+    '        <button type="button" class="method-btn active" data-method="paypal" aria-pressed="true">',
+    '          <i class="fab fa-paypal" aria-hidden="true"></i> PayPal',
     '        </button>',
-    '      </form>',
+    '        <button type="button" class="method-btn" data-method="stripe" aria-pressed="false">',
+    '          <i class="fas fa-credit-card" aria-hidden="true"></i> Card',
+    '        </button>',
+    '      </div>',
 
-    '      <p class="donate-secure"><i class="fas fa-lock" aria-hidden="true"></i> 100 % secure — powered by PayPal</p>',
+    /* ── PayPal panel ── */
+    '      <div id="panel-paypal" class="donate-panel">',
+    '        <form action="https://www.paypal.com/donate" method="post" target="_blank" id="donatePaypalForm" novalidate>',
+    '          <input type="hidden" name="business" value="Info@jlhcommunityaction.org">',
+    '          <input type="hidden" name="item_name" id="donateItemName" value="JLHCA One-Time Donation">',
+    '          <input type="hidden" name="currency_code" value="USD">',
+    '          <input type="hidden" name="amount" id="donatePaypalAmount" value="25">',
+    '          <input type="hidden" name="no_recurring" id="donateRecurring" value="1">',
+    '          <input type="hidden" name="return" value="https://jlhcommunityaction.org/thank-you.html">',
+    '          <input type="hidden" name="cancel_return" value="https://jlhcommunityaction.org/">',
+    '          <button type="submit" class="donate-submit-btn donate-paypal-btn" id="donateSubmitBtn">',
+    '            <i class="fab fa-paypal" aria-hidden="true"></i> Donate $<span id="donateBtnAmt">25</span> via PayPal',
+    '          </button>',
+    '        </form>',
+    '        <p class="donate-secure"><i class="fas fa-lock" aria-hidden="true"></i> 100% secure — powered by PayPal</p>',
+    '      </div>',
+
+    /* ── Stripe panel ── */
+    '      <div id="panel-stripe" class="donate-panel" hidden>',
+    '        <button type="button" class="donate-submit-btn donate-stripe-btn" id="donateStripeBtn">',
+    '          <i class="fas fa-credit-card" aria-hidden="true"></i> Donate $<span id="donateBtnAmtStripe">25</span> with Card',
+    '        </button>',
+    '        <p class="donate-secure"><i class="fas fa-lock" aria-hidden="true"></i> 100% secure — powered by Stripe</p>',
+    '      </div>',
+
     '      <p class="donate-tax">JLHCA is a 501(c)(3) nonprofit. Your donation may be tax-deductible.</p>',
 
     '    </div>',
@@ -74,28 +106,37 @@
 
   /* ── 2. State ─────────────────────────────────────────────────────── */
   var selectedAmount = 25;
-  var isMonthly = false;
+  var isMonthly      = false;
+  var activeMethod   = 'paypal';
 
   /* ── 3. DOM refs ──────────────────────────────────────────────────── */
   var popup          = document.getElementById('donate-popup');
   var closeBtn       = popup.querySelector('.close-donate');
   var freqBtns       = popup.querySelectorAll('.freq-btn');
   var amtBtns        = popup.querySelectorAll('.amt-btn');
+  var methodBtns     = popup.querySelectorAll('.method-btn');
+  var panelPaypal    = document.getElementById('panel-paypal');
+  var panelStripe    = document.getElementById('panel-stripe');
   var customWrap     = document.getElementById('donateCustomWrap');
   var customInput    = document.getElementById('donateCustomInput');
   var paypalAmount   = document.getElementById('donatePaypalAmount');
   var paypalItemName = document.getElementById('donateItemName');
   var recurringField = document.getElementById('donateRecurring');
-  var submitBtn      = document.getElementById('donateSubmitBtn');
-  var btnAmtLabel    = document.getElementById('donateBtnAmt');
+  var btnAmtPaypal   = document.getElementById('donateBtnAmt');
+  var btnAmtStripe   = document.getElementById('donateBtnAmtStripe');
 
   /* ── 4. Helpers ───────────────────────────────────────────────────── */
-  function updatePaypal() {
-    paypalAmount.value   = selectedAmount;
-    btnAmtLabel.textContent = selectedAmount;
+  function updateUI() {
+    var display = selectedAmount || '?';
+
+    /* PayPal hidden fields */
+    paypalAmount.value   = selectedAmount || 0;
+    btnAmtPaypal.textContent = display;
     paypalItemName.value = isMonthly ? 'JLHCA Monthly Donation' : 'JLHCA One-Time Donation';
     recurringField.value = isMonthly ? '0' : '1';
-    submitBtn.querySelector('span') && (submitBtn.querySelector('span') ? null : null);
+
+    /* Stripe button label */
+    btnAmtStripe.textContent = display;
   }
 
   function openPopup() {
@@ -109,6 +150,22 @@
     document.body.style.overflow = '';
   }
 
+  function switchPanel(method) {
+    activeMethod = method;
+    methodBtns.forEach(function (b) {
+      var isActive = b.getAttribute('data-method') === method;
+      b.classList.toggle('active', isActive);
+      b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+    if (method === 'stripe') {
+      panelPaypal.hidden = true;
+      panelStripe.hidden = false;
+    } else {
+      panelPaypal.hidden = false;
+      panelStripe.hidden = true;
+    }
+  }
+
   /* ── 5. Inject heart icon into nav donate buttons ────────────────── */
   document.querySelectorAll('a.nav-donate-btn').forEach(function (btn) {
     var icon = document.createElement('i');
@@ -117,42 +174,36 @@
     btn.insertBefore(icon, btn.firstChild);
   });
 
-  /* ── 6. Triggers: all .donate-box-btn clicks ──────────────────────── */
+  /* ── 6. Open triggers ─────────────────────────────────────────────── */
   document.addEventListener('click', function (e) {
     var trigger = e.target.closest('.donate-box-btn');
-    if (trigger) {
-      e.preventDefault();
-      openPopup();
-    }
+    if (trigger) { e.preventDefault(); openPopup(); }
   });
 
-  /* ── 6. Close ─────────────────────────────────────────────────────── */
+  /* ── 7. Close ─────────────────────────────────────────────────────── */
   closeBtn.addEventListener('click', closePopup);
-
   popup.addEventListener('click', function (e) {
     if (!e.target.closest('.donate-content')) closePopup();
   });
-
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && popup.classList.contains('popup-visible')) closePopup();
   });
 
-  /* ── 7. Frequency toggle ──────────────────────────────────────────── */
+  /* ── 8. Frequency toggle ──────────────────────────────────────────── */
   freqBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
       freqBtns.forEach(function (b) { b.classList.remove('active'); });
       this.classList.add('active');
       isMonthly = (this.getAttribute('data-freq') === 'monthly');
-      updatePaypal();
+      updateUI();
     });
   });
 
-  /* ── 8. Amount selection ──────────────────────────────────────────── */
+  /* ── 9. Amount selection ──────────────────────────────────────────── */
   amtBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
       amtBtns.forEach(function (b) { b.classList.remove('active'); });
       this.classList.add('active');
-
       if (this.getAttribute('data-amount') === 'custom') {
         customWrap.removeAttribute('aria-hidden');
         customInput.focus();
@@ -162,17 +213,23 @@
         customInput.value = '';
         selectedAmount = parseInt(this.getAttribute('data-amount'), 10);
       }
-      updatePaypal();
+      updateUI();
     });
   });
 
   customInput.addEventListener('input', function () {
     selectedAmount = parseInt(this.value, 10) || '';
-    paypalAmount.value = selectedAmount;
-    btnAmtLabel.textContent = selectedAmount || '?';
+    updateUI();
   });
 
-  /* ── 9. Form validation before PayPal redirect ────────────────────── */
+  /* ── 10. Payment method tabs ──────────────────────────────────────── */
+  methodBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      switchPanel(this.getAttribute('data-method'));
+    });
+  });
+
+  /* ── 11. PayPal form validation ───────────────────────────────────── */
   document.getElementById('donatePaypalForm').addEventListener('submit', function (e) {
     if (!selectedAmount || selectedAmount < 1) {
       e.preventDefault();
@@ -182,7 +239,21 @@
     }
   });
 
-  /* ── 10. Initial state ────────────────────────────────────────────── */
-  updatePaypal();
+  /* ── 12. Stripe redirect ──────────────────────────────────────────── */
+  document.getElementById('donateStripeBtn').addEventListener('click', function () {
+    if (!selectedAmount || selectedAmount < 1) {
+      customInput.focus();
+      customInput.style.borderColor = '#dc3545';
+      setTimeout(function () { customInput.style.borderColor = ''; }, 2000);
+      return;
+    }
+    var baseUrl  = isMonthly ? STRIPE.monthly : STRIPE.once;
+    var cents    = Math.round(selectedAmount * 100);
+    var fullUrl  = baseUrl + '?prefilled_amount=' + cents;
+    window.open(fullUrl, '_blank', 'noopener,noreferrer');
+  });
+
+  /* ── 13. Initial state ────────────────────────────────────────────── */
+  updateUI();
 
 })();
